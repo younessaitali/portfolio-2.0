@@ -11,11 +11,16 @@ import Unocss from 'unocss/vite';
 import { VitePWA } from 'vite-plugin-pwa';
 import VueI18n from '@intlify/vite-plugin-vue-i18n';
 import pkg from './package.json';
+import LinkAttributes from 'markdown-it-link-attributes';
+import Markdown from 'vite-plugin-md';
+import Prism from 'markdown-it-prism';
 
 process.env.VITE_APP_VERSION = pkg.version;
 if (process.env.NODE_ENV === 'production') {
   process.env.VITE_APP_BUILD_EPOCH = new Date().getTime().toString();
 }
+
+const markdownWrapperClasses = 'prose prose-sm m-auto text-left';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -27,7 +32,7 @@ export default defineConfig({
   },
   plugins: [
     vue({
-      include: [/\.vue$/],
+      include: [/\.vue$/, /\.md$/],
       reactivityTransform: true
     }),
 
@@ -66,6 +71,24 @@ export default defineConfig({
     // https://github.com/antfu/unocss
     // see unocss.config.ts for config
     Unocss(),
+
+    // https://github.com/antfu/vite-plugin-md
+    // Don't need this? Try vitesse-lite: https://github.com/antfu/vitesse-lite
+    Markdown({
+      wrapperClasses: markdownWrapperClasses,
+      headEnabled: true,
+      markdownItSetup(md) {
+        // https://prismjs.com/
+        md.use(Prism);
+        md.use(LinkAttributes, {
+          matcher: (link: string) => /^https?:\/\//.test(link),
+          attrs: {
+            target: '_blank',
+            rel: 'noopener'
+          }
+        });
+      }
+    }),
 
     // https://github.com/antfu/vite-plugin-pwa
     VitePWA({
