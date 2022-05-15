@@ -2,5 +2,6 @@
   "*.{js,jsx,ts,tsx}": ["pnpm lint:js", "pnpm lint:prettier"],
   "*.vue": ["pnpm lint:js", "pnpm lint:prettier"],
   "*.css": ["pnpm lint:prettier"],
+  "*.md": ["pnpm lint:md"],
   "*.json": ["pnpm prettier --write --loglevel warn --parser json"]
 }
