@@ -1,0 +1,11 @@
+node_modules/
+dist/
+dist-ssr/
+public
+.github/
+.husky/
+.vscode/
+**/coverage/
+locales/
+src/components.d.ts
+src/auto-imports.d.ts
