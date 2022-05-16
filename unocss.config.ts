@@ -5,22 +5,31 @@ import {
   presetTypography,
   presetUno,
   transformerDirectives,
-  transformerVariantGroup
+  transformerVariantGroup,
+  presetWebFonts
 } from 'unocss';
 
 export default defineConfig({
-  shortcuts: [
-    [
-      'btn',
-      'px-4 py-1 rounded inline-block bg-teal-600 text-white cursor-pointer hover:bg-teal-700 disabled:cursor-default disabled:bg-gray-600 disabled:opacity-50'
-    ],
-    [
-      'icon-btn',
-      'inline-block cursor-pointer select-none opacity-75 transition duration-200 ease-in-out hover:opacity-100 hover:text-teal-600'
-    ]
-  ],
+  shortcuts: [],
+  theme: {
+    colors: {
+      darkBlue: '#151D2B',
+      blue: '#1C2C3F',
+      blueGray: '#C8C9CA',
+      blueGrayDark: '#989BA1',
+      champagne: '#A6956E'
+    }
+  },
   presets: [
     presetUno(),
+    presetWebFonts({
+      fonts: {
+        sans: {
+          name: 'Poppins',
+          weights: [300, 400, 500, 600, 700, 800, 900]
+        }
+      }
+    }),
     presetAttributify({}),
     presetIcons({
       scale: 1.2,

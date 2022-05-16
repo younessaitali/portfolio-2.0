@@ -1,57 +1,63 @@
 <script lang="ts" setup>
-  import { useUserStore } from '~/stores/user';
-
-  const { t } = useI18n();
-  const user = useUserStore();
-  const name = $ref(user.savedName);
-
-  const router = useRouter();
-  const go = () => {
-    if (name) router.push(`/hi/${encodeURIComponent(name)}`);
-  };
+  const socialMedia = reactive([
+    {
+      path: 'https://github.com/younessaitali',
+      icon: 'i-carbon:logo-github',
+      title: 'Github'
+    },
+    {
+      path: 'https://twitter.com/younesaitali',
+      icon: 'i-carbon:logo-twitter',
+      title: 'Twitter'
+    },
+    {
+      path: 'https://www.linkedin.com/in/youness-ait-ali/',
+      icon: 'i-carbon:logo-linkedin',
+      title: 'linkedIn'
+    },
+    {
+      path: 'mailto:contact@younessatiali.com',
+      icon: 'i-carbon:email',
+      title: 'Contact me by Email'
+    }
+  ]);
 </script>
 
 <template>
-  <div>
-    <div text-4xl>
-      <div i-carbon-campsite inline-block />
-    </div>
-    <p>
-      <a
-        rel="noreferrer"
-        href="https://github.com/antfu/vitesse"
-        target="_blank">
-        Vitesse
-      </a>
+  <div class="flex relative flex-col h-full items-center justify-center gap-10">
+    <h2 font="bold" text="blue-gray 6xl">
+      Hi Am <span text="champagne">Youness</span>
+    </h2>
+
+    <h3 font="bold" text="blue-gray-dark 3xl">
+      Full stack-Developer / Vue enthusiasts
+    </h3>
+
+    <p font="medium" text="champagne xl center" max-w-5xl>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut
+      consequat enim. In sed elementum metus, malesuada gravida velit. cursus
+      porta, enim ipsum convallis lorem.
     </p>
-    <p>
-      <em class="text-gray-700 dark:text-gray:100 text-6xl font-black">
-        {{ t('hello') }}
-      </em>
-    </p>
-
-    <div py-4 />
-
-    <input
-      id="input"
-      v-model="name"
-      :placeholder="t('intro.whats-your-name')"
-      :aria-label="t('intro.whats-your-name')"
-      type="text"
-      autocomplete="false"
-      p="x4 y2"
-      w="250px"
-      text="center"
-      bg="transparent"
-      border="~ rounded gray-200 dark:gray-700"
-      outline="none active:none"
-      @keydown.enter="go" />
-    <label class="hidden" for="input">{{ t('intro.whats-your-name') }}</label>
-
-    <div>
-      <button btn m-3 text-sm :disabled="!name" @click="go">
-        {{ t('button.go') }}
-      </button>
-    </div>
+    <a
+      href="https://drive.google.com/file/d/1QpSEPHbBcn1yuqzsVsxxzeiz9fpRgNiY/view?usp=sharing"
+      target="_blank"
+      class="cursor-pointer inline-block bg-transparent border border-champagne rounded-full py-3 px-10 text-lg font-medium text-champagne hover:bg-blue"
+      >View resume</a
+    >
+    <ul class="flex gap-x-14">
+      <li v-for="item in socialMedia" :key="item.title">
+        <social-card v-bind="{ ...item }" />
+      </li>
+      <li>
+        <a
+          title="animation trigger"
+          cursor="pointer"
+          class="h-16 px-4 py-2 group hover:-translate-y-1 hover:scale-115 ease-in-out delay-100 duration-300 inline-flex justify-center items-center text-champagne text-8xl w-16 bg-dark-blue rounded-lg shadow-dark-900 drop-shadow-2xl shadow-lg">
+          <div
+            class="group-hover:scale-115 delay-100 duration-300"
+            i-carbon:rotate-clockwise-alt />
+        </a>
+      </li>
+    </ul>
   </div>
 </template>

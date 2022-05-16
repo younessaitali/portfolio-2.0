@@ -14,6 +14,7 @@ import pkg from './package.json';
 import LinkAttributes from 'markdown-it-link-attributes';
 import Markdown from 'vite-plugin-md';
 import Prism from 'markdown-it-prism';
+import Inspector from 'vite-plugin-vue-inspector';
 
 process.env.VITE_APP_VERSION = pkg.version;
 if (process.env.NODE_ENV === 'production') {
@@ -36,6 +37,10 @@ export default defineConfig({
       reactivityTransform: true
     }),
 
+    //https://github.com/webfansplz/vite-plugin-vue-inspector
+    Inspector({
+      enabled: false
+    }),
     // https://github.com/hannoeru/vite-plugin-pages
     Pages({
       extensions: ['vue', 'md']
