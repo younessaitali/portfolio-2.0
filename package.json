@@ -30,6 +30,7 @@
     "@pinia/testing": "^0.0.12",
     "@vueuse/core": "^8.4.2",
     "@vueuse/head": "^0.7.6",
+    "gsap": "^3.10.4",
     "nprogress": "^0.2.0",
     "pinia": "^2.0.14",
     "prism-theme-vars": "^0.2.2",

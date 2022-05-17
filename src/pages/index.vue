@@ -24,6 +24,8 @@
 </script>
 
 <template>
+  <Line />
+  <Circle />
   <div class="flex relative flex-col h-full items-center justify-center gap-10">
     <h2 font="bold" text="blue-gray 6xl">
       Hi Am <span text="champagne">Youness</span>
