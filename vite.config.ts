@@ -39,7 +39,8 @@ export default defineConfig({
 
     //https://github.com/webfansplz/vite-plugin-vue-inspector
     Inspector({
-      enabled: false
+      toggleButtonVisibility: 'always',
+      toggleButtonPos: 'bottom-right'
     }),
     // https://github.com/hannoeru/vite-plugin-pages
     Pages({
@@ -66,11 +67,13 @@ export default defineConfig({
     Components({
       // relative paths to the directory to search for components
       dirs: ['src/**/components'],
+
       // allow auto load markdown components under `./src/components/`
       extensions: ['vue', 'md'],
+
       // allow auto import and register components used in markdown
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
-      dts: 'src/components.d.ts'
+      dts: 'src/Components.d.ts'
     }),
 
     // https://github.com/antfu/unocss

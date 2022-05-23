@@ -110,7 +110,7 @@
     </g>
     <g id="square">
       <rect
-        id="big-square"
+        id="logo-big-square"
         x="422.68"
         y="369.52"
         width="44.08"

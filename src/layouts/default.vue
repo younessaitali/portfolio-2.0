@@ -1,8 +1,8 @@
 <template>
-  <div font="sans" class="h-full">
+  <div font="sans" class="relative overflow-hidden">
     <App-header />
-    <main container mx-auto h-full sm:px-6 lg:px-8>
-      <RouterView />
+    <main class="snap-y overflow-y-auto snap-mandatory h-screen">
+      <RouterView mx-auto sm:px-6 lg:px-8 container />
     </main>
   </div>
 </template>
