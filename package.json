@@ -52,7 +52,7 @@
     "@typescript-eslint/eslint-plugin": "^5.22.0",
     "@typescript-eslint/parser": "^5.22.0",
     "@vitejs/plugin-vue": "^2.3.2",
-    "@vue/test-utils": "2.0.0-rc.21",
+    "@vue/test-utils": "2.0.0",
     "critters": "^0.0.16",
     "cross-env": "^7.0.3",
     "cypress": "^9.6.0",
