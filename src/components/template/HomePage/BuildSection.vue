@@ -11,7 +11,7 @@
   <section ref="section" class="h-screen snap-center relative">
     <h1 class="text-5xl font-semibold text-white">Build</h1>
 
-    <VSvg :scale="1.6" :position="'left'" v-if="sectionIsVisible">
+    <VSvg :scale="1.6" position="left" v-if="sectionIsVisible">
       <build />
     </VSvg>
   </section>

@@ -38,7 +38,6 @@
       const verticalStick = drop('#vertical-stick', 7);
 
       const timeline = gsap.timeline();
-      const timeline_2 = gsap.timeline();
 
       timeline
         .add(square)
@@ -55,20 +54,6 @@
           ease: Power4.easeOut
         })
         .repeat(-1);
-
-      timeline_2.fromTo(
-        '#build-text',
-        {
-          y: 50
-        },
-        {
-          duration: 1,
-          y: 0,
-          ease: Power4.easeInOut,
-          repeat: -1,
-          repeatDelay: 1
-        }
-      );
     }, 200);
   });
 </script>

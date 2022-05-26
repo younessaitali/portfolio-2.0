@@ -6,10 +6,12 @@ import '@vue/runtime-core'
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AppHeader: typeof import('./components/AppHeader.vue')['default']
-    Build: typeof import('./components/compositions/build.vue')['default']
+    Balance: typeof import('./components/compositions/Balance.vue')['default']
+    BalanceSection: typeof import('./components/template/HomePage/BalanceSection.vue')['default']
+    Build: typeof import('./components/compositions/Build.vue')['default']
     BuildSection: typeof import('./components/template/HomePage/BuildSection.vue')['default']
     Circle: typeof import('./components/shapes/circle.vue')['default']
-    Fun: typeof import('./components/compositions/fun.vue')['default']
+    Fun: typeof import('./components/compositions/Fun.vue')['default']
     FunSection: typeof import('./components/template/HomePage/FunSection.vue')['default']
     IntroductionSection: typeof import('./components/template/HomePage/IntroductionSection.vue')['default']
     Line: typeof import('./components/shapes/line.vue')['default']
@@ -17,6 +19,8 @@ declare module '@vue/runtime-core' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SocialCard: typeof import('./components/SocialCard.vue')['default']
+    Support: typeof import('./components/compositions/Support.vue')['default']
+    SupportSection: typeof import('./components/template/HomePage/SupportSection.vue')['default']
     VSvg: typeof import('./components/VSvg.vue')['default']
   }
 }

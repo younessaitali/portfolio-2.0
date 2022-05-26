@@ -19,11 +19,10 @@
 
   const scene = ref<HTMLElement | null>(null);
   const { width, height } = useWindowSize();
-  const { width: elementWidth, height: elementHeight } = useElementSize(scene);
+  const { width: elementWidth, height: elementHeight } =
+    useElementBounding(scene);
 
   const setPosition = () => {
-    console.log(position);
-
     if (position === 'top-left') {
       x.value = 0;
       y.value = 0;
@@ -32,6 +31,7 @@
       x.value = width.value - elementWidth.value;
       y.value = 0;
     }
+
     if (position === 'bottom-left') {
       x.value = 0;
       y.value = height.value - elementHeight.value;
@@ -74,6 +74,8 @@
 </script>
 
 <template>
+  <div
+    class="absolute grid grid-cols-4 grid-rows-4 inset-0 w-full h-full"></div>
   <svg
     class="absolute inset-0 w-full h-full"
     xmlns="http://www.w3.org/2000/svg"

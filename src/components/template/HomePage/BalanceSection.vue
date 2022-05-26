@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
   const section = ref<HTMLElement | null>(null);
   const sectionIsVisible = ref(false);
 
@@ -9,8 +9,8 @@
 
 <template>
   <section ref="section" class="h-screen snap-center relative">
-    <VSvg position="center" :scale="1">
-      <fun />
+    <VSvg v-if="sectionIsVisible" position="left" :scale="5">
+      <balance />
     </VSvg>
   </section>
 </template>
