@@ -98,7 +98,7 @@
         '#support-rectangle',
         {
           keyframes: {
-            '25%': { rotate: 56, ease: Expo.easeIn },
+            '25%': { yPercent: 15, rotate: 56, ease: Expo.easeIn },
             '79%': { yPercent: 27, transformOrigin: 'bottom center' },
             '80%': {
               rotate: 0,
