@@ -1,4 +1,3 @@
 #!/bin/sh
 
 pnpm test:unit:ci
-pnpm test:e2e:headless
