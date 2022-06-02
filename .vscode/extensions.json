@@ -1,9 +1,10 @@
 {
   "recommendations": [
-    "Vue.volar",
+    "antfu.iconify",
+    "antfu.unocss",
+    "antfu.goto-alias",
+    "csstools.postcss",
     "dbaeumer.vscode-eslint",
-    "formulahendry.auto-close-tag",
-    "formulahendry.auto-rename-tag",
-    "esbenp.prettier-vscode"
+    "vue.volar"
   ]
 }

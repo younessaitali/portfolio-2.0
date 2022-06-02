@@ -7,5 +7,6 @@
     "heading_line_length": 40,
     "line_length": 100
   },
+  "MD025": false,
   "no-multiple-blanks": false
 }

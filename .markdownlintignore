@@ -1,6 +1,7 @@
 .github/
 .husky/
 .vscode/
+.nuxt/
 **/coverage/
 dist/
 locales/

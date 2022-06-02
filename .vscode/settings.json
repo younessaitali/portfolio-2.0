@@ -1,4 +1,9 @@
 {
-  "i18n-ally.localesPaths": ["locales"],
-  "cSpell.words": ["unocss", "Unocss", "vueuse"]
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "files.associations": {
+    "*.css": "postcss"
+  },
+  "editor.formatOnSave": true
 }
