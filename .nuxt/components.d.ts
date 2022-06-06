@@ -4,18 +4,14 @@ declare module 'vue' {
     'Tes': typeof import("../components/content/tes.vue")['default'],
     'AppHeader': typeof import("../components/AppHeader.vue")['default'],
     'BalanceAnimation': typeof import("../components/BalanceAnimation.vue")['default'],
+    'BioNav': typeof import("../components/BioNav.vue")['default'],
     'BuildAnimation': typeof import("../components/BuildAnimation.vue")['default'],
     'FunAnimation': typeof import("../components/FunAnimation.vue")['default'],
     'Logo': typeof import("../components/Logo.vue")['default'],
     'SocialCard': typeof import("../components/SocialCard.vue")['default'],
+    'SocialMediaBar': typeof import("../components/SocialMediaBar.vue")['default'],
     'SupportAnimation': typeof import("../components/SupportAnimation.vue")['default'],
     'VSvg': typeof import("../components/VSvg.vue")['default'],
-    'HomeBalanceSection': typeof import("../components/Home/BalanceSection.vue")['default'],
-    'HomeBuildSection': typeof import("../components/Home/BuildSection.vue")['default'],
-    'HomeFunSection': typeof import("../components/Home/FunSection.vue")['default'],
-    'HomeIntroductionController': typeof import("../components/Home/IntroductionController.vue")['default'],
-    'HomeIntroductionSection': typeof import("../components/Home/IntroductionSection.vue")['default'],
-    'HomeSupportSection': typeof import("../components/Home/SupportSection.vue")['default'],
     'UnoIcon': typeof import("../node_modules/.pnpm/@unocss+nuxt@0.37.2/node_modules/@unocss/nuxt/runtime/UnoIcon.vue")['default'],
     'ContentDoc': typeof import("../node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.mjs")['default'],
     'ContentList': typeof import("../node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/components/ContentList.mjs")['default'],
@@ -58,18 +54,14 @@ declare module 'vue' {
     'LazyTes': typeof import("../components/content/tes.vue")['default'],
     'LazyAppHeader': typeof import("../components/AppHeader.vue")['default'],
     'LazyBalanceAnimation': typeof import("../components/BalanceAnimation.vue")['default'],
+    'LazyBioNav': typeof import("../components/BioNav.vue")['default'],
     'LazyBuildAnimation': typeof import("../components/BuildAnimation.vue")['default'],
     'LazyFunAnimation': typeof import("../components/FunAnimation.vue")['default'],
     'LazyLogo': typeof import("../components/Logo.vue")['default'],
     'LazySocialCard': typeof import("../components/SocialCard.vue")['default'],
+    'LazySocialMediaBar': typeof import("../components/SocialMediaBar.vue")['default'],
     'LazySupportAnimation': typeof import("../components/SupportAnimation.vue")['default'],
     'LazyVSvg': typeof import("../components/VSvg.vue")['default'],
-    'LazyHomeBalanceSection': typeof import("../components/Home/BalanceSection.vue")['default'],
-    'LazyHomeBuildSection': typeof import("../components/Home/BuildSection.vue")['default'],
-    'LazyHomeFunSection': typeof import("../components/Home/FunSection.vue")['default'],
-    'LazyHomeIntroductionController': typeof import("../components/Home/IntroductionController.vue")['default'],
-    'LazyHomeIntroductionSection': typeof import("../components/Home/IntroductionSection.vue")['default'],
-    'LazyHomeSupportSection': typeof import("../components/Home/SupportSection.vue")['default'],
     'LazyUnoIcon': typeof import("../node_modules/.pnpm/@unocss+nuxt@0.37.2/node_modules/@unocss/nuxt/runtime/UnoIcon.vue")['default'],
     'LazyContentDoc': typeof import("../node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.mjs")['default'],
     'LazyContentList': typeof import("../node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/components/ContentList.mjs")['default'],
@@ -114,18 +106,14 @@ declare module 'vue' {
 export const Tes: typeof import("../components/content/tes.vue")['default']
 export const AppHeader: typeof import("../components/AppHeader.vue")['default']
 export const BalanceAnimation: typeof import("../components/BalanceAnimation.vue")['default']
+export const BioNav: typeof import("../components/BioNav.vue")['default']
 export const BuildAnimation: typeof import("../components/BuildAnimation.vue")['default']
 export const FunAnimation: typeof import("../components/FunAnimation.vue")['default']
 export const Logo: typeof import("../components/Logo.vue")['default']
 export const SocialCard: typeof import("../components/SocialCard.vue")['default']
+export const SocialMediaBar: typeof import("../components/SocialMediaBar.vue")['default']
 export const SupportAnimation: typeof import("../components/SupportAnimation.vue")['default']
 export const VSvg: typeof import("../components/VSvg.vue")['default']
-export const HomeBalanceSection: typeof import("../components/Home/BalanceSection.vue")['default']
-export const HomeBuildSection: typeof import("../components/Home/BuildSection.vue")['default']
-export const HomeFunSection: typeof import("../components/Home/FunSection.vue")['default']
-export const HomeIntroductionController: typeof import("../components/Home/IntroductionController.vue")['default']
-export const HomeIntroductionSection: typeof import("../components/Home/IntroductionSection.vue")['default']
-export const HomeSupportSection: typeof import("../components/Home/SupportSection.vue")['default']
 export const UnoIcon: typeof import("../node_modules/.pnpm/@unocss+nuxt@0.37.2/node_modules/@unocss/nuxt/runtime/UnoIcon.vue")['default']
 export const ContentDoc: typeof import("../node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.mjs")['default']
 export const ContentList: typeof import("../node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/components/ContentList.mjs")['default']
@@ -168,18 +156,14 @@ export const ColorScheme: typeof import("../node_modules/.pnpm/@nuxtjs+color-mod
 export const LazyTes: typeof import("../components/content/tes.vue")['default']
 export const LazyAppHeader: typeof import("../components/AppHeader.vue")['default']
 export const LazyBalanceAnimation: typeof import("../components/BalanceAnimation.vue")['default']
+export const LazyBioNav: typeof import("../components/BioNav.vue")['default']
 export const LazyBuildAnimation: typeof import("../components/BuildAnimation.vue")['default']
 export const LazyFunAnimation: typeof import("../components/FunAnimation.vue")['default']
 export const LazyLogo: typeof import("../components/Logo.vue")['default']
 export const LazySocialCard: typeof import("../components/SocialCard.vue")['default']
+export const LazySocialMediaBar: typeof import("../components/SocialMediaBar.vue")['default']
 export const LazySupportAnimation: typeof import("../components/SupportAnimation.vue")['default']
 export const LazyVSvg: typeof import("../components/VSvg.vue")['default']
-export const LazyHomeBalanceSection: typeof import("../components/Home/BalanceSection.vue")['default']
-export const LazyHomeBuildSection: typeof import("../components/Home/BuildSection.vue")['default']
-export const LazyHomeFunSection: typeof import("../components/Home/FunSection.vue")['default']
-export const LazyHomeIntroductionController: typeof import("../components/Home/IntroductionController.vue")['default']
-export const LazyHomeIntroductionSection: typeof import("../components/Home/IntroductionSection.vue")['default']
-export const LazyHomeSupportSection: typeof import("../components/Home/SupportSection.vue")['default']
 export const LazyUnoIcon: typeof import("../node_modules/.pnpm/@unocss+nuxt@0.37.2/node_modules/@unocss/nuxt/runtime/UnoIcon.vue")['default']
 export const LazyContentDoc: typeof import("../node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.mjs")['default']
 export const LazyContentList: typeof import("../node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/components/ContentList.mjs")['default']

@@ -1,10 +1,9 @@
+<script lang="ts" setup></script>
 <template>
-  <div font="sans" class="relative overflow-hidden">
-    <slot name="header">
-      <App-header class="absolute z-40 inset-x-0" />
-    </slot>
-    <main class="snap-y overflow-y-auto snap-mandatory h-screen">
-      <slot />
+  <div font="sans" class="relative min-h-screen">
+    <main class="mx-auto container flex flex-col">
+      <App-header />
+      <slot class="flex-1" />
     </main>
   </div>
 </template>

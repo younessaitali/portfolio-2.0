@@ -4,6 +4,7 @@
 /// <reference types="@nuxtjs/color-mode" />
 /// <reference types="@nuxt/content" />
 /// <reference types="@nuxt/telemetry" />
+/// <reference types="vue/macros-global" />
 /// <reference types="nuxt" />
 /// <reference path="types/plugins.d.ts" />
 /// <reference path="types/vue-shim.d.ts" />
