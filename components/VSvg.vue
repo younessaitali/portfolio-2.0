@@ -1,4 +1,4 @@
-//component to take SVG and make full-screen and center content on screen
+//component make svg take entire screen and position it where i want it
 <script setup lang="ts">
   interface Props {
     position?:
@@ -75,7 +75,7 @@
 
 <template>
   <div
-    class="absolute grid grid-cols-4 grid-rows-4 inset-0 w-full h-full"></div>
+    class="absolute grid grid-cols-8 grid-rows-8 inset-0 h-full w-full"></div>
   <svg
     class="absolute inset-0 w-full h-full"
     xmlns="http://www.w3.org/2000/svg"
@@ -87,9 +87,3 @@
     </g>
   </svg>
 </template>
-
-<style scoped>
-  g {
-    /* transform-origin: center ; */
-  }
-</style>

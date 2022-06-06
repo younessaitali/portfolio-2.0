@@ -95,28 +95,37 @@
 </script>
 
 <template>
-  <g id="balance">
-    <rect
-      id="balance-top-square"
-      x="25"
-      y="4"
-      width="16.5"
-      height="16.5"
-      fill="#37b8af" />
-    <circle id="balance-circle" cx="33" cy="30.92" r="7.33" fill="#f79a3e" />
-    <path
-      id="balance-top-half-circle"
-      d="M33,56.58A18.32,18.32,0,0,0,51.33,38.25H14.67A18.32,18.32,0,0,0,33,56.58Z"
-      fill="#75a640" />
-    <rect
-      id="balance-rectangle"
-      y="56.58"
-      width="66"
-      height="12.83"
-      fill="#edc73d" />
-  </g>
-  <path
-    id="balance-base"
-    d="M33,69.42A18.33,18.33,0,0,0,14.67,87.75H51.33A18.33,18.33,0,0,0,33,69.42Z"
-    fill="#ff5256" />
+  <svg xmlns="http://www.w3.org/2000/svg" id="animation" viewBox="0 0 200 300">
+    <g transform="translate(70 70)">
+      <g id="balance">
+        <rect
+          id="balance-top-square"
+          x="25"
+          y="4"
+          width="16.5"
+          height="16.5"
+          fill="#37b8af" />
+        <circle
+          id="balance-circle"
+          cx="33"
+          cy="30.92"
+          r="7.33"
+          fill="#f79a3e" />
+        <path
+          id="balance-top-half-circle"
+          d="M33,56.58A18.32,18.32,0,0,0,51.33,38.25H14.67A18.32,18.32,0,0,0,33,56.58Z"
+          fill="#75a640" />
+        <rect
+          id="balance-rectangle"
+          y="56.58"
+          width="66"
+          height="12.83"
+          fill="#edc73d" />
+      </g>
+      <path
+        id="balance-base"
+        d="M33,69.42A18.33,18.33,0,0,0,14.67,87.75H51.33A18.33,18.33,0,0,0,33,69.42Z"
+        fill="#ff5256" />
+    </g>
+  </svg>
 </template>

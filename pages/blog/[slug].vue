@@ -1,8 +1,5 @@
 <script setup lang="ts">
   const route = useRoute();
-  definePageMeta({
-    layout: 'article'
-  });
 </script>
 
 <template>

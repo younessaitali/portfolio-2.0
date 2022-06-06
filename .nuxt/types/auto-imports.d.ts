@@ -264,6 +264,7 @@ declare global {
   const throttledWatch: typeof import('@vueuse/core')['throttledWatch']
   const watchWithFilter: typeof import('@vueuse/core')['watchWithFilter']
   const whenever: typeof import('@vueuse/core')['whenever']
+  const useBioList: typeof import('../../composables/useBioList')['useBioList']
   const useColorMode: typeof import('../../node_modules/.pnpm/@nuxtjs+color-mode@3.1.3/node_modules/@nuxtjs/color-mode/dist/runtime/composables')['useColorMode']
   const queryContent: typeof import('../../node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/composables/query')['queryContent']
   const withContentBase: typeof import('../../node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/composables/utils')['withContentBase']
