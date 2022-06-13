@@ -28,7 +28,7 @@
     "@types/nprogress": "^0.2.0",
     "@typescript-eslint/eslint-plugin": "^5.27.1",
     "@typescript-eslint/parser": "^5.27.1",
-    "@unocss/nuxt": "^0.37.4",
+    "@unocss/nuxt": "^0.39.0",
     "@vueuse/nuxt": "^8.6.0",
     "eslint": "^8.17.0",
     "eslint-config-prettier": "^8.5.0",
