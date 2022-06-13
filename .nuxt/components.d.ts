@@ -7,12 +7,14 @@ declare module 'vue' {
     'BioNav': typeof import("../components/BioNav.vue")['default'],
     'BuildAnimation': typeof import("../components/BuildAnimation.vue")['default'],
     'FunAnimation': typeof import("../components/FunAnimation.vue")['default'],
+    'ImageSelector': typeof import("../components/ImageSelector.vue")['default'],
     'Logo': typeof import("../components/Logo.vue")['default'],
     'SocialCard': typeof import("../components/SocialCard.vue")['default'],
     'SocialMediaBar': typeof import("../components/SocialMediaBar.vue")['default'],
     'SupportAnimation': typeof import("../components/SupportAnimation.vue")['default'],
     'VSvg': typeof import("../components/VSvg.vue")['default'],
-    'UnoIcon': typeof import("../node_modules/.pnpm/@unocss+nuxt@0.37.2/node_modules/@unocss/nuxt/runtime/UnoIcon.vue")['default'],
+    'Project': typeof import("../components/project.vue")['default'],
+    'UnoIcon': typeof import("../node_modules/.pnpm/@unocss+nuxt@0.39.0/node_modules/@unocss/nuxt/runtime/UnoIcon.vue")['default'],
     'ContentDoc': typeof import("../node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.mjs")['default'],
     'ContentList': typeof import("../node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/components/ContentList.mjs")['default'],
     'ContentNavigation': typeof import("../node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/components/ContentNavigation.mjs")['default'],
@@ -45,24 +47,25 @@ declare module 'vue' {
     'ProseTr': typeof import("../node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/components/Prose/ProseTr.vue")['default'],
     'ProseUl': typeof import("../node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/components/Prose/ProseUl.vue")['default'],
     'NuxtWelcome': typeof import("../node_modules/.pnpm/@nuxt+ui-templates@0.1.1/node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default'],
-    'NuxtLayout': typeof import("../node_modules/.pnpm/nuxt@3.0.0-rc.3/node_modules/nuxt/dist/app/components/layout")['default'],
-    'NuxtErrorBoundary': typeof import("../node_modules/.pnpm/nuxt@3.0.0-rc.3/node_modules/nuxt/dist/app/components/nuxt-error-boundary")['default'],
-    'ClientOnly': typeof import("../node_modules/.pnpm/nuxt@3.0.0-rc.3/node_modules/nuxt/dist/app/components/client-only")['default'],
-    'ServerPlaceholder': typeof import("../node_modules/.pnpm/nuxt@3.0.0-rc.3/node_modules/nuxt/dist/app/components/server-placeholder")['default'],
-    'NuxtLink': typeof import("../node_modules/.pnpm/nuxt@3.0.0-rc.3/node_modules/nuxt/dist/app/components/nuxt-link")['default'],
-    'ColorScheme': typeof import("../node_modules/.pnpm/@nuxtjs+color-mode@3.1.3/node_modules/@nuxtjs/color-mode/dist/runtime/component.vue3.vue")['default']
+    'NuxtLayout': typeof import("../node_modules/.pnpm/nuxt@3.0.0-rc.4/node_modules/nuxt/dist/app/components/layout")['default'],
+    'NuxtErrorBoundary': typeof import("../node_modules/.pnpm/nuxt@3.0.0-rc.4/node_modules/nuxt/dist/app/components/nuxt-error-boundary")['default'],
+    'ClientOnly': typeof import("../node_modules/.pnpm/nuxt@3.0.0-rc.4/node_modules/nuxt/dist/app/components/client-only")['default'],
+    'ServerPlaceholder': typeof import("../node_modules/.pnpm/nuxt@3.0.0-rc.4/node_modules/nuxt/dist/app/components/server-placeholder")['default'],
+    'NuxtLink': typeof import("../node_modules/.pnpm/nuxt@3.0.0-rc.4/node_modules/nuxt/dist/app/components/nuxt-link")['default']
     'LazyTes': typeof import("../components/content/tes.vue")['default'],
     'LazyAppHeader': typeof import("../components/AppHeader.vue")['default'],
     'LazyBalanceAnimation': typeof import("../components/BalanceAnimation.vue")['default'],
     'LazyBioNav': typeof import("../components/BioNav.vue")['default'],
     'LazyBuildAnimation': typeof import("../components/BuildAnimation.vue")['default'],
     'LazyFunAnimation': typeof import("../components/FunAnimation.vue")['default'],
+    'LazyImageSelector': typeof import("../components/ImageSelector.vue")['default'],
     'LazyLogo': typeof import("../components/Logo.vue")['default'],
     'LazySocialCard': typeof import("../components/SocialCard.vue")['default'],
     'LazySocialMediaBar': typeof import("../components/SocialMediaBar.vue")['default'],
     'LazySupportAnimation': typeof import("../components/SupportAnimation.vue")['default'],
     'LazyVSvg': typeof import("../components/VSvg.vue")['default'],
-    'LazyUnoIcon': typeof import("../node_modules/.pnpm/@unocss+nuxt@0.37.2/node_modules/@unocss/nuxt/runtime/UnoIcon.vue")['default'],
+    'LazyProject': typeof import("../components/project.vue")['default'],
+    'LazyUnoIcon': typeof import("../node_modules/.pnpm/@unocss+nuxt@0.39.0/node_modules/@unocss/nuxt/runtime/UnoIcon.vue")['default'],
     'LazyContentDoc': typeof import("../node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.mjs")['default'],
     'LazyContentList': typeof import("../node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/components/ContentList.mjs")['default'],
     'LazyContentNavigation': typeof import("../node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/components/ContentNavigation.mjs")['default'],
@@ -95,12 +98,11 @@ declare module 'vue' {
     'LazyProseTr': typeof import("../node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/components/Prose/ProseTr.vue")['default'],
     'LazyProseUl': typeof import("../node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/components/Prose/ProseUl.vue")['default'],
     'LazyNuxtWelcome': typeof import("../node_modules/.pnpm/@nuxt+ui-templates@0.1.1/node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default'],
-    'LazyNuxtLayout': typeof import("../node_modules/.pnpm/nuxt@3.0.0-rc.3/node_modules/nuxt/dist/app/components/layout")['default'],
-    'LazyNuxtErrorBoundary': typeof import("../node_modules/.pnpm/nuxt@3.0.0-rc.3/node_modules/nuxt/dist/app/components/nuxt-error-boundary")['default'],
-    'LazyClientOnly': typeof import("../node_modules/.pnpm/nuxt@3.0.0-rc.3/node_modules/nuxt/dist/app/components/client-only")['default'],
-    'LazyServerPlaceholder': typeof import("../node_modules/.pnpm/nuxt@3.0.0-rc.3/node_modules/nuxt/dist/app/components/server-placeholder")['default'],
-    'LazyNuxtLink': typeof import("../node_modules/.pnpm/nuxt@3.0.0-rc.3/node_modules/nuxt/dist/app/components/nuxt-link")['default'],
-    'LazyColorScheme': typeof import("../node_modules/.pnpm/@nuxtjs+color-mode@3.1.3/node_modules/@nuxtjs/color-mode/dist/runtime/component.vue3.vue")['default']
+    'LazyNuxtLayout': typeof import("../node_modules/.pnpm/nuxt@3.0.0-rc.4/node_modules/nuxt/dist/app/components/layout")['default'],
+    'LazyNuxtErrorBoundary': typeof import("../node_modules/.pnpm/nuxt@3.0.0-rc.4/node_modules/nuxt/dist/app/components/nuxt-error-boundary")['default'],
+    'LazyClientOnly': typeof import("../node_modules/.pnpm/nuxt@3.0.0-rc.4/node_modules/nuxt/dist/app/components/client-only")['default'],
+    'LazyServerPlaceholder': typeof import("../node_modules/.pnpm/nuxt@3.0.0-rc.4/node_modules/nuxt/dist/app/components/server-placeholder")['default'],
+    'LazyNuxtLink': typeof import("../node_modules/.pnpm/nuxt@3.0.0-rc.4/node_modules/nuxt/dist/app/components/nuxt-link")['default']
   }
 }
 export const Tes: typeof import("../components/content/tes.vue")['default']
@@ -109,12 +111,14 @@ export const BalanceAnimation: typeof import("../components/BalanceAnimation.vue
 export const BioNav: typeof import("../components/BioNav.vue")['default']
 export const BuildAnimation: typeof import("../components/BuildAnimation.vue")['default']
 export const FunAnimation: typeof import("../components/FunAnimation.vue")['default']
+export const ImageSelector: typeof import("../components/ImageSelector.vue")['default']
 export const Logo: typeof import("../components/Logo.vue")['default']
 export const SocialCard: typeof import("../components/SocialCard.vue")['default']
 export const SocialMediaBar: typeof import("../components/SocialMediaBar.vue")['default']
 export const SupportAnimation: typeof import("../components/SupportAnimation.vue")['default']
 export const VSvg: typeof import("../components/VSvg.vue")['default']
-export const UnoIcon: typeof import("../node_modules/.pnpm/@unocss+nuxt@0.37.2/node_modules/@unocss/nuxt/runtime/UnoIcon.vue")['default']
+export const Project: typeof import("../components/project.vue")['default']
+export const UnoIcon: typeof import("../node_modules/.pnpm/@unocss+nuxt@0.39.0/node_modules/@unocss/nuxt/runtime/UnoIcon.vue")['default']
 export const ContentDoc: typeof import("../node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.mjs")['default']
 export const ContentList: typeof import("../node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/components/ContentList.mjs")['default']
 export const ContentNavigation: typeof import("../node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/components/ContentNavigation.mjs")['default']
@@ -147,24 +151,25 @@ export const ProseThead: typeof import("../node_modules/.pnpm/@nuxt+content@2.0.
 export const ProseTr: typeof import("../node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/components/Prose/ProseTr.vue")['default']
 export const ProseUl: typeof import("../node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/components/Prose/ProseUl.vue")['default']
 export const NuxtWelcome: typeof import("../node_modules/.pnpm/@nuxt+ui-templates@0.1.1/node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default']
-export const NuxtLayout: typeof import("../node_modules/.pnpm/nuxt@3.0.0-rc.3/node_modules/nuxt/dist/app/components/layout")['default']
-export const NuxtErrorBoundary: typeof import("../node_modules/.pnpm/nuxt@3.0.0-rc.3/node_modules/nuxt/dist/app/components/nuxt-error-boundary")['default']
-export const ClientOnly: typeof import("../node_modules/.pnpm/nuxt@3.0.0-rc.3/node_modules/nuxt/dist/app/components/client-only")['default']
-export const ServerPlaceholder: typeof import("../node_modules/.pnpm/nuxt@3.0.0-rc.3/node_modules/nuxt/dist/app/components/server-placeholder")['default']
-export const NuxtLink: typeof import("../node_modules/.pnpm/nuxt@3.0.0-rc.3/node_modules/nuxt/dist/app/components/nuxt-link")['default']
-export const ColorScheme: typeof import("../node_modules/.pnpm/@nuxtjs+color-mode@3.1.3/node_modules/@nuxtjs/color-mode/dist/runtime/component.vue3.vue")['default']
+export const NuxtLayout: typeof import("../node_modules/.pnpm/nuxt@3.0.0-rc.4/node_modules/nuxt/dist/app/components/layout")['default']
+export const NuxtErrorBoundary: typeof import("../node_modules/.pnpm/nuxt@3.0.0-rc.4/node_modules/nuxt/dist/app/components/nuxt-error-boundary")['default']
+export const ClientOnly: typeof import("../node_modules/.pnpm/nuxt@3.0.0-rc.4/node_modules/nuxt/dist/app/components/client-only")['default']
+export const ServerPlaceholder: typeof import("../node_modules/.pnpm/nuxt@3.0.0-rc.4/node_modules/nuxt/dist/app/components/server-placeholder")['default']
+export const NuxtLink: typeof import("../node_modules/.pnpm/nuxt@3.0.0-rc.4/node_modules/nuxt/dist/app/components/nuxt-link")['default']
 export const LazyTes: typeof import("../components/content/tes.vue")['default']
 export const LazyAppHeader: typeof import("../components/AppHeader.vue")['default']
 export const LazyBalanceAnimation: typeof import("../components/BalanceAnimation.vue")['default']
 export const LazyBioNav: typeof import("../components/BioNav.vue")['default']
 export const LazyBuildAnimation: typeof import("../components/BuildAnimation.vue")['default']
 export const LazyFunAnimation: typeof import("../components/FunAnimation.vue")['default']
+export const LazyImageSelector: typeof import("../components/ImageSelector.vue")['default']
 export const LazyLogo: typeof import("../components/Logo.vue")['default']
 export const LazySocialCard: typeof import("../components/SocialCard.vue")['default']
 export const LazySocialMediaBar: typeof import("../components/SocialMediaBar.vue")['default']
 export const LazySupportAnimation: typeof import("../components/SupportAnimation.vue")['default']
 export const LazyVSvg: typeof import("../components/VSvg.vue")['default']
-export const LazyUnoIcon: typeof import("../node_modules/.pnpm/@unocss+nuxt@0.37.2/node_modules/@unocss/nuxt/runtime/UnoIcon.vue")['default']
+export const LazyProject: typeof import("../components/project.vue")['default']
+export const LazyUnoIcon: typeof import("../node_modules/.pnpm/@unocss+nuxt@0.39.0/node_modules/@unocss/nuxt/runtime/UnoIcon.vue")['default']
 export const LazyContentDoc: typeof import("../node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.mjs")['default']
 export const LazyContentList: typeof import("../node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/components/ContentList.mjs")['default']
 export const LazyContentNavigation: typeof import("../node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/components/ContentNavigation.mjs")['default']
@@ -197,10 +202,9 @@ export const LazyProseThead: typeof import("../node_modules/.pnpm/@nuxt+content@
 export const LazyProseTr: typeof import("../node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/components/Prose/ProseTr.vue")['default']
 export const LazyProseUl: typeof import("../node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/components/Prose/ProseUl.vue")['default']
 export const LazyNuxtWelcome: typeof import("../node_modules/.pnpm/@nuxt+ui-templates@0.1.1/node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default']
-export const LazyNuxtLayout: typeof import("../node_modules/.pnpm/nuxt@3.0.0-rc.3/node_modules/nuxt/dist/app/components/layout")['default']
-export const LazyNuxtErrorBoundary: typeof import("../node_modules/.pnpm/nuxt@3.0.0-rc.3/node_modules/nuxt/dist/app/components/nuxt-error-boundary")['default']
-export const LazyClientOnly: typeof import("../node_modules/.pnpm/nuxt@3.0.0-rc.3/node_modules/nuxt/dist/app/components/client-only")['default']
-export const LazyServerPlaceholder: typeof import("../node_modules/.pnpm/nuxt@3.0.0-rc.3/node_modules/nuxt/dist/app/components/server-placeholder")['default']
-export const LazyNuxtLink: typeof import("../node_modules/.pnpm/nuxt@3.0.0-rc.3/node_modules/nuxt/dist/app/components/nuxt-link")['default']
-export const LazyColorScheme: typeof import("../node_modules/.pnpm/@nuxtjs+color-mode@3.1.3/node_modules/@nuxtjs/color-mode/dist/runtime/component.vue3.vue")['default']
+export const LazyNuxtLayout: typeof import("../node_modules/.pnpm/nuxt@3.0.0-rc.4/node_modules/nuxt/dist/app/components/layout")['default']
+export const LazyNuxtErrorBoundary: typeof import("../node_modules/.pnpm/nuxt@3.0.0-rc.4/node_modules/nuxt/dist/app/components/nuxt-error-boundary")['default']
+export const LazyClientOnly: typeof import("../node_modules/.pnpm/nuxt@3.0.0-rc.4/node_modules/nuxt/dist/app/components/client-only")['default']
+export const LazyServerPlaceholder: typeof import("../node_modules/.pnpm/nuxt@3.0.0-rc.4/node_modules/nuxt/dist/app/components/server-placeholder")['default']
+export const LazyNuxtLink: typeof import("../node_modules/.pnpm/nuxt@3.0.0-rc.4/node_modules/nuxt/dist/app/components/nuxt-link")['default']
 export const componentNames: string[]

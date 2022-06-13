@@ -9,3 +9,4 @@ public
 locales/
 src/components.d.ts
 src/auto-imports.d.ts
+html.d.ts

@@ -10,7 +10,14 @@ import {
 } from 'unocss';
 
 export default defineConfig({
-  shortcuts: [],
+  shortcuts: [
+    {
+      'underline-enter':
+        'overflow-hidden relative after:(block content-[""] h-0.5 bg-champagne absolute bottom-0 w-full -translate-x-[130%]) hover:after:(duration-300 ease-in-out translate-x-0) ',
+
+      'underline-out': 'after:(duration-300 ease-in-out translate-x-full)'
+    }
+  ],
   theme: {
     colors: {
       darkBlue: '#151D2B',
@@ -38,5 +45,8 @@ export default defineConfig({
     presetTypography()
   ],
   transformers: [transformerDirectives(), transformerVariantGroup()],
-  safelist: 'prose prose-sm m-auto text-left'.split(' ')
+  safelist:
+    'prose prose-sm m-auto text-left underline-enter underline-out after:translate-x-0'.split(
+      ' '
+    )
 });
