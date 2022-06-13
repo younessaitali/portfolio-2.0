@@ -31,7 +31,9 @@ export const useBioList = () => {
       title: 'supporting my family'
     }
   ];
+
   const route = useRoute();
+
   const activeTitle = computed(() => {
     return bioList.find(
       (bio) => bio.path.toLowerCase() === route.path.toLowerCase()

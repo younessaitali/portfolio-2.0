@@ -5,16 +5,16 @@ import { join } from 'path';
 import { mkdirSync } from 'fs';
 import { parentPort, threadId } from 'worker_threads';
 import { provider, isWindows } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/std-env@3.1.1/node_modules/std-env/dist/index.mjs';
-import { defineEventHandler, handleCacheHeaders, createEvent, useQuery, useCookie, createError, defineLazyEventHandler, useBody, createApp, createRouter, lazyEventHandler, eventHandler } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/h3@0.7.8/node_modules/h3/dist/index.mjs';
+import { defineEventHandler, handleCacheHeaders, createEvent, useQuery, useCookie, createError, defineLazyEventHandler, useBody, createApp, createRouter, lazyEventHandler, eventHandler } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/h3@0.7.9/node_modules/h3/dist/index.mjs';
 import { createFetch as createFetch$1, Headers } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/ohmyfetch@0.4.18/node_modules/ohmyfetch/dist/node.mjs';
 import destr from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/destr@1.1.1/node_modules/destr/dist/index.mjs';
 import { createRouter as createRouter$1 } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/radix3@0.1.2/node_modules/radix3/dist/index.mjs';
 import { createCall, createFetch } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/unenv@0.5.2/node_modules/unenv/runtime/fetch/index.mjs';
 import { createHooks } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/hookable@5.1.1/node_modules/hookable/dist/index.mjs';
 import { hash } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/ohash@0.1.0/node_modules/ohash/dist/index.mjs';
+import { parseURL, withQuery, withLeadingSlash, withoutTrailingSlash, withBase, joinURL } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/ufo@0.8.4/node_modules/ufo/dist/index.mjs';
 import { createStorage, prefixStorage } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/unstorage@0.4.1/node_modules/unstorage/dist/index.mjs';
 import _unstorage_drivers_fs from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/unstorage@0.4.1/node_modules/unstorage/dist/drivers/fs.mjs';
-import { withQuery, withLeadingSlash, withoutTrailingSlash, withBase, joinURL } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/ufo@0.8.4/node_modules/ufo/dist/index.mjs';
 import { extname } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/pathe@0.3.0/node_modules/pathe/dist/index.mjs';
 import defu from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/defu@6.0.0/node_modules/defu/dist/defu.mjs';
 import remarkEmoji from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/remark-emoji@3.0.2/node_modules/remark-emoji/index.js';
@@ -46,12 +46,12 @@ import { position } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.p
 import htmlTags from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/html-tags@3.2.0/node_modules/html-tags/index.js';
 import slugify from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/slugify@1.6.5/node_modules/slugify/slugify.js';
 import { getHighlighter, BUNDLED_LANGUAGES, BUNDLED_THEMES } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/shiki-es@0.1.2/node_modules/shiki-es/dist/shiki.node.mjs';
-import { createRenderer } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/vue-bundle-renderer@0.3.8/node_modules/vue-bundle-renderer/dist/index.mjs';
+import { createRenderer } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/vue-bundle-renderer@0.3.9/node_modules/vue-bundle-renderer/dist/index.mjs';
 import devalue from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/@nuxt+devalue@2.0.0/node_modules/@nuxt/devalue/dist/devalue.mjs';
-import { renderToString } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/vue@3.2.36/node_modules/vue/server-renderer/index.mjs';
+import { renderToString } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/vue@3.2.37/node_modules/vue/server-renderer/index.mjs';
 import htmlTemplate from '/home/youness/dev/portfolio-2.0/.nuxt/views/document.template.mjs';
 
-const _runtimeConfig = {"app":{"baseURL":"/","buildAssetsDir":"/_nuxt/","cdnURL":""},"nitro":{"routes":{},"envPrefix":"NUXT_"},"public":{"content":{"base":"_content","tags":{"p":"prose-p","a":"prose-a","blockquote":"prose-blockquote","code-inline":"prose-code-inline","code":"prose-code","em":"prose-em","h1":"prose-h1","h2":"prose-h2","h3":"prose-h3","h4":"prose-h4","h5":"prose-h5","h6":"prose-h6","hr":"prose-hr","img":"prose-img","ul":"prose-ul","ol":"prose-ol","li":"prose-li","strong":"prose-strong","table":"prose-table","thead":"prose-thead","tbody":"prose-tbody","td":"prose-td","th":"prose-th","tr":"prose-tr"},"highlight":{"theme":"one-dark-pro"},"wsUrl":"ws://localhost:4000/"}},"content":{"cacheVersion":2,"cacheIntegerity":"2895586844","transformers":["/home/youness/dev/portfolio-2.0/node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/server/transformers/markdown.mjs","/home/youness/dev/portfolio-2.0/node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/server/transformers/yaml.mjs","/home/youness/dev/portfolio-2.0/node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/server/transformers/json.mjs","/home/youness/dev/portfolio-2.0/node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/server/transformers/csv.mjs","/home/youness/dev/portfolio-2.0/node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/server/transformers/path-meta.mjs","/home/youness/dev/portfolio-2.0/node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/server/transformers/shiki.mjs"],"base":"_content","watch":true,"sources":["content"],"ignores":["\\.","-"],"locales":[],"highlight":{"theme":"one-dark-pro"},"markdown":{"tags":{"p":"prose-p","a":"prose-a","blockquote":"prose-blockquote","code-inline":"prose-code-inline","code":"prose-code","em":"prose-em","h1":"prose-h1","h2":"prose-h2","h3":"prose-h3","h4":"prose-h4","h5":"prose-h5","h6":"prose-h6","hr":"prose-hr","img":"prose-img","ul":"prose-ul","ol":"prose-ol","li":"prose-li","strong":"prose-strong","table":"prose-table","thead":"prose-thead","tbody":"prose-tbody","td":"prose-td","th":"prose-th","tr":"prose-tr"},"rehypePlugins":[],"remarkPlugins":[]},"yaml":{},"csv":{},"navigation":{"fields":[]}}};
+const _runtimeConfig = {"app":{"baseURL":"/","buildAssetsDir":"/_nuxt/","cdnURL":""},"nitro":{"routes":{},"envPrefix":"NUXT_"},"public":{"content":{"base":"_content","tags":{"p":"prose-p","a":"prose-a","blockquote":"prose-blockquote","code-inline":"prose-code-inline","code":"prose-code","em":"prose-em","h1":"prose-h1","h2":"prose-h2","h3":"prose-h3","h4":"prose-h4","h5":"prose-h5","h6":"prose-h6","hr":"prose-hr","img":"prose-img","ul":"prose-ul","ol":"prose-ol","li":"prose-li","strong":"prose-strong","table":"prose-table","thead":"prose-thead","tbody":"prose-tbody","td":"prose-td","th":"prose-th","tr":"prose-tr"},"highlight":{"theme":"one-dark-pro"},"wsUrl":"ws://localhost:3002/"}},"content":{"cacheVersion":2,"cacheIntegerity":"1544688654","transformers":["/home/youness/dev/portfolio-2.0/node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/server/transformers/markdown.mjs","/home/youness/dev/portfolio-2.0/node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/server/transformers/yaml.mjs","/home/youness/dev/portfolio-2.0/node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/server/transformers/json.mjs","/home/youness/dev/portfolio-2.0/node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/server/transformers/csv.mjs","/home/youness/dev/portfolio-2.0/node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/server/transformers/path-meta.mjs","/home/youness/dev/portfolio-2.0/node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/server/transformers/shiki.mjs"],"base":"_content","watch":true,"sources":["content"],"ignores":["\\.","-"],"locales":[],"highlight":{"theme":"one-dark-pro"},"markdown":{"tags":{"p":"prose-p","a":"prose-a","blockquote":"prose-blockquote","code-inline":"prose-code-inline","code":"prose-code","em":"prose-em","h1":"prose-h1","h2":"prose-h2","h3":"prose-h3","h4":"prose-h4","h5":"prose-h5","h6":"prose-h6","hr":"prose-hr","img":"prose-img","ul":"prose-ul","ol":"prose-ol","li":"prose-li","strong":"prose-strong","table":"prose-table","thead":"prose-thead","tbody":"prose-tbody","td":"prose-td","th":"prose-th","tr":"prose-tr"},"rehypePlugins":[],"remarkPlugins":[]},"yaml":{},"csv":{},"navigation":{"fields":[]}}};
 const ENV_PREFIX = "NITRO_";
 const ENV_PREFIX_ALT = _runtimeConfig.nitro.envPrefix ?? process.env.NITRO_ENV_PREFIX ?? "_";
 const getEnv = (key) => {
@@ -141,7 +141,7 @@ function defineCachedFunction(fn, opts) {
   const name = opts.name || fn.name || "_";
   const integrity = hash([opts.integrity, fn, opts]);
   async function get(key, resolver) {
-    const cacheKey = [opts.base, group, name, key].filter(Boolean).join(":").replace(/:\/$/, ":index");
+    const cacheKey = [opts.base, group, name, key + ".json"].filter(Boolean).join(":").replace(/:\/$/, ":index");
     const entry = await useStorage().getItem(cacheKey) || {};
     const ttl = (opts.maxAge ?? opts.maxAge ?? 0) * 1e3;
     if (ttl) {
@@ -150,6 +150,10 @@ function defineCachedFunction(fn, opts) {
     const expired = entry.integrity !== integrity || ttl && Date.now() - (entry.mtime || 0) > ttl;
     const _resolve = async () => {
       if (!pending[key]) {
+        entry.value = void 0;
+        entry.integrity = void 0;
+        entry.mtime = void 0;
+        entry.expires = void 0;
         pending[key] = Promise.resolve(resolver());
       }
       entry.value = await pending[key];
@@ -179,11 +183,11 @@ const cachedFunction = defineCachedFunction;
 function getKey(...args) {
   return args.length ? hash(args, {}) : "";
 }
-function defineCachedEventHandler(handler, opts) {
+function defineCachedEventHandler(handler, opts = defaultCacheOptions) {
   const _opts = {
     ...opts,
     getKey: (event) => {
-      return event.req.originalUrl || event.req.url;
+      return decodeURI(parseURL(event.req.originalUrl || event.req.url).pathname).replace(/\/$/, "/index");
     },
     group: opts.group || "nitro/handlers",
     integrity: [
@@ -398,7 +402,7 @@ const sortList = (data, params) => {
   }
   return data;
 };
-const assertArray = (value, message) => {
+const assertArray = (value, message = "Expected an array") => {
   if (!Array.isArray(value)) {
     throw new TypeError(message);
   }
@@ -2055,7 +2059,7 @@ function getTagName(value) {
   const result = String(value).match(TAG_NAME_REGEXP);
   return result && result[1];
 }
-function wrap(nodes, loose) {
+function wrap(nodes, loose = false) {
   const result = [];
   let index = -1;
   if (loose) {
@@ -2411,7 +2415,7 @@ const useDefaultOptions = () => ({
     [rehypeRaw, { passThrough: ["element"] }]
   ]
 });
-async function parse(file, userOptions) {
+async function parse(file, userOptions = {}) {
   const options = defu(userOptions, useDefaultOptions());
   const { content, data } = await parseFrontMatter(file);
   const body = await generateBody(content, { ...options, data });
@@ -3571,17 +3575,17 @@ const _356242 = defineLazyEventHandler(async () => {
   };
 });
 
-const _lazy_320954 = () => Promise.resolve().then(function () { return renderer$1; });
+const _lazy_350823 = () => Promise.resolve().then(function () { return renderer$1; });
 
 const handlers = [
-  { route: '/__nuxt_error', handler: _lazy_320954, lazy: true, middleware: false, method: undefined },
+  { route: '/__nuxt_error', handler: _lazy_350823, lazy: true, middleware: false, method: undefined },
   { route: '/api/_content/query/:qid', handler: _332874, lazy: false, middleware: false, method: "get" },
   { route: '/api/_content/query', handler: _332874, lazy: false, middleware: false, method: "get" },
   { route: '/api/_content/cache', handler: _278401, lazy: false, middleware: false, method: "get" },
   { route: '/api/_content/navigation/:qid', handler: _363179, lazy: false, middleware: false, method: "get" },
   { route: '/api/_content/navigation', handler: _363179, lazy: false, middleware: false, method: "get" },
   { route: '/api/_content/highlight', handler: _356242, lazy: false, middleware: false, method: "post" },
-  { route: '/**', handler: _lazy_320954, lazy: true, middleware: false, method: undefined }
+  { route: '/**', handler: _lazy_350823, lazy: true, middleware: false, method: undefined }
 ];
 
 function createNitroApp() {
@@ -3723,7 +3727,6 @@ const renderer = eventHandler(async (event) => {
     runtimeConfig: useRuntimeConfig(),
     noSSR: !!event.req.headers["x-nuxt-no-ssr"],
     error: ssrError,
-    redirected: void 0,
     nuxt: void 0,
     payload: void 0
   };
@@ -3736,7 +3739,7 @@ const renderer = eventHandler(async (event) => {
   if (!rendered) {
     return;
   }
-  if (ssrContext.redirected || event.res.writableEnded) {
+  if (event.res.writableEnded) {
     return;
   }
   if (ssrContext.error && !ssrError) {

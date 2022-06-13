@@ -50,22 +50,19 @@
         "public/*"
       ],
       "#app": [
-        "node_modules/.pnpm/nuxt@3.0.0-rc.3/node_modules/nuxt/dist/app"
+        "node_modules/.pnpm/nuxt@3.0.0-rc.4/node_modules/nuxt/dist/app"
       ],
       "#app/*": [
-        "node_modules/.pnpm/nuxt@3.0.0-rc.3/node_modules/nuxt/dist/app/*"
+        "node_modules/.pnpm/nuxt@3.0.0-rc.4/node_modules/nuxt/dist/app/*"
       ],
       "vue-demi": [
-        "node_modules/.pnpm/nuxt@3.0.0-rc.3/node_modules/nuxt/dist/app/compat/vue-demi"
-      ],
-      "#color-mode-options": [
-        ".nuxt/color-mode-options"
+        "node_modules/.pnpm/nuxt@3.0.0-rc.4/node_modules/nuxt/dist/app/compat/vue-demi"
       ],
       "#head": [
-        "node_modules/.pnpm/nuxt@3.0.0-rc.3/node_modules/nuxt/dist/head/runtime"
+        "node_modules/.pnpm/nuxt@3.0.0-rc.4/node_modules/nuxt/dist/head/runtime"
       ],
       "#head/*": [
-        "node_modules/.pnpm/nuxt@3.0.0-rc.3/node_modules/nuxt/dist/head/runtime/*"
+        "node_modules/.pnpm/nuxt@3.0.0-rc.4/node_modules/nuxt/dist/head/runtime/*"
       ],
       "#components": [
         ".nuxt/components"
@@ -75,6 +72,9 @@
       ],
       "#build": [
         ".nuxt"
+      ],
+      "#build/*": [
+        ".nuxt/*"
       ]
     }
   },
