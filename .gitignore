@@ -48,3 +48,7 @@ dist-ssr
 .vite-ssg-dist
 .vite-ssg-temp
 .vercel
+
+
+# nuxt files
+./nuxt
