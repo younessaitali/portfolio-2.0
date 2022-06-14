@@ -11,8 +11,11 @@
       title: string;
       url: string;
     }[];
+
+    technologies: string[];
   }
-  const { links, name, description, image } = defineProps<Props>();
+  const { technologies, links, name, description, image } =
+    defineProps<Props>();
 </script>
 
 <template>
@@ -23,6 +26,20 @@
         <h3 text="blue-gray 5xl " mb-5 font="bold">{{ name }}</h3>
         <p text="lg blue-gray left">
           {{ description }}
+        </p>
+        <p m="t-1.5" text="lg blue-gray left">
+          Technologies used:
+          <span
+            v-for="(tech, index) in technologies"
+            inline-block
+            :key="tech"
+            p="0.5"
+            hover="underline"
+            text="champagne"
+            >#
+            {{ `${tech}  ${index === technologies.length ? '' : ','}` }}</span
+          >
+          <!-- v-underline-animation -->
         </p>
       </div>
       <img :src="image.src" :alt="image.alt" class="max-w-sm" />

@@ -1,7 +1,7 @@
 <script setup lang="ts">
-  definePageMeta({
-    layout: 'projects'
-  });
+  const section = ref<HTMLElement | null>(null);
+
+  // const { isScrolling, directions, arrivedState } = useScroll(section);
 
   const projects = $ref([
     {
@@ -19,17 +19,16 @@
       links: [
         {
           title: 'Visit website',
-          url: 'https://marrakech-invest.com'
-        },
-        {
-          title: 'Visit website',
-          url: 'https://marrakech-invest.com'
+          url: 'https://marrakechinvest.ma/'
         }
-      ]
+      ],
+      technologies: ['Vue', 'Vuex', 'Vue Router']
     },
     {
-      name: 'Blog',
-      description: '/blog',
+      name: 'BPI',
+      description: `An interactive web app allows entrepreneurs to generate a business plan step-by-step
+and guide them through it. has already benefited thousands of small business owners.`,
+      technologies: ['Vue', 'Vuex', 'Vue Router'],
       image: {
         src: '/projects/mi_logo.png',
         alt: 'Marrakech invest logo'
@@ -44,6 +43,7 @@
     },
     {
       name: 'About',
+      technologies: ['Vue', 'Vuex', 'Vue Router'],
       description: '/about',
       image: {
         src: '/projects/mi_logo.png',
@@ -59,6 +59,7 @@
     },
     {
       name: 'Contact',
+      technologies: ['Vue', 'Vuex', 'Vue Router'],
       description: '/contact',
       image: {
         src: '/projects/mi_logo.png',
@@ -79,6 +80,7 @@
         alt: 'Marrakech invest logo'
       },
       description: '/resume',
+      technologies: ['Vue', 'Vuex', 'Vue Router'],
       isActive: false,
       links: [
         {
@@ -89,13 +91,26 @@
     }
   ]);
 
-  const activeProject = computed(() => {
-    let project = projects.find((project) => project.isActive);
-    if (!project) {
+  const activeProject = $computed(() => {
+    const projectIndex = projects.findIndex((project) => project.isActive);
+    if (projectIndex === -1) {
       projects[0].isActive = true;
-      project = projects[0];
+      return { project: projects[0], index: 0 };
     }
-    return project;
+    return { project: projects[projectIndex], index: projectIndex };
+  });
+
+  const { directions, isScrolling } = useWheel(section, {
+    onScroll: () => {
+      let { index } = activeProject;
+      if (isScrolling && directions.bottom) {
+        index = (index + 1) % projects.length;
+      }
+      if (isScrolling && directions.top) {
+        index = (index - 1 + projects.length) % projects.length;
+      }
+      projectSelected(projects[index].name);
+    }
   });
 
   function projectSelected(name: string) {
@@ -106,9 +121,9 @@
 </script>
 
 <template>
-  <section class="flex gap-x-3 mx-10">
+  <section ref="section" class="flex justify-center sm:px-8 lg:px-12 gap-x-3">
     <nav class="">
-      <ul class="flex items-center justify-center flex-col gap-y-2">
+      <ul class="flex flex-col gap-y-2">
         <li
           v-for="(project, index) in projects"
           :key="project.name"
@@ -132,7 +147,7 @@
         </li>
       </ul>
     </nav>
-    <project v-bind="{ ...activeProject }" />
+    <project v-bind="{ ...activeProject.project }" />
     <!-- <div class="relative flex-1 max-w-2xl max-h-lg">
         <img
           src="/m.jpg"
