@@ -21,7 +21,7 @@
 <template>
   <div
     class="flex-1 flex flex-col items-center justify-center gap-y-8 max-w-[75%] mx-auto">
-    <div class="flex justify-center items-center gap-x-8">
+    <div class="flex w-3/4 justify-center items-center gap-x-8">
       <div class="max-w-lg px-6">
         <h3 text="blue-gray 5xl " mb-5 font="bold">{{ name }}</h3>
         <p text="lg blue-gray left">
@@ -35,16 +35,17 @@
             :key="tech"
             p="0.5"
             hover="underline"
-            text="champagne"
-            >#
-            {{ `${tech}  ${index === technologies.length ? '' : ','}` }}</span
+            text="champagne">
+            {{
+              ` #${tech} ${index === technologies.length - 1 ? '' : ','}`
+            }}</span
           >
           <!-- v-underline-animation -->
         </p>
       </div>
-      <img :src="image.src" :alt="image.alt" class="max-w-sm" />
+      <img :src="image.src" :alt="image.alt" class="max-w-64" />
     </div>
-    <div class="flex gap-x-4">
+    <div class="flex z-30 gap-x-4">
       <a
         v-for="link in links"
         :key="link.title"

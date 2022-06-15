@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="368.59" height="376.98" viewBox="0 0 468.59 476.98">
+  <defs>
+    <linearGradient id="linear-gradient" x1="17.36" y1="250.28" x2="468.59" y2="250.28" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#a9d1e3"/>
+      <stop offset="1" stop-color="#bd34fe"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="-96.77" y1="621.59" x2="451.17" y2="73.66" gradientUnits="userSpaceOnUse">
+      <stop offset="0.08" stop-color="#ffea83"/>
+      <stop offset="0.52" stop-color="#ffdd35"/>
+      <stop offset="0.83" stop-color="#ffa800"/>
+    </linearGradient>
+  </defs>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_4" data-name="Layer 4">
+      <g>
+        <rect width="468.59" height="476.98" rx="20.93" fill="#6844c1"/>
+        <rect x="17.36" y="23.58" width="451.23" height="453.4" rx="20.93" fill="url(#linear-gradient)"/>
+        <path d="M216.57,56l-73,195.9h28.81a54.43,54.43,0,0,0,51.39-36.49L258.12,117l68.81,197.26H120.39L71.85,444.53h0a101.6,101.6,0,0,0,95.83-67.82L172.52,363H414.09L300.23,56Z" fill="url(#linear-gradient-2)"/>
+      </g>
+    </g>
+  </g>
+</svg>

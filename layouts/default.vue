@@ -1,9 +1,9 @@
 <script lang="ts" setup></script>
 <template>
-  <div font="sans" class="relative min-h-screen">
-    <main class="mx-auto container flex flex-col">
-      <App-header />
-      <slot class="flex-1" />
+  <div font="sans" class="relative h-full min-h-screen">
+    <main class="mx-auto container h-full flex flex-col">
+      <App-header z-36 />
+      <slot />
     </main>
   </div>
 </template>
