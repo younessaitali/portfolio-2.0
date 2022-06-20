@@ -23,7 +23,7 @@
     "@commitlint/config-conventional": "^17.0.2",
     "@iconify-json/carbon": "^1.1.5",
     "@nuxt/content": "^2.0.1",
-    "@nuxt/test-utils-edge": "3.0.0-rc.4-27585508.c9d4b2e",
+    "@nuxt/test-utils-edge": "3.0.0-rc.4-27588443.cf25525",
     "@types/nprogress": "^0.2.0",
     "@typescript-eslint/eslint-plugin": "^5.28.0",
     "@typescript-eslint/parser": "^5.28.0",
