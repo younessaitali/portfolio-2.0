@@ -1,23 +1,27 @@
 import { defineNuxtConfig } from 'nuxt';
 
 export default defineNuxtConfig({
-  modules: ['@vueuse/nuxt', '@unocss/nuxt', '@nuxt/content'],
-  head: {
-    script: [{}]
-  },
-  content: {
-    highlight: {
-      theme: 'one-dark-pro'
-    }
-  },
+  modules: [
+    '@vueuse/nuxt',
+    '@unocss/nuxt',
+    '@nuxtjs/color-mode',
+    '@nuxt/content'
+  ],
 
   experimental: {
-    reactivityTransform: true
+    reactivityTransform: true,
+    viteNode: false
   },
   unocss: {
     preflight: true
   },
   colorMode: {
     classSuffix: ''
+  },
+
+  content: {
+    highlight: {
+      theme: 'one-dark-pro'
+    }
   }
 });

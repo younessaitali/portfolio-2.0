@@ -1,5 +1,5 @@
 <template>
-  <svg id="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 466.76 413.6">
+  <svg id="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 376 413.6">
     <g id="main">
       <g id="borders">
         <rect
@@ -107,22 +107,6 @@
           </text>
         </g>
       </g>
-    </g>
-    <g id="square">
-      <rect
-        id="logo-big-square"
-        x="422.68"
-        y="369.52"
-        width="44.08"
-        height="44.08"
-        fill="#a6956e" />
-      <rect
-        id="small-square"
-        x="433.7"
-        y="380.54"
-        width="22.04"
-        height="22.04"
-        fill="#c5c7ca" />
     </g>
   </svg>
 </template>

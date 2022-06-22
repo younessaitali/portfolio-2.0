@@ -95,8 +95,8 @@
 </script>
 
 <template>
-  <svg xmlns="http://www.w3.org/2000/svg" id="animation" viewBox="0 0 200 300">
-    <g transform="translate(70 70)">
+  <svg xmlns="http://www.w3.org/2000/svg" id="animation" viewBox="0 0 130 100">
+    <g transform="translate(35 8)">
       <g id="balance">
         <rect
           id="balance-top-square"

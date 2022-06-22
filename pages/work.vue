@@ -1,7 +1,7 @@
 <script setup lang="ts">
-  const wheel = ref<HTMLElement | null>(null);
+  import { SwipeDirection } from '@vueuse/core';
 
-  // const { isScrolling, directions, arrivedState } = useScroll(section);
+  const wheel = ref<HTMLElement | null>(null);
 
   const projects = $ref([
     {
@@ -113,7 +113,7 @@ and guide them through it. has already benefited thousands of small business own
       ]
     },
     {
-      name: 'Flavor Tasks',
+      name: 'Tasks',
       technologies: [
         'Vue',
         'Vuex',
@@ -126,8 +126,8 @@ and guide them through it. has already benefited thousands of small business own
       description: `This project management app provides a visual representation of what is being worked on by splitting projects into boards that contain tasks with a description and multiple to-do lists, and the user has the ability to add other members to a project ... I used Laravel as a backend to serve my Rest-API, VueJS as a frontend, Vuex as state management, and Pusher for Real-time communication, as well as JWT for authorization.
 this was a side project Inspired by Jira from Atlassian`,
       image: {
-        src: '/projects/mi_logo.png',
-        alt: 'Marrakech invest logo'
+        src: '/projects/tasks.svg',
+        alt: 'Tasks logo'
       },
       isActive: false,
       links: [
@@ -144,7 +144,7 @@ this was a side project Inspired by Jira from Atlassian`,
     {
       name: 'MediaTheque',
       image: {
-        src: '/projects/mi_logo.png',
+        src: '/projects/media.svg',
         alt: 'Marrakech invest logo'
       },
       description: `As part of my graduation project, I developed a library app. There are two parts to the app: a client-side dashboard and an admin dashboard.
@@ -169,17 +169,36 @@ The client has the option to rent or buy books. In addition, you can subscribe t
     return { project: projects[projectIndex], index: projectIndex };
   });
 
-  const { directions, isScrolling } = useWheel(wheel, {
-    onScroll: () => {
-      let { index } = activeProject;
-      if (isScrolling && directions.bottom) {
-        index = (index + 1) % projects.length;
-      }
-      if (isScrolling && directions.top) {
-        index = (index - 1 + projects.length) % projects.length;
-      }
-      projectSelected(projects[index].name);
+  const prevProject = () => {
+    let { index } = activeProject;
+    index = (index - 1 + projects.length) % projects.length;
+    projectSelected(projects[index].name);
+  };
+
+  const nextProject = () => {
+    let { index } = activeProject;
+    index = (index + 1) % projects.length;
+    projectSelected(projects[index].name);
+  };
+
+  useWheel(wheel, {
+    onScroll: ({ bottom, top }) => {
+      if (bottom) nextProject();
+      if (top) prevProject();
     }
+  });
+
+  onKeyStroke('ArrowLeft', () => prevProject());
+  onKeyStroke('ArrowRight', () => nextProject());
+  onKeyStroke('ArrowUp', () => prevProject());
+  onKeyStroke('ArrowDown', () => nextProject());
+
+  const { direction } = useSwipe(wheel, {
+    onSwipeEnd() {
+      if (direction.value === SwipeDirection.RIGHT) nextProject();
+      if (direction.value === SwipeDirection.LEFT) prevProject();
+    },
+    threshold: 100
   });
 
   function projectSelected(name: string) {
@@ -190,48 +209,72 @@ The client has the option to rent or buy books. In addition, you can subscribe t
 </script>
 
 <template>
+  <!-- <Teleport to="body"> -->
+  <!-- </Teleport> -->
   <!-- this element just to let us detect wheel event on all page  -->
-  <div ref="wheel" class="absolute inset-0"></div>
-  <section
-    class="flex flex-1 items-center justify-center py-5 md:px-0 px-5 gap-x-3">
-    <nav class="">
-      <ul class="flex flex-col gap-y-2">
-        <li
-          v-for="(project, index) in projects"
-          :key="project.name"
-          v-underline-animation="{ isActive: project.isActive }"
-          @click="projectSelected(project.name)"
-          font="bold"
-          text=" 5xl center stroke-sm stroke-champagne transparent "
-          class="py-5 px-16 inline-block relative capitalize after:-ml-16 cursor-pointer overflow-hidden group opacity-85">
-          <span
+  <nuxt-layout>
+    <template #something>
+      <div
+        md="-right-(10.75rem)  inset-y-0 my-auto w-96 h-10 rotate-270"
+        class="fixed bottom-0 w-screen rotate-0 p-0.5 bg-champagne/42 z-36 flex items-center justify-between">
+        <button @click="nextProject" text="white 3xl">
+          <div class="i-carbon:chevron-down"></div>
+        </button>
+        <h3 text="xl md:2xl white ">{{ activeProject.project.name }}</h3>
+        <button @click="prevProject" text="white 3xl">
+          <div class="i-carbon:chevron-up"></div>
+        </button>
+      </div>
+    </template>
+    <div ref="wheel" class="absolute inset-0"></div>
+    <section
+      md="px-0 py-5"
+      class="flex flex-1 items-center justify-center px-2 gap-x-3">
+      <nav class="hidden md:block">
+        <ul class="flex flex-col gap-y-2">
+          <li
+            v-for="(project, index) in projects"
+            :key="project.name"
+            v-underline-animation="{ isActive: project.isActive }"
+            @click="projectSelected(project.name)"
+            font="bold"
+            text=" 5xl center stroke-sm stroke-champagne "
             :class="[
-              'absolute left-0 group-hover:translate-y-0 duration-300',
+              'py-5 px-16 inline-block relative capitalize after:-ml-16 cursor-pointer overflow-hidden group opacity-85',
               {
-                'translate-y-0': project.isActive,
-                'translate-y-[140%]': !project.isActive
+                'text-transparent': !project.isActive,
+                'text-champagne': project.isActive
               }
-            ]"
-            >{{ index + 1 }}</span
-          >
+            ]">
+            <span
+              :class="[
+                'absolute left-0 group-hover:translate-y-0 duration-300',
+                {
+                  'translate-y-0': project.isActive,
+                  'translate-y-[140%]': !project.isActive
+                }
+              ]"
+              >{{ index + 1 }}</span
+            >
 
-          <h3>project</h3>
-        </li>
-      </ul>
-    </nav>
-    <project v-bind="{ ...activeProject.project }" />
-    <!-- <div class="relative flex-1 max-w-2xl max-h-lg">
+            <h3>project</h3>
+          </li>
+        </ul>
+      </nav>
+      <project v-bind="{ ...activeProject.project }" />
+      <!-- <div class="relative flex-1 max-w-2xl max-h-lg">
         <img
           src="/m.jpg"
           alt="Angled front view with bag zipped and handles upright."
           class="mx-auto py-6 w-full max-h-lg aspect-square object-center object-cover sm:rounded-lg" />
 
         <hr class="w-full h-30 bg-dark-100/60 absolute bottom-0 inset-x-0" /> -->
-    <!-- More images... -->
-    <!--
+      <!-- More images... -->
+      <!--
         <image-selector />
       </div> -->
 
-    <!-- Image selector -->
-  </section>
+      <!-- Image selector -->
+    </section>
+  </nuxt-layout>
 </template>

@@ -1,5 +1,9 @@
 import { MaybeRef, noop } from '@vueuse/shared';
 
+interface Directions {
+  top: boolean;
+  bottom: boolean;
+}
 export interface UseScrollOptions {
   /**
    * Throttle time for scroll event, it’s disabled by default.
@@ -12,7 +16,7 @@ export interface UseScrollOptions {
    * Trigger it when scrolling.
    *
    */
-  onScroll?: (e: Event) => void;
+  onScroll?: (directions: Directions) => void;
 
   /**
    * Listener options for scroll event.
@@ -40,13 +44,13 @@ export function useWheel(
 
   const isScrolling = ref(false);
 
-  const directions = reactive({
+  const directions: Directions = reactive({
     top: false,
     bottom: false
   });
 
   if (element) {
-    const onScrollEnd = useDebounceFn((_e: WheelEvent) => {
+    const onScrollEnd = useDebounceFn(() => {
       isScrolling.value = false;
       directions.top = false;
       directions.bottom = false;
@@ -58,8 +62,8 @@ export function useWheel(
       directions.bottom = deltaY > 0;
 
       isScrolling.value = true;
-      onScrollEnd(e);
-      onScroll(e);
+      onScrollEnd();
+      onScroll(directions);
     };
 
     useEventListener(

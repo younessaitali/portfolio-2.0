@@ -12,23 +12,20 @@
 </script>
 
 <template>
-  <NuxtLayout>
-    <NuxtPage />
-  </NuxtLayout>
+  <NuxtPage />
 </template>
 
 <style>
   html,
   body,
   #__nuxt {
-    height: 100%;
+    height: 100vh;
     margin: 0;
     padding: 0;
-    background: #151d2b;
+    color: #1c2c3f;
   }
-
   html.dark {
-    background: #151d2b;
-    color: white;
+    background: #1c2c3f;
+    color: #a6956e;
   }
 </style>

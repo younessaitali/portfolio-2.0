@@ -23,7 +23,8 @@
     :href="path"
     :title="title"
     target="_blank"
-    class="h-16 px-4 py-2 group hover:-translate-y-1 hover:scale-115 ease-in-out delay-100 duration-300 inline-flex justify-center items-center text-champagne text-5xl w-16 bg-dark-blue rounded-lg shadow-dark-900 drop-shadow-2xl shadow-lg">
+    md="h-16 w-16 text-5xl px-4 py-2"
+    class="px-2 py-2 h-12 w-12 text-2xl group hover:-translate-y-1 hover:scale-115 ease-in-out delay-100 duration-300 inline-flex justify-center items-center bg-dark-blue rounded-lg shadow-dark-900 drop-shadow-2xl shadow-lg">
     <div :class="[icon, 'group-hover:scale-115  delay-100 duration-300']" />
   </a>
 </template>

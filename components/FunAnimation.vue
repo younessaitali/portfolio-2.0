@@ -210,7 +210,7 @@
   });
 </script>
 <template>
-  <svg xmlns="http://www.w3.org/2000/svg" id="animation" viewBox="0 0 500 500">
+  <svg xmlns="http://www.w3.org/2000/svg" id="animation" viewBox="0 0 500 250">
     <g transform="translate(0 20)">
       <g id="half-pipe">
         <path

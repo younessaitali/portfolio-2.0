@@ -26,7 +26,9 @@ export default defineNuxtPlugin((nuxtApp) => {
       el.classList.add('underline-enter');
 
       elementIsActive(el, value?.isActive ?? false);
-      useEventListener(el, 'mouseleave', animationOut);
+      useEventListener(el, 'mouseleave', () => {
+        animationOut(el);
+      });
     },
 
     updated(el, binding: { value: { isActive: false } | undefined }) {

@@ -59,9 +59,9 @@
 </script>
 
 <template>
-  <svg xmlns="http://www.w3.org/2000/svg" id="animation" viewBox="0 0 500 500">
+  <svg xmlns="http://www.w3.org/2000/svg" id="animation" viewBox="0 0 450 250">
     >
-    <g id="composition-build" transform="translate(150 50)">
+    <g id="composition-build" transform="translate(125 0)">
       <g id="frame">
         <g>
           <rect

@@ -130,8 +130,8 @@
 </script>
 
 <template>
-  <svg xmlns="http://www.w3.org/2000/svg" id="animation" viewBox="0 0 50 50">
-    <g id="support" transform="translate(0 15)">
+  <svg xmlns="http://www.w3.org/2000/svg" id="animation" viewBox="0 0 5 50">
+    <g id="support" transform="translate(-30 15)">
       <rect id="support-rectangle" width="14" height="32" fill="#78a300" />
       <rect
         id="support-square"

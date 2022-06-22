@@ -6,7 +6,7 @@
   <ContentDoc :path="route.path">
     <template #not-found>
       <div
-        class="mx-auto text-center max-w-screen-xl text-champagne px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 xl:mt-28">
+        class="mx-auto text-center max-w-screen-xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 xl:mt-28">
         <h1
           class="text-4xl tracking-tight leading-10 font-semibold sm:text-5xl sm:leading-none md:text-6xl">
           Document not found
