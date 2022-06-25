@@ -1,12 +1,12 @@
 <script setup lang="ts">
   import { gsap, SteppedEase, Power4 } from 'gsap';
+  const timeline = gsap.timeline();
 
   onMounted(() => {
-    gsap.set('#frame', {
-      opacity: 1
-    });
-
     setTimeout(() => {
+      gsap.set('#frame', {
+        opacity: 1
+      });
       const drop = (
         elem: string,
         steps: number,
@@ -37,8 +37,6 @@
       const HorizontalStick = drop('#horizontal-stick', 7);
       const verticalStick = drop('#vertical-stick', 7);
 
-      const timeline = gsap.timeline();
-
       timeline
         .add(square)
         .add(LeftT)
@@ -55,6 +53,11 @@
         })
         .repeat(-1);
     }, 200);
+  });
+
+  onBeforeUnmount(() => {
+    timeline.restart();
+    timeline.kill();
   });
 </script>
 

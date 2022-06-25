@@ -4,209 +4,201 @@
   import { CustomEase } from 'gsap/CustomEase';
   gsap.registerPlugin(MotionPathPlugin, CustomEase);
 
-  let tl: gsap.core.Timeline | null = gsap.timeline();
+  const tl = gsap.timeline();
 
   onMounted(() => {
-    // gsap.set('#half-pipe', {
-    //   scale: 2
-    // });
+    tl.restart();
 
-    // gsap.set('#bike', {
-    //   scale: 1.7,
-    //   transformOrigin: 'center bottom'
-    // });
+    setTimeout(() => {
+      const ease = CustomEase.create(
+        'custom',
+        'M0,400C69.331,336.129,152.065,368.189,200,200,252.328,16.394,384.991,0.871,400,0'
+      );
 
-    const ease = CustomEase.create(
-      'custom',
-      'M0,400C69.331,336.129,152.065,368.189,200,200,252.328,16.394,384.991,0.871,400,0'
-    );
-
-    const tl = gsap.timeline();
-    tl.to('#bike', {
-      ease,
-      duration: 1.7,
-
-      motionPath: {
-        path: '#bike-path',
-        align: '#bike-path',
-        alignOrigin: [0.5, 1],
-        autoRotate: true,
-        start: 0.05,
-        end: 0.95
-      }
-    })
-      .to(
-        '#front-wheel',
-        {
-          keyframes: {
-            '0%': { yPercent: 0 },
-            '16.5%': { scaleY: 1.2, scaleX: 0.8 },
-            '33.33%': {
-              yPercent: 130,
-              xPercent: 0,
-              scaleY: 1,
-              scaleX: 1,
-              ease: Power4.easeOut
-            },
-            '50%': { scaleX: 1.2, scaleY: 0.8 },
-            '66.66%': {
-              yPercent: 130,
-              scaleX: 1,
-              scaleY: 1,
-              xPercent: -190,
-              ease: Power4.easeOut
-            },
-            '83.16%': {
-              scaleX: 0.8,
-              scaleY: 1.2
-            },
-            '100%': { yPercent: 0, scaleX: 1, scaleY: 1 }
-          },
-
-          duration: 0.6
-        },
-        'transform'
-      )
-      .to(
-        '#back-wheel',
-        {
-          rotate: -140,
-          duration: 0.4,
-          svgOrigin: '35 50',
-          ease: Power4.easeOut
-        },
-        'transform+=0.2'
-      )
-      .to(
-        '#handlebars',
-        {
-          rotate: -90,
-          duration: 0.4,
-          svgOrigin: '35 50',
-          ease: Power4.easeOut
-        },
-        'transform+=0.2'
-      )
-      .to(
-        '#seat',
-        {
-          xPercent: 130,
-          yPercent: -50,
-          duration: 0.4,
-          ease: Power4.easeOut
-        },
-        'transform+=0.4'
-      )
-      .to(
-        '#teal',
-        {
-          xPercent: 1400,
-          yPercent: -70,
-          rotate: 180,
-          transformOrigin: 'center center',
-          duration: 1,
-          ease: Elastic.easeOut
-        },
-        'transform+=0.4'
-      )
-      .to('#bike', {
+      tl.to('#bike', {
         ease,
         duration: 1.7,
-        keyframes: {
-          '0%': { scaleY: -1, scaleX: -1 }
-        },
+
         motionPath: {
-          path: '#reverse-bike-path',
-          align: '#reverse-bike-path',
-          alignOrigin: [0.55, 1],
+          path: '#bike-path',
+          align: '#bike-path',
+          alignOrigin: [0.5, 1],
           autoRotate: true,
           start: 0.05,
           end: 0.95
         }
       })
-      .to(
-        '#front-wheel',
-        {
-          keyframes: {
-            '0%': { yPercent: 0, xPercent: -190 },
-            '16.5%': { scaleY: 1.2, scaleX: 0.8 },
-            '33.33%': {
-              yPercent: 130,
-              xPercent: -190,
-              scaleY: 1,
-              scaleX: 1,
-              ease: Power4.easeOut
+        .to(
+          '#front-wheel',
+          {
+            keyframes: {
+              '0%': { yPercent: 0 },
+              '16.5%': { scaleY: 1.2, scaleX: 0.8 },
+              '33.33%': {
+                yPercent: 130,
+                xPercent: 0,
+                scaleY: 1,
+                scaleX: 1,
+                ease: Power4.easeOut
+              },
+              '50%': { scaleX: 1.2, scaleY: 0.8 },
+              '66.66%': {
+                yPercent: 130,
+                scaleX: 1,
+                scaleY: 1,
+                xPercent: -190,
+                ease: Power4.easeOut
+              },
+              '83.16%': {
+                scaleX: 0.8,
+                scaleY: 1.2
+              },
+              '100%': { yPercent: 0, scaleX: 1, scaleY: 1 }
             },
-            '50%': { scaleX: 1.2, scaleY: 0.8 },
-            '66.66%': {
-              yPercent: 130,
-              scaleX: 1,
-              scaleY: 1,
-              xPercent: 5,
-              ease: Power4.easeOut
-            },
-            '83.16%': {
-              scaleX: 0.8,
-              scaleY: 1.2
-            },
-            '100%': { yPercent: 0, scaleX: 1, scaleY: 1 }
+
+            duration: 0.6
           },
+          'transform'
+        )
+        .to(
+          '#back-wheel',
+          {
+            rotate: -140,
+            duration: 0.4,
+            svgOrigin: '35 50',
+            ease: Power4.easeOut
+          },
+          'transform+=0.2'
+        )
+        .to(
+          '#handlebars',
+          {
+            rotate: -90,
+            duration: 0.4,
+            svgOrigin: '35 50',
+            ease: Power4.easeOut
+          },
+          'transform+=0.2'
+        )
+        .to(
+          '#seat',
+          {
+            xPercent: 130,
+            yPercent: -50,
+            duration: 0.4,
+            ease: Power4.easeOut
+          },
+          'transform+=0.4'
+        )
+        .to(
+          '#teal',
+          {
+            xPercent: 1400,
+            yPercent: -70,
+            rotate: 180,
+            transformOrigin: 'center center',
+            duration: 1,
+            ease: Elastic.easeOut
+          },
+          'transform+=0.4'
+        )
+        .to('#bike', {
+          ease,
+          duration: 1.7,
+          keyframes: {
+            '0%': { scaleY: -1, scaleX: -1 }
+          },
+          motionPath: {
+            path: '#reverse-bike-path',
+            align: '#reverse-bike-path',
+            alignOrigin: [0.55, 1],
+            autoRotate: true,
+            start: 0.05,
+            end: 0.95
+          }
+        })
+        .to(
+          '#front-wheel',
+          {
+            keyframes: {
+              '0%': { yPercent: 0, xPercent: -190 },
+              '16.5%': { scaleY: 1.2, scaleX: 0.8 },
+              '33.33%': {
+                yPercent: 130,
+                xPercent: -190,
+                scaleY: 1,
+                scaleX: 1,
+                ease: Power4.easeOut
+              },
+              '50%': { scaleX: 1.2, scaleY: 0.8 },
+              '66.66%': {
+                yPercent: 130,
+                scaleX: 1,
+                scaleY: 1,
+                xPercent: 5,
+                ease: Power4.easeOut
+              },
+              '83.16%': {
+                scaleX: 0.8,
+                scaleY: 1.2
+              },
+              '100%': { yPercent: 0, scaleX: 1, scaleY: 1 }
+            },
 
-          duration: 0.6
-        },
-        'reverse-transform'
-      )
-      .to(
-        '#back-wheel',
-        {
-          rotate: 0,
-          duration: 0.4,
-          svgOrigin: '35 50',
-          ease: Power4.easeOut
-        },
-        'reverse-transform+=0.2'
-      )
-      .to(
-        '#handlebars',
-        {
-          rotate: 0,
-          duration: 0.4,
-          svgOrigin: '35 50',
-          ease: Power4.easeOut
-        },
-        'reverse-transform+=0.2'
-      )
-      .to(
-        '#seat',
-        {
-          xPercent: 0,
-          yPercent: 0,
-          duration: 0.4,
-          ease: Power4.easeOut
-        },
-        'reverse-transform+=0.4'
-      )
-      .to(
-        '#teal',
-        {
-          xPercent: 0,
-          yPercent: 0,
-          rotate: 0,
-          transformOrigin: 'center center',
-          duration: 1,
-          ease: Elastic.easeOut
-        },
-        'reverse-transform+=0.4'
-      )
+            duration: 0.6
+          },
+          'reverse-transform'
+        )
+        .to(
+          '#back-wheel',
+          {
+            rotate: 0,
+            duration: 0.4,
+            svgOrigin: '35 50',
+            ease: Power4.easeOut
+          },
+          'reverse-transform+=0.2'
+        )
+        .to(
+          '#handlebars',
+          {
+            rotate: 0,
+            duration: 0.4,
+            svgOrigin: '35 50',
+            ease: Power4.easeOut
+          },
+          'reverse-transform+=0.2'
+        )
+        .to(
+          '#seat',
+          {
+            xPercent: 0,
+            yPercent: 0,
+            duration: 0.4,
+            ease: Power4.easeOut
+          },
+          'reverse-transform+=0.4'
+        )
+        .to(
+          '#teal',
+          {
+            xPercent: 0,
+            yPercent: 0,
+            rotate: 0,
+            transformOrigin: 'center center',
+            duration: 1,
+            ease: Elastic.easeOut
+          },
+          'reverse-transform+=0.4'
+        )
 
-      .repeat(Infinity);
+        .repeat(Infinity);
+    }, 500);
   });
 
-  onUnmounted(() => {
-    if (tl) {
-      tl.kill();
-      tl = null;
-    }
+  onBeforeUnmount(() => {
+    tl.restart();
+    tl.kill();
   });
 </script>
 <template>

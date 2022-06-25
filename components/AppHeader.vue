@@ -32,7 +32,7 @@
 
 <template>
   <header class="items-end h-24 flex justify-between items-center">
-    <NuxtLink cursor="pointer" class="w-28" :to="{ path: '/' }">
+    <NuxtLink class="w-28" to="/">
       <span class="sr-only">Logo</span>
       <logo w="14 " mx-a />
     </NuxtLink>
@@ -43,7 +43,7 @@
           v-for="item in navItems"
           :key="item.name"
           class="text-xl relative pl-4 pr-7 group overflow-hidden font-medium"
-          :to="{ path: item.path }">
+          :to="item.path">
           <span
             :class="[
               'absolute left-0 text-champagne dark:text-white group-hover:translate-y-0 duration-300',

@@ -21,16 +21,16 @@
 <template>
   <div
     md="max-w-[75%] mb-0"
-    class="flex-1 flex isolate mb-16 flex-col items-center justify-center gap-y-8 mx-auto">
+    class="flex-1 flex mb-16 flex-col items-center justify-center gap-y-8 mx-auto">
     <h3
-      class="absolute hidden md-block z-10 opacity-5"
+      class="absolute hidden md-block opacity-5"
       text="230px stroke-champagne stroke-sm  transparent">
       {{ name }}
     </h3>
 
     <div
       md="flex-row "
-      class="flex z-20 flex-col w-11/12 justify-center items-center gap-x-8">
+      class="flex z-10 flex-col w-11/12 justify-center items-center gap-x-8">
       <div md="px-6" class="max-w-lg">
         <h3 text="blue-gray 3xl md:5xl " mb-5 font="bold">{{ name }}</h3>
         <p text="md:lg md  blue-gray left">

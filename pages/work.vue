@@ -1,6 +1,4 @@
 <script setup lang="ts">
-  import { SwipeDirection } from '@vueuse/core';
-
   const wheel = ref<HTMLElement | null>(null);
 
   const projects = $ref([
@@ -181,25 +179,7 @@ The client has the option to rent or buy books. In addition, you can subscribe t
     projectSelected(projects[index].name);
   };
 
-  useWheel(wheel, {
-    onScroll: ({ bottom, top }) => {
-      if (bottom) nextProject();
-      if (top) prevProject();
-    }
-  });
-
-  onKeyStroke('ArrowLeft', () => prevProject());
-  onKeyStroke('ArrowRight', () => nextProject());
-  onKeyStroke('ArrowUp', () => prevProject());
-  onKeyStroke('ArrowDown', () => nextProject());
-
-  const { direction } = useSwipe(wheel, {
-    onSwipeEnd() {
-      if (direction.value === SwipeDirection.RIGHT) nextProject();
-      if (direction.value === SwipeDirection.LEFT) prevProject();
-    },
-    threshold: 100
-  });
+  useNavigation({ element: wheel, next: nextProject, prev: prevProject });
 
   function projectSelected(name: string) {
     projects.forEach((item) => {
@@ -209,11 +189,9 @@ The client has the option to rent or buy books. In addition, you can subscribe t
 </script>
 
 <template>
-  <!-- <Teleport to="body"> -->
-  <!-- </Teleport> -->
   <!-- this element just to let us detect wheel event on all page  -->
   <nuxt-layout>
-    <template #something>
+    <template #root>
       <div
         md="-right-(10.75rem)  inset-y-0 my-auto w-96 h-10 rotate-270"
         class="fixed bottom-0 w-screen rotate-0 p-0.5 bg-champagne/42 z-36 flex items-center justify-between">
@@ -226,7 +204,7 @@ The client has the option to rent or buy books. In addition, you can subscribe t
         </button>
       </div>
     </template>
-    <div ref="wheel" class="absolute inset-0"></div>
+    <div ref="wheel" class="absolute z-12 inset-0"></div>
     <section
       md="px-0 py-5"
       class="flex flex-1 items-center justify-center px-2 gap-x-3">

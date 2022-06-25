@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import { gsap, Power2 } from 'gsap';
-
+  const { uuid } = useBioTransition();
   definePageMeta({
     layout: 'home',
     pageTransition: {
@@ -34,19 +34,21 @@
 </script>
 
 <template>
-  <!-- <div ref="bio" class="absolute inset-0 w-full h-full"></div> -->
   <nuxt-layout>
-    <p font="medium" px-2 text="champagne md:xl md center" max-w-5xl>
-      A web developer with experience building web applications in a variety of
-      business domains using the latest and most appropriate technology.
-    </p>
-    <a
-      href="https://drive.google.com/file/d/1CLLjqPX1QJIQvaI1tosUTpjy8w1m9nHN/view?usp=sharing"
-      target="_blank"
-      md="py-3 px-10 text-lg"
-      class="inline-block bg-transparent border border-champagne rounded-full py-1.5 px-5 text-md font-medium hover:bg-blue"
-      >View resume</a
-    >
+    <div
+      class="flex items-center flex-col-reverse md:flex-row justify-center pointer-events-none">
+      <BuildAnimation class="h-48 mt-5 sm:(h-sm mt-0) xl:h-md" :key="uuid" />
+      <div class="self-center">
+        <p
+          font="medium"
+          px-2
+          flex-none
+          text="champagne  md:xl md center"
+          max-w-5xl>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+          euismod, nisi eu consectetur consectetur,
+        </p>
+      </div>
+    </div>
   </nuxt-layout>
 </template>
-<style></style>

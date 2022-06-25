@@ -1,6 +1,8 @@
+<script setup lang="ts"></script>
 <template>
   <div class="relative flex-col flex justify-between h-full min-h-screen">
     <App-header z-36 />
+    <slot name="root" />
     <main
       class="mx-auto container h-full w-full flex-1 ml-28 border-l border-champagne">
       <slot />
