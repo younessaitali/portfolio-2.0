@@ -7,8 +7,36 @@
   const tl = gsap.timeline();
 
   onMounted(() => {
-    tl.restart();
-
+    tl.set('#half-pipe', {
+      clearProps: 'all'
+    });
+    tl.set('#bike-path', {
+      clearProps: 'all'
+    });
+    tl.set('#reverse-bike-path', {
+      clearProps: 'all'
+    });
+    tl.set('#bike', {
+      clearProps: 'all'
+    });
+    tl.set('#back-wheel', {
+      clearProps: 'all'
+    });
+    tl.set('#front-wheel', {
+      clearProps: 'all'
+    });
+    tl.set('#center', {
+      clearProps: 'all'
+    });
+    tl.set('#teal', {
+      clearProps: 'all'
+    });
+    tl.set('#seat', {
+      clearProps: 'all'
+    });
+    tl.set('#handlebars', {
+      clearProps: 'all'
+    });
     setTimeout(() => {
       const ease = CustomEase.create(
         'custom',
@@ -18,7 +46,6 @@
       tl.to('#bike', {
         ease,
         duration: 1.7,
-
         motionPath: {
           path: '#bike-path',
           align: '#bike-path',
@@ -198,6 +225,7 @@
 
   onBeforeUnmount(() => {
     tl.restart();
+
     tl.kill();
   });
 </script>
@@ -221,7 +249,12 @@
       </g>
       <g id="bike">
         <circle id="back-wheel" cx="14.61" cy="57" r="10.97" fill="#043c42" />
-        <circle id="front-wheel" cx="53.03" cy="57" r="10.97" fill="#fdfdfe" />
+        <circle
+          id="front-wheel"
+          cx="53.03"
+          cy="57"
+          r="10.97"
+          class="dark:fill-white fill-orange-400" />
         <polygon
           id="center"
           points="19 41.74 47.5 39.25 34.74 57.55 19 41.74"
@@ -237,7 +270,7 @@
           width="20.12"
           height="5.49"
           transform="translate(-2.07 1.22) rotate(-3.18)"
-          fill="#fdfdfe" />
+          class="dark:fill-white fill-yellow-400" />
         <polygon
           id="handlebars"
           points="47.43 29.44 60.24 29.39 60.29 42.19 53.88 42.22 53.86 35.81 47.46 35.84 47.43 29.44"

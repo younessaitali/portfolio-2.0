@@ -1,48 +1,22 @@
 <script setup lang="ts">
-  import { gsap, Power2 } from 'gsap';
   const { uuid } = useBioTransition();
   definePageMeta({
     layout: 'home',
-    pageTransition: {
-      onLeave(el: Element, done: () => void) {
-        gsap.to(el.querySelector('main'), {
-          duration: 0.5,
-          yPercent: useBioTransition().leaveTransition === 'down' ? -200 : 200,
-          opacity: 0,
-          ease: Power2.easeInOut,
-          onComplete: done
-        });
-      },
-      onEnter(el: Element, done: () => void) {
-        gsap.fromTo(
-          el.querySelector('main'),
-          {
-            yPercent: useBioTransition().enterTransition === 'up' ? 200 : -200,
-            opacity: 0
-          },
-          {
-            yPercent: 0,
-            opacity: 1,
-            duration: 0.5,
-            onComplete: done,
-            ease: Power2.easeInOut
-          }
-        );
-      }
-    }
+    pageTransition
   });
 </script>
 
 <template>
   <nuxt-layout>
-    <div class="pointer-events-none flex flex-col gap-y-4">
-      <div class="self-center">
-        <p font="medium" px-2 text="champagne md:xl md center" max-w-5xl>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-          euismod, nisi eu consectetur consectetur,
-        </p>
-      </div>
-      <FunAnimation class="absolute bottom-0 md:relative" :key="uuid" />
+    <div class="flex flex-col">
+      <head-line title="love to have fun" />
+
+      <FunAnimation class="h-86" :key="uuid" />
+
+      <p font="medium" mx-a mt-5 text="champagne md:xl md center" max-w-5xl>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod,
+        nisi eu consectetur consectetur,
+      </p>
     </div>
   </nuxt-layout>
 </template>

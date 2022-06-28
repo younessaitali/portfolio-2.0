@@ -18,7 +18,8 @@ export default defineConfig({
       'underline-out': 'after:(duration-300 ease-in-out translate-x-full)',
       'bg-base': 'bg-white dark:bg-darkBlue',
       'bg-canvas': 'bg-gray:15 dark:bg-[#111]',
-      'text-base': 'text-darkBlue dark:text-champagne'
+      'text-base': 'text-darkBlue dark:text-champagne',
+      'text-canvas': 'text-blueGrayDark dark:text-blueGray'
     }
   ],
   theme: {
@@ -26,7 +27,7 @@ export default defineConfig({
       darkBlue: '#1C2C3F',
       blue: '#015270',
       blueGray: '#C8C9CA',
-      blueGrayDark: '#989BA1',
+      blueGrayDark: '#9F9F9F',
       champagne: '#A6956E'
     }
   },

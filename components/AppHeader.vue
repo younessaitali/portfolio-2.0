@@ -42,7 +42,7 @@
         <NuxtLink
           v-for="item in navItems"
           :key="item.name"
-          class="text-xl relative pl-4 pr-7 group overflow-hidden font-medium"
+          class="text-xl relative pl-4 uppercase pr-7 group overflow-hidden font-medium"
           :to="item.path">
           <span
             :class="[

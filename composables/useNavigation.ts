@@ -30,14 +30,6 @@ export interface useNavigationOptions {
 export const useNavigation = (options: useNavigationOptions = {}) => {
   const { element, next = noop, prev = noop, keyStrokeDelay = 100 } = options;
 
-  if (element)
-    useWheel(element, {
-      onScroll: ({ bottom, top }) => {
-        if (bottom) next();
-        if (top) prev();
-      }
-    });
-
   onKeyStroke(
     'ArrowLeft',
     useDebounceFn(() => {
@@ -64,6 +56,12 @@ export const useNavigation = (options: useNavigationOptions = {}) => {
   );
 
   if (element) {
+    useWheel(element, {
+      onScroll: ({ bottom, top }) => {
+        if (bottom) next();
+        if (top) prev();
+      }
+    });
     const { direction } = useSwipe(element, {
       onSwipeEnd() {
         if (direction.value === SwipeDirection.RIGHT) next();

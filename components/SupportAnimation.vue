@@ -4,16 +4,18 @@
   const tl = gsap.timeline();
 
   onMounted(() => {
+    tl.restart();
+
+    gsap.set('#support-rectangle', {
+      transformOrigin: 'bottom center'
+    });
+
+    gsap.set('#support-square', {
+      transformOrigin: 'bottom center',
+      xPercent: 160
+    });
+
     setTimeout(() => {
-      gsap.set('#support-rectangle', {
-        transformOrigin: 'bottom center'
-      });
-
-      gsap.set('#support-square', {
-        transformOrigin: 'bottom center',
-        xPercent: 160
-      });
-
       tl.to(
         '#support-square',
         {
@@ -147,7 +149,7 @@
         y="19"
         width="13"
         height="13"
-        fill="#ffffff" />
+        class="dark:fill-white fill-sky-400" />
     </g>
   </svg>
 </template>

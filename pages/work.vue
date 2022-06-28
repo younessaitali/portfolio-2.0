@@ -29,7 +29,7 @@
     {
       name: 'Auto Filler',
       description: `desktop application that assists users with repetitive tasks and auto-fills forms from a
-spreadsheet. As a result, my client spent less time doing the repetitive tasks.`,
+  spreadsheet. As a result, my client spent less time doing the repetitive tasks.`,
       isActive: false,
       image: {
         src: '/projects/auto-k.svg',
@@ -53,9 +53,9 @@ spreadsheet. As a result, my client spent less time doing the repetitive tasks.`
     {
       name: 'Marrakech Invest',
       description: `Informational website for entrepreneurs and businesses looking for
-      information about potential investment opportunities in the Marrakech
-      region. More than 100 pages are available on the website on a variety
-      of investment opportunities and business guides. This project was part of my work at the Digital-butterfly agency. Among my responsibilities was leading the development team. `,
+            information about potential investment opportunities in the Marrakech
+            region. More than 100 pages are available on the website on a variety
+            of investment opportunities and business guides. This project was part of my work at the Digital-butterfly agency. Among my responsibilities was leading the development team. `,
       isActive: false,
       image: {
         src: '/projects/mi_logo.png',
@@ -72,7 +72,7 @@ spreadsheet. As a result, my client spent less time doing the repetitive tasks.`
     {
       name: 'Business Plan Interactive',
       description: `An interactive web app allows entrepreneurs to generate a business plan step-by-step
-and guide them through it. has already benefited thousands of small business owners. This project was part of my work at the Digital-butterfly agency. Among my responsibilities was leading the development team. `,
+      and guide them through it. has already benefited thousands of small business owners. This project was part of my work at the Digital-butterfly agency. Among my responsibilities was leading the development team. `,
       technologies: ['Vue', 'TailwindCSS', 'Firebase', 'Vuex'],
       image: {
         src: '/projects/bpi.png',
@@ -122,7 +122,7 @@ and guide them through it. has already benefited thousands of small business own
         'Pusher'
       ],
       description: `This project management app provides a visual representation of what is being worked on by splitting projects into boards that contain tasks with a description and multiple to-do lists, and the user has the ability to add other members to a project ... I used Laravel as a backend to serve my Rest-API, VueJS as a frontend, Vuex as state management, and Pusher for Real-time communication, as well as JWT for authorization.
-this was a side project Inspired by Jira from Atlassian`,
+      this was a side project Inspired by Jira from Atlassian`,
       image: {
         src: '/projects/tasks.svg',
         alt: 'Tasks logo'
@@ -146,7 +146,7 @@ this was a side project Inspired by Jira from Atlassian`,
         alt: 'Marrakech invest logo'
       },
       description: `As part of my graduation project, I developed a library app. There are two parts to the app: a client-side dashboard and an admin dashboard.
-The client has the option to rent or buy books. In addition, you can subscribe to the membership for a monthly fee. Owners and Admins can also manage the inventory, client information, and employee roles `,
+      The client has the option to rent or buy books. In addition, you can subscribe to the membership for a monthly fee. Owners and Admins can also manage the inventory, client information, and employee roles `,
       technologies: ['laravel', 'MySql', 'Stripe API', 'Axios', 'Sass'],
       isActive: false,
       links: [
@@ -216,9 +216,9 @@ The client has the option to rent or buy books. In addition, you can subscribe t
             v-underline-animation="{ isActive: project.isActive }"
             @click="projectSelected(project.name)"
             font="bold"
-            text=" 5xl center stroke-sm stroke-champagne "
+            text="4xl center stroke-sm stroke-champagne"
             :class="[
-              'py-5 px-16 inline-block relative capitalize after:-ml-16 cursor-pointer overflow-hidden group opacity-85',
+              'py-5 px-9 z-20 inline-block relative capitalize after:-ml-16 cursor-pointer overflow-hidden group opacity-85',
               {
                 'text-transparent': !project.isActive,
                 'text-champagne': project.isActive
@@ -240,19 +240,6 @@ The client has the option to rent or buy books. In addition, you can subscribe t
         </ul>
       </nav>
       <project v-bind="{ ...activeProject.project }" />
-      <!-- <div class="relative flex-1 max-w-2xl max-h-lg">
-        <img
-          src="/m.jpg"
-          alt="Angled front view with bag zipped and handles upright."
-          class="mx-auto py-6 w-full max-h-lg aspect-square object-center object-cover sm:rounded-lg" />
-
-        <hr class="w-full h-30 bg-dark-100/60 absolute bottom-0 inset-x-0" /> -->
-      <!-- More images... -->
-      <!--
-        <image-selector />
-      </div> -->
-
-      <!-- Image selector -->
     </section>
   </nuxt-layout>
 </template>

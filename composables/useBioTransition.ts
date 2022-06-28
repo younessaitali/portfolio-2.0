@@ -1,15 +1,31 @@
 import { acceptHMRUpdate, defineStore } from 'pinia';
-
+import { gsap, Power2 } from 'gsap';
+import { MaybeRef } from '@vueuse/shared';
 export const useBioTransition = defineStore('bio', () => {
   const route = useRoute();
   const router = useRouter();
 
   type TransitionType = 'up' | 'down';
 
-  let enterTransition = $ref<TransitionType>('up');
-  let leaveTransition = $ref<TransitionType>('down');
+  /**
+   * page transition direction (up or down)
+   */
+  const enterTransition = ref<TransitionType>('up');
+  const leaveTransition = ref<TransitionType>('down');
 
-  const bio = $ref<HTMLElement | null>(null);
+  /**
+   * determine if to trigger animation or not when route changes
+   */
+
+  const animateLeaveOnRouteChange = ref(true);
+  const animateEnterOnRouteChange = ref(false);
+
+  const setAnimaLeaveOnRouteChange = (value: boolean) => {
+    animateLeaveOnRouteChange.value = value;
+  };
+  const setAnimateEnterOnRouteChange = (value: boolean) => {
+    animateEnterOnRouteChange.value = value;
+  };
 
   const bioLinks = $ref([
     {
@@ -39,14 +55,18 @@ export const useBioTransition = defineStore('bio', () => {
     }
   ]);
 
-  const activeLinkIndex = $computed(() => {
+  const activeLinkIndex = computed(() => {
     const linkIndex = bioLinks.findIndex((link) => link.isActive);
     if (linkIndex === -1) return 0;
-
     return linkIndex;
   });
 
-  let uuid = $ref<string>('');
+  /**
+   *
+   * random uuid to force component re-render when route changes
+   */
+
+  const uuid = ref<string>('');
 
   const randomUid = () => {
     return (
@@ -55,60 +75,42 @@ export const useBioTransition = defineStore('bio', () => {
     );
   };
 
-  useNavigation({
-    element: bio,
-    next: () => {
-      enterTransition = 'up';
-      leaveTransition = 'down';
-      console.log('next');
-      uuid = randomUid();
-      const index = (activeLinkIndex + 1 + bioLinks.length) % bioLinks.length;
-      const link = bioLinks[index];
-      router.push(link.path);
-    },
-    prev: () => {
-      enterTransition = 'down';
-      leaveTransition = 'up';
-      console.log('prev');
-      uuid = randomUid();
-      const index = (activeLinkIndex - 1 + bioLinks.length) % bioLinks.length;
-      const link = bioLinks[index];
-      router.push(link.path);
-    }
-  });
+  /**
+   *
+   * function to set init ref element to start detecting scroll and keystroke  events
+   */
 
-  // const pageTransition = $computed(() => {
-  //   return {
-  //     onLeave(el: Element, done: () => void) {
-  //       gsap.to(el.querySelector('main'), {
-  //         duration: 0.5,
-  //         yPercent: leaveTransition === 'down' ? -200 : 200,
+  const setNavigationElement = (
+    el?: MaybeRef<
+      HTMLElement | SVGElement | Window | Document | null | undefined
+    >
+  ) => {
+    useNavigation({
+      element: el,
+      next: () => {
+        enterTransition.value = 'up';
+        leaveTransition.value = 'down';
 
-  //         opacity: 0,
-  //         ease: Power2.easeInOut,
-  //         onComplete: done
-  //       });
-  //     },
+        uuid.value = randomUid();
 
-  //     onEnter(el: Element, done: () => void) {
-  //       gsap.fromTo(
-  //         el.querySelector('main'),
-  //         {
-  //           yPercent: enterTransition === 'up' ? 200 : -200,
+        const index =
+          (activeLinkIndex.value + 1 + bioLinks.length) % bioLinks.length;
+        const link = bioLinks[index];
+        router.push(link.path);
+      },
+      prev: () => {
+        enterTransition.value = 'down';
+        leaveTransition.value = 'up';
 
-  //           opacity: 0
-  //         },
-  //         {
-  //           yPercent: 0,
-  //           opacity: 1,
-  //           duration: 0.5,
-  //           onComplete: done,
-  //           ease: Power2.easeInOut
-  //         }
-  //       );
-  //     }
-  //   };
-  // });
+        uuid.value = randomUid();
+
+        const index =
+          (activeLinkIndex.value - 1 + bioLinks.length) % bioLinks.length;
+        const link = bioLinks[index];
+        router.push(link.path);
+      }
+    });
+  };
 
   watch(
     route,
@@ -120,8 +122,70 @@ export const useBioTransition = defineStore('bio', () => {
     { immediate: true, deep: true }
   );
 
-  return { bioLinks, bio, leaveTransition, enterTransition, uuid };
+  return {
+    bioLinks: readonly(bioLinks),
+    leaveTransition: readonly(leaveTransition),
+    enterTransition: readonly(enterTransition),
+    uuid: readonly(uuid),
+    setNavigationElement,
+    setAnimaLeaveOnRouteChange,
+    setAnimateEnterOnRouteChange,
+    animateEnterOnRouteChange: readonly(animateEnterOnRouteChange),
+    animateLeaveOnRouteChange: readonly(animateLeaveOnRouteChange)
+  };
 });
 
 if (import.meta.hot)
   import.meta.hot.accept(acceptHMRUpdate(useBioTransition, import.meta.hot));
+
+export const pageTransition = {
+  onLeave(el: Element, done: () => void) {
+    const { leaveTransition, animateLeaveOnRouteChange } = useBioTransition();
+
+    const animation = animateLeaveOnRouteChange
+      ? {
+          duration: 0.6,
+          yPercent: leaveTransition === 'down' ? -100 : 100,
+          opacity: 0,
+          ease: Power2.easeInOut,
+          onComplete: done
+        }
+      : { duration: 0.7, opacity: 0, ease: Power2.easeOut, onComplete: done };
+
+    gsap.to(el.querySelector('main'), {
+      ...animation
+    });
+  },
+  onEnter(el: Element, done: () => void) {
+    const { enterTransition, animateEnterOnRouteChange } = useBioTransition();
+
+    const yPercent = enterTransition === 'up' ? 100 : -100;
+
+    const animation = animateEnterOnRouteChange
+      ? {
+          keyframes: {
+            '0%': {
+              yPercent,
+              opacity: 0
+            },
+            '40%': {
+              yPercent,
+              opacity: 0
+            },
+            '100%': {
+              yPercent: 0,
+              opacity: 1,
+              onComplete: done
+            },
+
+            ease: Power2.easeInOut
+          },
+          duration: 1.3
+        }
+      : {};
+
+    gsap.to(el.querySelector('main'), {
+      ...animation
+    });
+  }
+};

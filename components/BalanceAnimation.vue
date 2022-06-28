@@ -2,12 +2,28 @@
   import { gsap, Power2, Power4, Sine, Expo } from 'gsap';
 
   const tl = gsap.timeline();
-  onMounted(() => {
-    setTimeout(() => {
+
+  onMounted(async () => {
+    tl.restart();
+
+    setTimeout(async () => {
       gsap.set('#balance', {
-        yPercent: 0,
+        y: 0,
         transformOrigin: 'center bottom'
       });
+
+      gsap.set('#balance-top-square', {
+        transformOrigin: 'center center'
+      });
+
+      gsap.set('#balance-circle', {
+        transformOrigin: 'center center'
+      });
+
+      gsap.set('#balance-top-half-circle', {
+        transformOrigin: 'center bottom'
+      });
+
       gsap.fromTo(
         '#balance',
         { rotation: -5 },
@@ -20,21 +36,23 @@
         }
       );
 
-      tl.to('#balance-top-square', {
-        keyframes: {
-          '0%': { y: 0, rotate: -45 },
-          '30%': { y: -8, rotate: -45 },
-          '50%': { rotate: 45, ease: Power2.easeOut },
-          '60%': { y: 0 },
-          '70%': { x: 4, rotate: 50 },
-          '80%': { rotate: 38 },
-          '100%': { x: 0, rotate: 45, ease: Power2.easeInOut },
-          easeEach: Expo.easeInOut
+      tl.to(
+        '#balance-top-square',
+        {
+          keyframes: {
+            '0%': { y: 0, rotate: -45 },
+            '30%': { y: -8, rotate: -45 },
+            '50%': { rotate: 45, ease: Power2.easeOut },
+            '60%': { y: 0 },
+            '70%': { x: 4, rotate: 50 },
+            '80%': { rotate: 38 },
+            '100%': { x: 0, rotate: 45, ease: Power2.easeInOut },
+            easeEach: Expo.easeInOut
+          },
+          duration: 1.4
         },
-        duration: 1.4,
-
-        transformOrigin: 'center center'
-      })
+        '<0'
+      )
         .to(
           '#balance-circle',
           {
@@ -60,7 +78,6 @@
               '100%': { rotate: 0 },
               easeEach: Power4.easeOut
             },
-            transformOrigin: 'center bottom',
             duration: 1.2
           },
           '<0.4'
@@ -74,8 +91,7 @@
             '100%': { y: 0 },
             easeEach: Expo.easeInOut
           },
-          duration: 1.2,
-          transformOrigin: 'center center'
+          duration: 1.2
         })
         .to(
           '#balance-circle',
@@ -86,18 +102,16 @@
               '100%': { y: 0 },
               easeEach: Sine.easeInOut
             },
-            duration: 0.4,
-            transformOrigin: 'center center'
+            duration: 0.4
           },
           '<0.2'
         )
         .repeat(-1);
-    }, 500);
+    }, 200);
   });
 
   onBeforeUnmount(() => {
     tl.restart();
-
     tl.kill();
   });
 </script>
