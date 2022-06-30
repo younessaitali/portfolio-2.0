@@ -11,7 +11,7 @@
   <nuxt-layout>
     <div class="h-full w-full flex flex-col items-center">
       <head-line title="Like to have fun" />
-      <BalanceAnimation class="h-82" :key="uuid" />
+      <BalanceAnimation class="md:h-82" :key="uuid" />
 
       <p
         font="medium"

@@ -31,14 +31,16 @@
 </script>
 
 <template>
-  <header class="items-end h-24 flex justify-between items-center">
+  <header
+    class="items-end border-b border-champagne md:border-b-0 h-24 flex justify-between items-center">
     <NuxtLink class="w-28" to="/">
       <span class="sr-only">Logo</span>
-      <logo w="14 " mx-a />
+      <logo class="md:w-14 w-12 my-2 mx-auto" />
     </NuxtLink>
     <nav
-      class="border-b border-l text-base flex-1 flex items-center justify-end h-full border-champagne">
-      <div class="mr-28 flex gap-x-1">
+      md="border-b border-l"
+      class="text-base flex-1 flex items-center justify-end h-full border-champagne">
+      <div class="mr-28 md:flex gap-x-1 hidden">
         <NuxtLink
           v-for="item in navItems"
           :key="item.name"
@@ -68,6 +70,9 @@
           >
         </NuxtLink>
       </div>
+      <button class="md:hidden mr-4">
+        <icons-menu-icon class="h-6 w-6" />
+      </button>
     </nav>
   </header>
 </template>

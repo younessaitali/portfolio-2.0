@@ -3,12 +3,13 @@
   <div class="relative flex-col flex justify-between h-full min-h-screen">
     <App-header z-36 />
     <slot name="root" />
-    <main class="h-full flex-1 ml-28 border-l border-champagne">
+    <main md="ml-28 border-l border-champagne" class="h-full flex-1">
       <div class="container mx-auto h-full">
         <slot />
       </div>
     </main>
-    <p class="text-lg text-base fixed -left-17 bottom-1/2 rotate-270">
+    <p
+      class="text-lg md:block hidden text-base fixed -left-17 bottom-1/2 rotate-270">
       Want to Work 🤝
       <nuxt-link :to="{ path: '/contact' }" class="underline"
         >Together?</nuxt-link

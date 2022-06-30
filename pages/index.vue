@@ -8,17 +8,21 @@
 <template>
   <nuxt-layout>
     <div class="h-full mx-auto text-center">
-      <h1 class="dark:text-white mt-28 text-8xl capitalize font-light">
+      <h1
+        class="dark:text-white md:mt-28 mt-10 md:text-8xl text-7xl capitalize font-light">
         hi Am
         <span
           class="text-transparent font-semibold text-stroke-champagne text-stroke-2"
           >Youness</span
         >
       </h1>
-      <h2 class="text-4xl text-canvas mt-4 font-semibold">
+      <h2 class="md:text-4xl text-3xl text-canvas md:mt-4 mt-2 font-semibold">
         Full-Stack Developer
       </h2>
-      <p font="medium" mx-a px-2 mt-16 text="champagne md:xl md" max-w-5xl>
+      <p
+        font="medium"
+        class="mx-a px-2 md:mt-16 mt-8 max-w-5xl"
+        text="champagne md:xl md">
         A web developer with experience building web applications in a variety
         of business domains using the latest and most appropriate technology.
       </p>
@@ -26,7 +30,7 @@
         href="https://drive.google.com/file/d/1CLLjqPX1QJIQvaI1tosUTpjy8w1m9nHN/view?usp=sharing"
         target="_blank"
         md="py-3 px-10 text-lg"
-        class="inline-block mt-16 hover:bg-blue/20 text-base bg-transparent border border-champagne rounded-full py-1.5 px-5 text-md font-medium"
+        class="inline-block md:mt-16 my-10 hover:bg-blue/20 text-base bg-transparent border border-champagne rounded-full py-1.5 px-5 text-md font-medium"
         >View resume</a
       >
     </div>

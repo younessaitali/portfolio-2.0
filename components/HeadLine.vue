@@ -8,11 +8,11 @@
 <template>
   <div class="relative text-center isolate w-full py-2">
     <h4
-      class="text-42 leading-40 opacity-10 text-transparent text-stroke-champagne text-stroke-2">
+      class="md:text-42 md:leading-40 text-8xl opacity-10 text-transparent text-stroke-champagne text-stroke-2">
       Youness
     </h4>
     <h1
-      class="text-4xl text-canvas z-20 font-semibold absolute bottom-4 w-full">
+      class="md:text-4xl text-2xl text-canvas z-20 font-semibold absolute bottom-4 w-full">
       {{ title }}
     </h1>
   </div>

@@ -5,7 +5,7 @@
 <template>
   <nav
     aria-label="Tabs"
-    class="px-10 w-80 absolute md:-right-12 z-50 bottom-1/2 rotate-90">
+    class="px-10 md:w-80 w-58 fixed md:-right-12 z-50 md:bottom-1/2 inset-x-0 mx-auto bottom-5 md:rotate-90">
     <ul class="items-center grid gap-x-6 grid-cols-5">
       <li
         class="h-5 w-5 border-2 flex items-center justify-center border-darkBlue dark:border-champagne rounded-md"

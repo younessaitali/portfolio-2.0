@@ -24,7 +24,7 @@
 </script>
 
 <template>
-  <footer class="flex border-t border-champagne h-20 justify-between">
+  <footer class="md:flex hidden border-t border-champagne h-20 justify-between">
     <div class="ml-28 flex items-center">
       <dark-mode-toggle />
     </div>

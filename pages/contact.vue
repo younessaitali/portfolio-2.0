@@ -6,8 +6,9 @@
 
 <template>
   <nuxt-layout>
-    <div class="grid grid-cols-2 mt-28 gap-y-9xl">
-      <form action="" id="contact-form" class="flex flex-col gap-y-6xl">
+    <div
+      class="flex lg:flex-row flex-col-reverse lg:items-center lg:justify-center px-4 md:mt-28 mt-16 gap-y-10">
+      <form action="" id="contact-form" class="flex flex-1 flex-col gap-y-6xl">
         <forms-text-input
           type="text"
           v-model="name"
@@ -24,9 +25,10 @@
           placeholder="Share your thought"
           :is-textarea="true" />
       </form>
-      <div class="text-left relative text-base">
+      <div class="flex-1 text-left mx-a relative text-base px-2">
         <span
-          class="text-transparent absolute -top-16 left-12 leading-46 text-stroke-2 text-stroke-champagne/20 text-13rem"
+          lg="inline text-9rem"
+          class="text-transparent hidden absolute -top-16 left-12 leading-46 text-stroke-2 text-stroke-champagne/20 text-13rem"
           >Get In Touch</span
         >
         <h2 class="font-medium text-6xl">Get In Touch</h2>
@@ -36,12 +38,12 @@
           malesuada elementum sagittis, posuere nam.
         </p>
       </div>
-      <button
-        type="submit"
-        class="col-span-2 mx-a text-2xl flex items-center justify-center gap-x-3 px-12 py-2.5 rounded-full text-base border border-champagne"
-        form="contact-form">
-        send <icons-send-icon />
-      </button>
     </div>
+    <button
+      type="submit"
+      class="mt-24 mx-a mb-10 md:mb-0 text-2xl flex items-center justify-center gap-x-3 px-12 py-2.5 rounded-full text-base border border-champagne"
+      form="contact-form">
+      send <icons-send-icon />
+    </button>
   </nuxt-layout>
 </template>
