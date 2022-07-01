@@ -20,19 +20,19 @@
 
 <template>
   <div
-    md="max-w-[75%]   mb-0"
+    lg="max-w-[75%]   mb-0"
     class="flex-1 flex mb-16 relative flex-col items-center justify-center gap-y-8 mx-auto">
     <h1
-      class="absolute w-full h-full -top-16 uppercase break-words -left-4 leading-46 max-w-5xl hidden md-block opacity-20"
+      class="absolute w-full h-full -top-16 uppercase break-words -left-4 leading-46 max-w-5xl hidden lg:block opacity-20"
       text="10rem stroke-champagne stroke-1 left  transparent">
       {{ name }}
     </h1>
 
     <div
-      md="flex-row "
-      class="flex z-10 flex-col w-11/12 md:mt=0 mt-6 justify-center items-center gap-x-8">
-      <div md="px-6" class="max-w-xl self-start">
-        <h3 text="dark:white 3xl md:7xl" max-w- mb-5 font="bold">
+      xl="flex-row"
+      class="flex z-10 flex-col w-11/12 lg:mt=0 mt-6 justify-center items-center gap-y-8 gap-x-8">
+      <div lg="px-6" class="max-w-xl self-start">
+        <h3 text="dark:white 3xl md:5xl xl:7xl" max-w- mb-5 font="bold">
           {{ name }}
         </h3>
         <p text="md:lg   canvas left justify">
@@ -57,7 +57,7 @@
       <img
         :src="image.src"
         :alt="image.alt"
-        class="md:max-w-sm mx-auto md:mt-0 mt-5 max-w-[80%]" />
+        class="xl:max-w-sm mx-auto max-h-sm lg:max-h-xs xl:max-h-sm lg:mt-0 mt-5 max-w-[80%]" />
     </div>
     <div class="flex mb-10 md:mb-0 z-30 gap-x-4">
       <a

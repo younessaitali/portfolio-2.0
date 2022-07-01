@@ -6,9 +6,9 @@
 </script>
 
 <template>
-  <div class="relative text-center isolate w-full py-2">
+  <div class="relative text-center isolate py-2">
     <h4
-      class="md:text-42 md:leading-40 text-8xl opacity-10 text-transparent text-stroke-champagne text-stroke-2">
+      class="xl:text-38 md:text-34 2xl:text-42 md:leading-40 text-8xl opacity-10 text-transparent text-stroke-champagne text-stroke-2">
       Youness
     </h4>
     <h1

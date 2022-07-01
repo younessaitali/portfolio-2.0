@@ -193,8 +193,8 @@
   <nuxt-layout>
     <template #root>
       <div
-        md="-right-(10.75rem)  inset-y-0 my-auto w-96 h-10 rotate-270"
-        class="fixed bottom-0 w-screen rotate-0 p-0.5 bg-champagne/42 z-36 flex items-center justify-between">
+        lg="-right-(10.75rem)  inset-y-0 my-auto w-96 h-10 rotate-270"
+        class="fixed bottom-0 w-screen rotate-0 px-0.5 py-2 bg-champagne/42 z-36 flex items-center justify-between">
         <button @click="nextProject" text="white 3xl">
           <div class="i-carbon:chevron-down"></div>
         </button>
@@ -207,8 +207,8 @@
     <div ref="wheel" class="absolute z-12 inset-0"></div>
     <section
       md="px-0 py-5"
-      class="flex flex-1 items-center justify-center px-2 gap-x-3">
-      <nav class="hidden md:block">
+      class="flex flex-1 h-full lg:items-center items-start justify-center px-2 gap-x-3">
+      <nav class="hidden lg:block">
         <ul class="flex flex-col gap-y-2">
           <li
             v-for="(project, index) in projects"

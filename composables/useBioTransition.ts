@@ -1,11 +1,13 @@
 import { acceptHMRUpdate, defineStore } from 'pinia';
 import { gsap, Power2 } from 'gsap';
 import { MaybeRef } from '@vueuse/shared';
+import { breakpointsTailwind } from '@vueuse/core';
+
 export const useBioTransition = defineStore('bio', () => {
   const route = useRoute();
   const router = useRouter();
 
-  type TransitionType = 'up' | 'down';
+  type TransitionType = 'up' | 'down' | 'left' | 'right';
 
   /**
    * page transition direction (up or down)
@@ -26,6 +28,9 @@ export const useBioTransition = defineStore('bio', () => {
   const setAnimateEnterOnRouteChange = (value: boolean) => {
     animateEnterOnRouteChange.value = value;
   };
+
+  const breakPoints = useBreakpoints(breakpointsTailwind);
+  const mdAndSmaller = breakPoints.smaller('lg');
 
   const bioLinks = $ref([
     {
@@ -88,8 +93,8 @@ export const useBioTransition = defineStore('bio', () => {
     useNavigation({
       element: el,
       next: () => {
-        enterTransition.value = 'up';
-        leaveTransition.value = 'down';
+        enterTransition.value = mdAndSmaller ? 'right' : 'up';
+        leaveTransition.value = mdAndSmaller ? 'left' : 'down';
 
         uuid.value = randomUid();
 
@@ -99,8 +104,8 @@ export const useBioTransition = defineStore('bio', () => {
         router.push(link.path);
       },
       prev: () => {
-        enterTransition.value = 'down';
-        leaveTransition.value = 'up';
+        enterTransition.value = mdAndSmaller ? 'left' : 'down';
+        leaveTransition.value = mdAndSmaller ? 'right' : 'up';
 
         uuid.value = randomUid();
 
@@ -131,7 +136,8 @@ export const useBioTransition = defineStore('bio', () => {
     setAnimaLeaveOnRouteChange,
     setAnimateEnterOnRouteChange,
     animateEnterOnRouteChange: readonly(animateEnterOnRouteChange),
-    animateLeaveOnRouteChange: readonly(animateLeaveOnRouteChange)
+    animateLeaveOnRouteChange: readonly(animateLeaveOnRouteChange),
+    mdAndSmaller: readonly(mdAndSmaller)
   };
 });
 
@@ -140,12 +146,18 @@ if (import.meta.hot)
 
 export const pageTransition = {
   onLeave(el: Element, done: () => void) {
-    const { leaveTransition, animateLeaveOnRouteChange } = useBioTransition();
+    const { leaveTransition, animateLeaveOnRouteChange, mdAndSmaller } =
+      useBioTransition();
+
+    const transitionAxis = mdAndSmaller ? 'xPercent' : 'yPercent';
+
+    const percent =
+      leaveTransition === 'down' || leaveTransition === 'left' ? 100 : -100;
 
     const animation = animateLeaveOnRouteChange
       ? {
           duration: 0.6,
-          yPercent: leaveTransition === 'down' ? -100 : 100,
+          [transitionAxis]: percent,
           opacity: 0,
           ease: Power2.easeInOut,
           onComplete: done
@@ -157,27 +169,34 @@ export const pageTransition = {
     });
   },
   onEnter(el: Element, done: () => void) {
-    const { enterTransition, animateEnterOnRouteChange } = useBioTransition();
+    const { enterTransition, animateEnterOnRouteChange, mdAndSmaller } =
+      useBioTransition();
 
-    const yPercent = enterTransition === 'up' ? 100 : -100;
+    const transitionAxis = mdAndSmaller ? 'xPercent' : 'yPercent';
+
+    const percent =
+      enterTransition === 'up' || enterTransition === 'left' ? 100 : -100;
+
+    const translation = {
+      [transitionAxis]: percent
+    };
 
     const animation = animateEnterOnRouteChange
       ? {
           keyframes: {
             '0%': {
-              yPercent,
+              ...translation,
               opacity: 0
             },
             '40%': {
-              yPercent,
+              ...translation,
               opacity: 0
             },
             '100%': {
-              yPercent: 0,
+              [transitionAxis]: 0,
               opacity: 1,
               onComplete: done
             },
-
             ease: Power2.easeInOut
           },
           duration: 1.3

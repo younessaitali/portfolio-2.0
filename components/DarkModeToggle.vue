@@ -16,7 +16,7 @@
   <button
     @click="toggleDark"
     :class="[
-      'relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-champagne rounded-full cursor-pointer transition-colors ease-in-out duration-200',
+      'relative inline-flex  flex-shrink-0 h-6 w-11 border-2 border-champagne rounded-full cursor-pointer transition-colors ease-in-out duration-200',
       {
         'bg-dark-blue': isDark,
         'bg-gray-200': !isDark
@@ -58,8 +58,9 @@
         <div i-carbon-moon text-sm />
       </span>
     </span>
-    <span class="text-lg font-medium text-base absolute -top-1 -right-28">{{
-      isDark ? 'Dark Mode' : 'Light Mode'
-    }}</span>
+    <span
+      class="text-lg inline md:hidden lg:inline font-medium text-base absolute -top-1 -right-28"
+      >{{ isDark ? 'Dark Mode' : 'Light Mode' }}</span
+    >
   </button>
 </template>

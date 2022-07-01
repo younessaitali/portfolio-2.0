@@ -4,7 +4,7 @@
     <App-header z-36 />
     <slot name="root" />
     <main md="ml-28 border-l border-champagne" class="h-full flex-1">
-      <div class="container mx-auto h-full">
+      <div class="container mx-auto h-full w-full">
         <slot />
       </div>
     </main>

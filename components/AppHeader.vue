@@ -40,7 +40,8 @@
     <nav
       md="border-b border-l"
       class="text-base flex-1 flex items-center justify-end h-full border-champagne">
-      <div class="mr-28 md:flex gap-x-1 hidden">
+      <div
+        class="mr-8 xl:mr-28 md:flex items-center justify-center gap-x-1 hidden">
         <NuxtLink
           v-for="item in navItems"
           :key="item.name"
@@ -69,6 +70,7 @@
             >/&gt;</span
           >
         </NuxtLink>
+        <DarkModeToggle class="hidden lg:hidden md:inline-flex" />
       </div>
       <button class="md:hidden mr-4">
         <icons-menu-icon class="h-6 w-6" />

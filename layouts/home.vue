@@ -3,9 +3,9 @@
     <App-header z-36 />
     <div
       ref="bio"
-      md="ml-28 border-l border-champagne"
-      class="container z-50 mx-auto flex-1 h-full w-full">
-      <main class="h-full overflow-hidden">
+      md="ml-28 border-l mr-0 border-champagne "
+      class="z-50 ml-auto mr-auto flex-1 h-full">
+      <main class="h-full container mx-auto overflow-hidden">
         <slot />
       </main>
     </div>

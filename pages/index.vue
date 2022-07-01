@@ -7,9 +7,9 @@
 
 <template>
   <nuxt-layout>
-    <div class="h-full mx-auto text-center">
-      <h1
-        class="dark:text-white md:mt-28 mt-10 md:text-8xl text-7xl capitalize font-light">
+    <div
+      class="h-full mx-auto flex flex-col justify-center items-center text-center">
+      <h1 class="dark:text-white lg:text-8xl text-7xl capitalize font-light">
         hi Am
         <span
           class="text-transparent font-semibold text-stroke-champagne text-stroke-2"
@@ -21,8 +21,8 @@
       </h2>
       <p
         font="medium"
-        class="mx-a px-2 md:mt-16 mt-8 max-w-5xl"
-        text="champagne md:xl md">
+        class="mx-a px-2 lg:mt-16 mt-8 xl:max-w-3xl lg:max-w-2xl"
+        text="champagne lg:xl md">
         A web developer with experience building web applications in a variety
         of business domains using the latest and most appropriate technology.
       </p>
