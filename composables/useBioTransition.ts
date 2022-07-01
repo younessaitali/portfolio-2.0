@@ -16,7 +16,7 @@ export const useBioTransition = defineStore('bio', () => {
   const leaveTransition = ref<TransitionType>('down');
 
   /**
-   * determine if to trigger animation or not when route changes
+   * variables to  determine if to trigger animation or not when route changes
    */
 
   const animateLeaveOnRouteChange = ref(true);
@@ -28,6 +28,10 @@ export const useBioTransition = defineStore('bio', () => {
   const setAnimateEnterOnRouteChange = (value: boolean) => {
     animateEnterOnRouteChange.value = value;
   };
+
+  /**
+   *  variables to determine if  we are in mobile or desktop mode to change the animation direction from Y axis to X axis
+   */
 
   const breakPoints = useBreakpoints(breakpointsTailwind);
   const mdAndSmaller = breakPoints.smaller('lg');
