@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 <template>
   <div class="relative flex-col flex justify-between h-full min-h-screen">
-    <App-header z-36 />
+    <App-header />
     <slot name="root" />
     <main md="ml-28 border-l border-champagne" class="h-full flex-1">
       <div class="container mx-auto h-full w-full">
@@ -16,6 +16,6 @@
       >
     </p>
 
-    <app-footer z-36 />
+    <app-footer />
   </div>
 </template>

@@ -21,7 +21,7 @@
 <template>
   <div
     lg="max-w-[75%]   mb-0"
-    class="flex-1 flex mb-16 relative flex-col items-center justify-center gap-y-8 mx-auto">
+    class="flex-1 flex mb-24 relative flex-col items-center justify-center gap-y-8 mx-auto">
     <h1
       class="absolute w-full h-full -top-16 uppercase break-words -left-4 leading-46 max-w-5xl hidden lg:block opacity-20"
       text="10rem stroke-champagne stroke-1 left  transparent">
@@ -59,7 +59,7 @@
         :alt="image.alt"
         class="xl:max-w-sm mx-auto max-h-sm lg:max-h-xs xl:max-h-sm lg:mt-0 mt-5 max-w-[80%]" />
     </div>
-    <div class="flex mb-10 md:mb-0 z-30 gap-x-4">
+    <div class="flex mb-16 md:mb-0 flex-grow z-30 gap-x-4">
       <a
         v-for="link in links"
         :key="link.title"

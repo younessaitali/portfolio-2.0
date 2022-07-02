@@ -59,7 +59,7 @@
       </span>
     </span>
     <span
-      class="text-lg inline md:hidden lg:inline font-medium text-base absolute -top-1 -right-28"
+      class="text-lg inline hidden lg:inline font-medium text-base absolute -top-1 -right-28"
       >{{ isDark ? 'Dark Mode' : 'Light Mode' }}</span
     >
   </button>

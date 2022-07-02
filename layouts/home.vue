@@ -1,10 +1,10 @@
 <template>
   <div class="relative flex-col flex justify-between h-full min-h-screen">
-    <App-header z-36 />
+    <App-header />
     <div
       ref="bio"
       md="ml-28 border-l mr-0 border-champagne "
-      class="z-50 ml-auto mr-auto flex-1 h-full">
+      class="z-24 ml-auto mr-auto flex-1 h-full">
       <main class="h-full container mx-auto overflow-hidden">
         <slot />
       </main>
