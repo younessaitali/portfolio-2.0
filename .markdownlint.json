@@ -1,12 +1,12 @@
 {
-  "default": true,
-  "list-marker-space": false,
-  "MD033": false,
-  "MD013": {
-    "code_block_line_length": 100,
-    "heading_line_length": 40,
-    "line_length": 100
-  },
-  "MD025": false,
-  "no-multiple-blanks": false
+    "default": true,
+    "list-marker-space": false,
+    "MD033": false,
+    "MD013": {
+        "code_block_line_length": 100,
+        "heading_line_length": 40,
+        "line_length": 100
+    },
+    "MD025": false,
+    "no-multiple-blanks": false
 }
