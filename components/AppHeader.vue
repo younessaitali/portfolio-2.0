@@ -32,7 +32,7 @@
 
 <template>
     <header
-        class="items-end border-b z-36 border-champagne md:border-b-0 h-24 flex justify-between items-center">
+        class="items-end border-b z-52 border-champagne md:border-b-0 h-24 flex justify-between items-center">
         <NuxtLink class="w-28" to="/">
             <span class="sr-only">Logo</span>
             <logo class="md:w-14 w-12 my-2 mx-auto" />
@@ -78,7 +78,7 @@
         </nav>
         <fade-transition>
             <div v-if="open" class="absolute inset-0 top-0 h-screen md:hidden">
-                <div class="h-full bg-base">
+                <div class="h-full bg-base flex flex-col">
                     <div class="border-b border-champagne">
                         <div
                             class="flex px-8 items-center py-3 justify-between">
@@ -99,38 +99,40 @@
                             </div>
                         </div>
                     </div>
-                    <nav
-                        class="flex h-full items-center justify-start gap-y-8 flex-col mt-12">
-                        <NuxtLink
-                            v-for="item in navItems"
-                            :key="item.name"
-                            class="text-xl relative pl-4 text-base uppercase pr-7 group overflow-hidden font-medium"
-                            :to="item.path">
-                            <span
-                                :class="[
-                                    'absolute left-0 text-champagne dark:text-white group-hover:translate-y-0 duration-300',
-                                    {
-                                        'translate-y-0': item.isActive,
-                                        'translate-y-[140%]': !item.isActive
-                                    }
-                                ]"
-                                >&lt;</span
-                            >
-
-                            {{ item.name }}
-                            <span
-                                :class="[
-                                    'absolute text-champagne dark:text-white right-0 group-hover:translate-y-0 duration-300',
-                                    {
-                                        'translate-y-0': item.isActive,
-                                        'translate-y-[140%]': !item.isActive
-                                    }
-                                ]"
-                                >/&gt;</span
-                            >
-                        </NuxtLink>
-                        <dark-mode-toggle />
-                    </nav>
+                    <div class="flex flex-col flex-1 justify-between">
+                        <nav
+                            class="flex h-full items-center justify-start gap-y-8 flex-col mt-12">
+                            <NuxtLink
+                                v-for="item in navItems"
+                                :key="item.name"
+                                class="text-xl relative pl-4 text-base uppercase pr-7 group overflow-hidden font-medium"
+                                :to="item.path">
+                                <span
+                                    :class="[
+                                        'absolute left-0 text-champagne dark:text-white group-hover:translate-y-0 duration-300',
+                                        {
+                                            'translate-y-0': item.isActive,
+                                            'translate-y-[140%]': !item.isActive
+                                        }
+                                    ]"
+                                    >&lt;</span
+                                >
+                                {{ item.name }}
+                                <span
+                                    :class="[
+                                        'absolute text-champagne dark:text-white right-0 group-hover:translate-y-0 duration-300',
+                                        {
+                                            'translate-y-0': item.isActive,
+                                            'translate-y-[140%]': !item.isActive
+                                        }
+                                    ]"
+                                    >/&gt;</span
+                                >
+                            </NuxtLink>
+                            <dark-mode-toggle />
+                        </nav>
+                        <social-media-bar />
+                    </div>
                 </div>
             </div>
         </fade-transition>

@@ -28,7 +28,7 @@ export default defineConfig({
             darkBlue: '#1C2C3F',
             blue: '#015270',
             blueGray: '#C8C9CA',
-            blueGrayDark: '#9F9F9F',
+            blueGrayDark: '#1C2C3FD9',
             champagne: '#A6956E'
         }
     },

@@ -68,7 +68,7 @@
                 :href="link.url"
                 target="_blank"
                 md="px-10 py-3 text-xl"
-                class="inline-block bg-transparent text-base border border-champagne rounded-full py-1.5 px-5 text-md font-medium hover:bg-blue"
+                class="inline-block bg-transparent text-base border border-champagne rounded-full py-1.5 px-5 text-md font-medium dark:hover:bg-blue/20 hover:bg-champagne/20"
                 >{{ link.title }}</a
             >
         </div>

@@ -67,7 +67,7 @@ export const useNavigation = (options: useNavigationOptions = {}) => {
                 if (direction.value === SwipeDirection.RIGHT) next();
                 if (direction.value === SwipeDirection.LEFT) prev();
             },
-            threshold: 200
+            threshold: 50
         });
     }
 };

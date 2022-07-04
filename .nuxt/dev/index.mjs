@@ -3679,7 +3679,7 @@ const contact_post = defineEventHandler(async (event) => {
     };
   }
   const { name, email, message } = result.data;
-  const res = await fetch("https://api.sendinblue.com/v3/smtp/email", {
+  await fetch("https://api.sendinblue.com/v3/smtp/email", {
     body: JSON.stringify({
       sender: { email: "younes.aitali95@gmail.com" },
       to: [
@@ -3706,7 +3706,7 @@ const contact_post = defineEventHandler(async (event) => {
     },
     method: "POST"
   });
-  return { success: true, data: res };
+  return { success: true, data: result.data };
 });
 
 const contact_post$1 = /*#__PURE__*/Object.freeze({

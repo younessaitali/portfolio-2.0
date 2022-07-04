@@ -33,7 +33,7 @@
                 href="https://drive.google.com/file/d/1CLLjqPX1QJIQvaI1tosUTpjy8w1m9nHN/view?usp=sharing"
                 target="_blank"
                 md="py-3 px-10 text-lg"
-                class="inline-block md:mt-16 my-10 hover:bg-blue/20 text-base bg-transparent border border-champagne rounded-full py-1.5 px-5 text-md font-medium"
+                class="inline-block md:mt-16 my-10 dark:hover:bg-blue/20 hover:bg-champagne/20 text-base bg-transparent border border-champagne rounded-full py-1.5 px-5 text-md font-medium"
                 >View resume</a
             >
         </div>

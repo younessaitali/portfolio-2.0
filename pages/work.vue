@@ -201,7 +201,7 @@
         <template #root>
             <div
                 lg="-right-(10.75rem)  inset-y-0 my-auto w-96 h-10 rotate-270"
-                class="fixed bottom-0 w-screen rotate-0 px-0.5 py-2 bg-champagne/42 z-36 flex items-center justify-between">
+                class="fixed bottom-0 w-screen rotate-0 px-0.5 py-2 dark:bg-champagne/50 bg-darkBlue/50 z-36 flex items-center justify-between">
                 <button @click="nextProject" text="white 3xl">
                     <div class="i-carbon:chevron-down"></div>
                 </button>

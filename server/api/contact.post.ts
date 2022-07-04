@@ -51,5 +51,5 @@ export default defineEventHandler(async (event) => {
         method: 'POST'
     });
 
-    return { success: true, data: res };
+    return { success: true, data: result.data };
 });
