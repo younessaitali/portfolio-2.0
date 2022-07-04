@@ -7,6 +7,7 @@
         aria-label="Tabs"
         xl="-right-16  "
         lg="w-80 -right-28 bottom-1/2 inset-x-auto rotate-90"
+        md="inset-x-auto left-28 right-0  bottom-28  "
         class="px-10 w-58 fixed z-50 inset-x-0 mx-auto bottom-5">
         <ul class="items-center grid gap-x-6 grid-cols-5">
             <li

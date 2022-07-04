@@ -25,7 +25,7 @@
 
 <template>
     <div
-        class="flex md:flex-row flex-col justify-center text-base items-center gap-y-5 md:gap-x-5 md:mr-28">
+        class="flex md:flex-row flex-col justify-center text-base items-center gap-y-5 md:gap-x-5 lg:mr-28 md:mr-12">
         <nuxt-link font-medium text-lg to="/contact">Get in touch</nuxt-link>
 
         <span class="w-16 h-0.5 dark:bg-champagne bg-darkBlue" />

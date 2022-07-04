@@ -2,8 +2,8 @@
 
 <template>
     <footer
-        class="lg:flex hidden border-t z-36 border-champagne h-20 justify-between">
-        <div class="ml-28 flex items-center">
+        class="md:flex hidden border-t z-36 border-champagne h-20 lg:justify-between md:justify-center">
+        <div class="lg:ml-28 md:ml-24 hidden lg:flex items-center">
             <dark-mode-toggle />
         </div>
         <social-media-bar />

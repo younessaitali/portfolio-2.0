@@ -15,7 +15,7 @@
                 <p
                     font="medium"
                     class="mx-a px-2 xl:max-w-3xl lg:max-w-2xl"
-                    text="champagne center lg:xl  md">
+                    text="champagne center lg:xl  ">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Donec euismod, nisi eu consectetur consectetur,Lorem ipsum
                     dolor sit amet, consectetur adipiscing elit. Donec euismod,

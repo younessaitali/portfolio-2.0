@@ -34,7 +34,7 @@
                 :is="isTextarea ? 'textarea' : 'input'"
                 v-bind="$attrs"
                 @input="updateModelValue"
-                class="block w-full py-6 text-base dark:bg-dark-blue placeholder-white/50 h-10 transition duration-150 ease-in-out border-b-3 border-champagne outline-none sm:text-lg sm:leading-5" />
+                class="block w-full py-6 text-base dark:bg-dark-blue dark:placeholder-white/50 placeholder-black/50 h-10 transition duration-150 ease-in-out border-b-3 border-champagne outline-none sm:text-lg sm:leading-5" />
             <div
                 class="absolute inset-y-0 right-0 flex items-center pr-3"
                 v-if="errors && isDirty">

@@ -98,7 +98,7 @@
                     >Get In Touch</span
                 >
                 <h2 class="font-medium text-6xl">Get In Touch</h2>
-                <p class="text-canvas mt-5 text-lg max-w-sm font-light">
+                <p class="text-canvas mt-5 text-lg max-w-sm font-normal">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                     ut quam morbi etiam justo. Consequat, suspendisse tellus et
                     at blandit. Mi malesuada elementum sagittis, posuere nam.
@@ -109,7 +109,7 @@
         <button
             type="submit"
             @click.prevent="onSubmit"
-            class="mt-24 mx-a mb-10 md:mb-0 text-2xl flex items-center justify-center gap-x-3 px-12 py-2.5 rounded-full text-base border border-champagne"
+            class="mt-24 mx-a mb-10 md:mb-0 text-2xl flex items-center dark:hover:bg-blue/20 hover:bg-champagne/20 justify-center gap-x-3 px-12 py-2.5 rounded-full text-base border border-champagne"
             form="contact-form">
             {{ buttonMessage }}
             <icons-send-icon v-if="status === 'idle'" />
