@@ -33,9 +33,12 @@
             <a
                 v-for="link in socialMedia"
                 :key="link.title"
+                rel="noopener"
                 :href="link.path"
                 target="_blank"
-                :class="['inline-block text-2xl', link.icon]" />
+                :class="['inline-block text-2xl', link.icon]">
+                <span class="sr-only">{{ link.title }}</span>
+            </a>
         </div>
     </div>
 </template>

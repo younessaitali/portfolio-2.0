@@ -9,6 +9,7 @@ export default defineNuxtConfig({
         '@nuxtjs/color-mode',
         '@nuxt/content'
     ],
+
     runtimeConfig: {
         sendinblueAPi: ''
     },
@@ -26,7 +27,7 @@ export default defineNuxtConfig({
     },
     colorMode: {
         classSuffix: '',
-        fallback: 'dark'
+        preference: 'dark'
     },
 
     content: {

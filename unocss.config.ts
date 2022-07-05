@@ -29,7 +29,8 @@ export default defineConfig({
             blue: '#015270',
             blueGray: '#C8C9CA',
             blueGrayDark: '#1C2C3FD9',
-            champagne: '#A6956E'
+            champagne: '#A6956E',
+            darkChampagne: '#87805E'
         }
     },
     presets: [

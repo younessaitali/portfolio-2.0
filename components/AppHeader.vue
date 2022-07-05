@@ -38,6 +38,7 @@
             <logo class="md:w-14 w-12 my-2 mx-auto" />
         </NuxtLink>
         <nav
+            title="main nav"
             md="border-b border-l"
             class="text-base flex-1 flex items-center justify-end h-full border-champagne">
             <div
@@ -72,12 +73,15 @@
                 </NuxtLink>
                 <DarkModeToggle class="hidden lg:hidden md:inline-flex" />
             </div>
-            <button class="md:hidden mr-4" @click="open = true">
+            <button type="button" class="md:hidden mr-4" @click="open = true">
                 <icons-menu-icon class="h-6 w-6" />
+                <span class="sr-only">open menu</span>
             </button>
         </nav>
         <fade-transition>
-            <div v-if="open" class="absolute inset-0 top-0 h-screen md:hidden">
+            <div
+                v-if="open"
+                class="fixed overflow-y-auto inset-0 top-0 h-screen md:hidden">
                 <div class="h-full bg-base flex flex-col">
                     <div class="border-b border-champagne">
                         <div
