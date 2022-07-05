@@ -21,7 +21,7 @@ declare module 'vue' {
     'FormsTextInput': typeof import("../components/forms/TextInput.vue")['default'],
     'IconsMenuIcon': typeof import("../components/icons/MenuIcon.vue")['default'],
     'IconsSendIcon': typeof import("../components/icons/SendIcon.vue")['default'],
-    'UnoIcon': typeof import("../node_modules/.pnpm/@unocss+nuxt@0.43.0/node_modules/@unocss/nuxt/runtime/UnoIcon.vue")['default'],
+    'UnoIcon': typeof import("../node_modules/.pnpm/@unocss+nuxt@0.43.1/node_modules/@unocss/nuxt/runtime/UnoIcon.vue")['default'],
     'ContentDoc': typeof import("../node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.mjs")['default'],
     'ContentList': typeof import("../node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/components/ContentList.mjs")['default'],
     'ContentNavigation': typeof import("../node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/components/ContentNavigation.mjs")['default'],
@@ -80,7 +80,7 @@ declare module 'vue' {
     'LazyFormsTextInput': typeof import("../components/forms/TextInput.vue")['default'],
     'LazyIconsMenuIcon': typeof import("../components/icons/MenuIcon.vue")['default'],
     'LazyIconsSendIcon': typeof import("../components/icons/SendIcon.vue")['default'],
-    'LazyUnoIcon': typeof import("../node_modules/.pnpm/@unocss+nuxt@0.43.0/node_modules/@unocss/nuxt/runtime/UnoIcon.vue")['default'],
+    'LazyUnoIcon': typeof import("../node_modules/.pnpm/@unocss+nuxt@0.43.1/node_modules/@unocss/nuxt/runtime/UnoIcon.vue")['default'],
     'LazyContentDoc': typeof import("../node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.mjs")['default'],
     'LazyContentList': typeof import("../node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/components/ContentList.mjs")['default'],
     'LazyContentNavigation': typeof import("../node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/components/ContentNavigation.mjs")['default'],
@@ -141,7 +141,7 @@ export const Project: typeof import("../components/project.vue")['default']
 export const FormsTextInput: typeof import("../components/forms/TextInput.vue")['default']
 export const IconsMenuIcon: typeof import("../components/icons/MenuIcon.vue")['default']
 export const IconsSendIcon: typeof import("../components/icons/SendIcon.vue")['default']
-export const UnoIcon: typeof import("../node_modules/.pnpm/@unocss+nuxt@0.43.0/node_modules/@unocss/nuxt/runtime/UnoIcon.vue")['default']
+export const UnoIcon: typeof import("../node_modules/.pnpm/@unocss+nuxt@0.43.1/node_modules/@unocss/nuxt/runtime/UnoIcon.vue")['default']
 export const ContentDoc: typeof import("../node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.mjs")['default']
 export const ContentList: typeof import("../node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/components/ContentList.mjs")['default']
 export const ContentNavigation: typeof import("../node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/components/ContentNavigation.mjs")['default']
@@ -200,7 +200,7 @@ export const LazyProject: typeof import("../components/project.vue")['default']
 export const LazyFormsTextInput: typeof import("../components/forms/TextInput.vue")['default']
 export const LazyIconsMenuIcon: typeof import("../components/icons/MenuIcon.vue")['default']
 export const LazyIconsSendIcon: typeof import("../components/icons/SendIcon.vue")['default']
-export const LazyUnoIcon: typeof import("../node_modules/.pnpm/@unocss+nuxt@0.43.0/node_modules/@unocss/nuxt/runtime/UnoIcon.vue")['default']
+export const LazyUnoIcon: typeof import("../node_modules/.pnpm/@unocss+nuxt@0.43.1/node_modules/@unocss/nuxt/runtime/UnoIcon.vue")['default']
 export const LazyContentDoc: typeof import("../node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/components/ContentDoc.mjs")['default']
 export const LazyContentList: typeof import("../node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/components/ContentList.mjs")['default']
 export const LazyContentNavigation: typeof import("../node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/components/ContentNavigation.mjs")['default']

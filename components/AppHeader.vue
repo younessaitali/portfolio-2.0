@@ -38,7 +38,8 @@
             <logo class="md:w-14 w-12 my-2 mx-auto" />
         </NuxtLink>
         <nav
-            title="main nav"
+            id="main-navigation"
+            title="main-navigation"
             md="border-b border-l"
             class="text-base flex-1 flex items-center justify-end h-full border-champagne">
             <div

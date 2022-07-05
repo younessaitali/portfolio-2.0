@@ -202,14 +202,16 @@
             <div
                 lg="-right-(10.75rem)  inset-y-0 my-auto w-96 h-10 rotate-270"
                 class="fixed bottom-0 w-screen rotate-0 px-0.5 py-2 dark:bg-champagne/50 bg-darkBlue/50 z-36 flex items-center justify-between">
-                <button @click="nextProject" text="white 3xl">
-                    <div class="i-carbon:chevron-down"></div>
+                <button type="button" @click="nextProject" text="white 3xl">
+                    <span class="inline-block i-carbon:chevron-down"></span>
+                    <span class="sr-only">next project</span>
                 </button>
-                <h3 text="xl md:2xl white ">
+                <span text="xl md:2xl white">
                     {{ activeProject.project.name }}
-                </h3>
-                <button @click="prevProject" text="white 3xl">
-                    <div class="i-carbon:chevron-up"></div>
+                </span>
+                <button type="button" @click="prevProject" text="white 3xl">
+                    <span class="inline-block i-carbon:chevron-up"></span>
+                    <span class="sr-only">previous project</span>
                 </button>
             </div>
         </template>
@@ -217,7 +219,10 @@
         <section
             md="px-0 py-5"
             class="flex flex-1 h-full lg:items-center items-start justify-center px-2 gap-x-3">
-            <nav class="hidden lg:block">
+            <nav
+                aria-labelledby="project-navigation"
+                id="project-navigation"
+                class="hidden lg:block">
                 <ul class="flex flex-col gap-y-2">
                     <li
                         v-for="(project, index) in projects"
@@ -244,7 +249,7 @@
                             >{{ index + 1 }}</span
                         >
 
-                        <h3>project</h3>
+                        project
                     </li>
                 </ul>
             </nav>

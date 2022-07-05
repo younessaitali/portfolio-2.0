@@ -59,18 +59,17 @@ const contact_post = defineEventHandler(async (event) => {
     };
   }
   const { name, email, message } = result.data;
-  try {
-    const res = await fetch("https://api.sendinblue.com/v3/smtp/email", {
-      body: JSON.stringify({
-        sender: { email: "younes.aitali95@gmail.com" },
-        to: [
-          {
-            email: "younes.aitali95@gmail.com",
-            name: "Youness Aitali "
-          }
-        ],
-        subject: "Contact Form younessaitali.com",
-        htmlContent: `<html>
+  await fetch("https://api.sendinblue.com/v3/smtp/email", {
+    body: JSON.stringify({
+      sender: { email: "younes.aitali95@gmail.com" },
+      to: [
+        {
+          email: "younes.aitali95@gmail.com",
+          name: "Youness Aitali "
+        }
+      ],
+      subject: "Contact Form younessaitali.com",
+      htmlContent: `<html>
 										<body>
 										Name: ${name}
 										<br>
@@ -79,17 +78,14 @@ const contact_post = defineEventHandler(async (event) => {
 											<p>${message}</p>
 										</body>
 									</html>`
-      }),
-      headers: {
-        Accept: "application/json",
-        "Api-Key": `${useRuntimeConfig().sendinblueAPi}`,
-        "Content-Type": "application/json"
-      },
-      method: "POST"
-    });
-  } catch (error) {
-    return { success: false, errors: [error] };
-  }
+    }),
+    headers: {
+      Accept: "application/json",
+      "Api-Key": `${useRuntimeConfig().sendinblueAPi}`,
+      "Content-Type": "application/json"
+    },
+    method: "POST"
+  });
   return { success: true, data: result.data };
 });
 

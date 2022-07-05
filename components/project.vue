@@ -22,19 +22,19 @@
     <div
         lg="max-w-[75%]   mb-0"
         class="flex-1 flex mb-24 relative flex-col items-center justify-center gap-y-8 mx-auto">
-        <h1
+        <span
             class="absolute w-full h-full -top-16 uppercase break-words -left-4 leading-46 max-w-5xl hidden lg:block opacity-20"
             text="10rem stroke-champagne stroke-1 left  transparent">
             {{ name }}
-        </h1>
+        </span>
 
         <div
             xl="flex-row"
             class="flex z-10 flex-col w-11/12 lg:mt=0 mt-6 justify-center items-center gap-y-8 gap-x-8">
             <div lg="px-6" class="max-w-xl self-start">
-                <h3 text="dark:white 3xl md:5xl xl:7xl" max-w- mb-5 font="bold">
+                <h1 text="dark:white 3xl md:5xl xl:7xl" max-w- mb-5 font="bold">
                     {{ name }}
-                </h3>
+                </h1>
                 <p text="md:lg   canvas left justify">
                     {{ description }}
                 </p>
@@ -64,6 +64,8 @@
         <div class="flex mb-16 md:mb-0 flex-grow z-30 gap-x-4">
             <a
                 v-for="link in links"
+                Missing
+                rel="noopener"
                 :key="link.title"
                 :href="link.url"
                 target="_blank"
