@@ -2,6 +2,7 @@ import { acceptHMRUpdate, defineStore } from 'pinia';
 import { gsap, Power2 } from 'gsap';
 import { MaybeRef } from '@vueuse/shared';
 import { breakpointsTailwind } from '@vueuse/core';
+import { TransitionProps } from 'vue';
 
 export const useBioTransition = defineStore('bio', () => {
     const route = useRoute();
@@ -95,8 +96,7 @@ export const useBioTransition = defineStore('bio', () => {
         const index =
             (activeLinkIndex.value + 1 + bioLinks.length) % bioLinks.length;
         const link = bioLinks[index];
-
-        router.push({ path: link.path });
+        navigateTo({ path: link.path });
     }, 500);
 
     const prev = useThrottleFn(() => {
@@ -108,7 +108,7 @@ export const useBioTransition = defineStore('bio', () => {
         const index =
             (activeLinkIndex.value - 1 + bioLinks.length) % bioLinks.length;
         const link = bioLinks[index];
-        router.push({ path: link.path });
+        navigateTo({ path: link.path });
     }, 500);
 
     /**
@@ -205,7 +205,12 @@ function disableNavigation(el: Element) {
     return resetNavigation(el);
 }
 
-export const pageTransition = {
+export const pageTransition: TransitionProps = {
+    css: false,
+    duration: {
+        enter: 1.4,
+        leave: 0.9
+    },
     onLeave(el: Element, done: () => void) {
         const resetNavigation = disableNavigation(el);
         const mainElement = el.querySelector('main');
