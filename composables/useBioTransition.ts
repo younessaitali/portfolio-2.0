@@ -84,6 +84,33 @@ export const useBioTransition = defineStore('bio', () => {
         );
     };
 
+    // i did use throttle here to prevent triggering route change multiple times when scrolling fast or using  laptop touchPad(trigger multiple scroll event when scrolling)
+
+    const next = useThrottleFn(() => {
+        enterTransition.value = mdAndSmaller ? 'right' : 'up';
+        leaveTransition.value = mdAndSmaller ? 'left' : 'down';
+
+        uuid.value = randomUid();
+
+        const index =
+            (activeLinkIndex.value + 1 + bioLinks.length) % bioLinks.length;
+        const link = bioLinks[index];
+
+        router.push({ path: link.path });
+    }, 500);
+
+    const prev = useThrottleFn(() => {
+        enterTransition.value = mdAndSmaller ? 'left' : 'down';
+        leaveTransition.value = mdAndSmaller ? 'right' : 'up';
+
+        uuid.value = randomUid();
+
+        const index =
+            (activeLinkIndex.value - 1 + bioLinks.length) % bioLinks.length;
+        const link = bioLinks[index];
+        router.push({ path: link.path });
+    }, 500);
+
     /**
      *
      * function to set init ref element to start detecting scroll and keystroke  events
@@ -96,31 +123,8 @@ export const useBioTransition = defineStore('bio', () => {
     ) => {
         useNavigation({
             element: el,
-            next: () => {
-                enterTransition.value = mdAndSmaller ? 'right' : 'up';
-                leaveTransition.value = mdAndSmaller ? 'left' : 'down';
-
-                uuid.value = randomUid();
-
-                const index =
-                    (activeLinkIndex.value + 1 + bioLinks.length) %
-                    bioLinks.length;
-                const link = bioLinks[index];
-
-                router.push({ path: link.path });
-            },
-            prev: () => {
-                enterTransition.value = mdAndSmaller ? 'left' : 'down';
-                leaveTransition.value = mdAndSmaller ? 'right' : 'up';
-
-                uuid.value = randomUid();
-
-                const index =
-                    (activeLinkIndex.value - 1 + bioLinks.length) %
-                    bioLinks.length;
-                const link = bioLinks[index];
-                router.push({ path: link.path });
-            }
+            next,
+            prev
         });
     };
 
@@ -151,17 +155,69 @@ export const useBioTransition = defineStore('bio', () => {
 if (import.meta.hot)
     import.meta.hot.accept(acceptHMRUpdate(useBioTransition, import.meta.hot));
 
+function disableNavigation(el: Element) {
+    const scene = el.querySelector('#scene');
+    scene?.classList.add('overflow-y-hidden', 'overflow-x-hidden');
+
+    const disableScroll = (e: Event) => {
+        e.preventDefault();
+        return false;
+    };
+
+    const disableKeyBoardScroll = (e: Event) => {
+        const keys = [
+            'ArrowUp',
+            'ArrowDown',
+            'ArrowLeft',
+            'ArrowRight',
+            'End',
+            'PageDown',
+            'PageUp',
+            'Home',
+            ' '
+        ];
+
+        console.log('e');
+
+        if (keys.includes((e as KeyboardEvent).key)) {
+            e.preventDefault();
+            return false;
+        }
+    };
+
+    el.addEventListener('wheel', disableScroll, { passive: false });
+
+    el.addEventListener('touchmove', disableScroll, { passive: false });
+
+    document.addEventListener('keydown', disableKeyBoardScroll, {
+        passive: false
+    });
+
+    const resetNavigation = (el: Element) => {
+        return () => {
+            scene?.classList.remove('overflow-y-hidden', 'overflow-x-hidden');
+            el.removeEventListener('wheel', disableScroll);
+            el.removeEventListener('touchmove', disableScroll);
+            document.removeEventListener('keydown', disableKeyBoardScroll);
+        };
+    };
+
+    return resetNavigation(el);
+}
+
 export const pageTransition = {
     onLeave(el: Element, done: () => void) {
+        const resetNavigation = disableNavigation(el);
+        const mainElement = el.querySelector('main');
+
         const { leaveTransition, animateLeaveOnRouteChange, mdAndSmaller } =
             useBioTransition();
 
+        // to change animation direction depending on screen size
         const transitionAxis = mdAndSmaller ? 'xPercent' : 'yPercent';
 
         const percent =
-            leaveTransition === 'down' || leaveTransition === 'left'
-                ? 100
-                : -100;
+            leaveTransition === 'down' || leaveTransition === 'left' ? 80 : -80;
 
         const animation = animateLeaveOnRouteChange
             ? {
@@ -169,20 +225,29 @@ export const pageTransition = {
                   [transitionAxis]: percent,
                   opacity: 0,
                   ease: Power2.easeInOut,
-                  onComplete: done
+                  onComplete: () => {
+                      resetNavigation();
+                      done();
+                  }
               }
             : {
                   duration: 0.7,
                   opacity: 0,
                   ease: Power2.easeOut,
-                  onComplete: done
+                  onComplete: () => {
+                      resetNavigation();
+                      done();
+                  }
               };
 
-        gsap.to(el.querySelector('main'), {
-            ...animation
+        gsap.to(mainElement, {
+            ...animation,
+            delay: 0.1
         });
     },
     onEnter(el: Element, done: () => void) {
+        const resetNavigation = disableNavigation(el);
+        const mainElement = el.querySelector('main');
         const { enterTransition, animateEnterOnRouteChange, mdAndSmaller } =
             useBioTransition();
 
@@ -208,16 +273,20 @@ export const pageTransition = {
                       },
                       '100%': {
                           [transitionAxis]: 0,
-                          opacity: 1,
-                          onComplete: done
+                          opacity: 1
                       },
-                      ease: Power2.easeInOut
+                      ease: Power2.easeOut
                   },
-                  duration: 1.3
+                  onComplete: () => {
+                      resetNavigation();
+                      done();
+                  },
+                  duration: 1,
+                  delay: 0.3
               }
             : {};
 
-        gsap.to(el.querySelector('main'), {
+        gsap.to(mainElement, {
             ...animation
         });
     }

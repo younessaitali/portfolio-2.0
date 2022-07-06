@@ -20,15 +20,15 @@ export default defineConfig({
             'bg-base': 'bg-white dark:bg-darkBlue',
             'bg-canvas': 'bg-gray:15 dark:bg-[#111]',
             'text-base': 'text-darkBlue dark:text-champagne',
-            'text-canvas': 'text-blueGrayDark dark:text-blueGray'
+            'text-canvas': 'text-darkBlue dark:text-blueGray'
         }
     ],
     theme: {
         colors: {
-            darkBlue: '#1C2C3F',
+            darkBlue: '#151d2b',
             blue: '#015270',
             blueGray: '#C8C9CA',
-            blueGrayDark: '#1C2C3FD9',
+
             champagne: '#A6956E',
             darkChampagne: '#87805E'
         }
@@ -52,7 +52,7 @@ export default defineConfig({
     ],
     transformers: [transformerDirectives(), transformerVariantGroup()],
     safelist:
-        'prose prose-sm m-auto text-left underline-enter underline-out after:translate-x-0'.split(
+        'prose prose-sm m-auto text-left underline-enter underline-out after:translate-x-0 overflow-y-hidden  overflow-x-hidden overflow-hidden'.split(
             ' '
         )
 });

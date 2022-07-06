@@ -14,11 +14,11 @@ export interface useNavigationOptions {
     /**
      *  trigger when scrolling down | arrow down |arrow right |  swipe right
      */
-    next?: () => void;
+    next?: (e?: Event) => void;
     /**
      *  trigger when scrolling up | arrow up |arrow left |  swipe left
      */
-    prev?: () => void;
+    prev?: (e?: Event) => void;
 
     /**
      * key navigation delay
@@ -57,15 +57,15 @@ export const useNavigation = (options: useNavigationOptions = {}) => {
 
     if (element) {
         useWheel(element, {
-            onScroll: ({ bottom, top }) => {
-                if (bottom) next();
-                if (top) prev();
+            onScroll: ({ directions: { bottom, top }, e }) => {
+                if (bottom) next(e);
+                if (top) prev(e);
             }
         });
-        const { direction } = useSwipe(element, {
-            onSwipeEnd() {
-                if (direction.value === SwipeDirection.RIGHT) next();
-                if (direction.value === SwipeDirection.LEFT) prev();
+        useSwipe(element, {
+            onSwipeEnd(e, direction) {
+                if (direction === SwipeDirection.RIGHT) next(e);
+                if (direction === SwipeDirection.LEFT) prev(e);
             },
             threshold: 50
         });

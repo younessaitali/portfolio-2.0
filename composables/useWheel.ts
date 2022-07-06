@@ -4,6 +4,11 @@ interface Directions {
     top: boolean;
     bottom: boolean;
 }
+
+interface onScrollParam {
+    directions: Directions;
+    e: WheelEvent;
+}
 export interface UseScrollOptions {
     /**
      * Throttle time for scroll event, it’s disabled by default.
@@ -16,7 +21,7 @@ export interface UseScrollOptions {
      * Trigger it when scrolling.
      *
      */
-    onScroll?: (directions: Directions) => void;
+    onScroll?: (param: onScrollParam) => void;
 
     /**
      * Listener options for scroll event.
@@ -38,7 +43,7 @@ export function useWheel(
 
         eventListenerOptions = {
             capture: false,
-            passive: true
+            passive: false
         }
     } = options;
 
@@ -63,7 +68,8 @@ export function useWheel(
 
             isScrolling.value = true;
             onScrollEnd();
-            onScroll(directions);
+
+            onScroll({ directions, e });
         };
 
         useEventListener(

@@ -2,10 +2,11 @@
     <div class="relative flex-col flex justify-between h-full min-h-screen">
         <App-header />
         <div
+            id="scene"
             ref="bio"
-            md="ml-28 border-l mr-0 border-champagne "
+            md="ml-28  border-l mr-0 border-champagne"
             class="z-24 ml-auto mr-auto flex-1 h-full">
-            <main class="h-full container mx-auto overflow-hidden">
+            <main class="h-full container mx-auto">
                 <slot />
             </main>
         </div>
@@ -24,5 +25,6 @@
 <script setup lang="ts">
     const bio = ref<HTMLElement | null>(null);
     const transition = useBioTransition();
+
     transition.setNavigationElement(bio);
 </script>
