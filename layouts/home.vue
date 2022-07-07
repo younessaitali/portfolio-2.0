@@ -5,8 +5,8 @@
             id="scene"
             ref="bio"
             md="ml-28  border-l mr-0 border-champagne"
-            class="z-24 ml-auto mr-auto flex-1 h-full">
-            <main class="h-full container mx-auto">
+            class="z-24 flex ml-auto mr-auto flex-1">
+            <main class="container mx-auto md:h-full md:my-0 my-12">
                 <slot />
             </main>
         </div>

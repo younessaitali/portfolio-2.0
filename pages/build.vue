@@ -9,7 +9,7 @@
 
 <template>
     <nuxt-layout>
-        <div class="flex items-center h-full flex-col justify-center">
+        <div class="flex items-center my-a min-h-full flex-col justify-center">
             <div class="max-h-3xl flex-1 flex flex-col justify-evenly gap-y-3">
                 <head-line title="Like to build things" />
                 <BuildAnimation class="max-h-56" :key="uuid" />

@@ -31,7 +31,7 @@
         <div
             xl="flex-row"
             class="flex z-10 flex-col w-11/12 lg:mt=0 mt-6 justify-center items-center gap-y-8 gap-x-8">
-            <div lg="px-6" class="max-w-xl self-start">
+            <div lg="px-6" class="max-w-xl mx-auto self-start">
                 <h1 text="dark:white 3xl md:5xl xl:7xl" max-w- mb-5 font="bold">
                     {{ name }}
                 </h1>

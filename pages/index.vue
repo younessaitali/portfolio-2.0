@@ -8,10 +8,10 @@
 <template>
     <nuxt-layout>
         <div
-            class="h-full mx-auto flex flex-col justify-center items-center text-center">
+            class="mx-auto my-auto min-h-full flex flex-col justify-center items-center text-center">
             <h1
                 class="dark:text-white lg:text-8xl text-7xl capitalize font-light">
-                hi Am
+                hi I'm
                 <span
                     class="text-transparent font-semibold text-stroke-champagne text-stroke-2"
                     >Youness</span

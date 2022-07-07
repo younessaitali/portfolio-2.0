@@ -2,14 +2,13 @@
     const { uuid } = useBioTransition();
     definePageMeta({
         layout: 'home',
-
         pageTransition
     });
 </script>
 
 <template>
     <nuxt-layout>
-        <div class="flex flex-col h-full items-center justify-center">
+        <div class="flex flex-col min-h-full items-center justify-center">
             <div class="flex flex-1 flex-col max-h-3xl justify-evenly">
                 <head-line title="love to have fun" />
                 <FunAnimation

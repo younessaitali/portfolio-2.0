@@ -6,7 +6,6 @@ import { TransitionProps } from 'vue';
 
 export const useBioTransition = defineStore('bio', () => {
     const route = useRoute();
-    const router = useRouter();
 
     type TransitionType = 'up' | 'down' | 'left' | 'right';
 
@@ -15,6 +14,13 @@ export const useBioTransition = defineStore('bio', () => {
      */
     const enterTransition = ref<TransitionType>('up');
     const leaveTransition = ref<TransitionType>('down');
+
+    const setEnterTransition = (transition: TransitionType) => {
+        enterTransition.value = transition;
+    };
+    const setLeaveTransition = (transition: TransitionType) => {
+        leaveTransition.value = transition;
+    };
 
     /**
      * variables to  determine if to trigger animation or not when route changes
@@ -49,6 +55,11 @@ export const useBioTransition = defineStore('bio', () => {
             isActive: false
         },
         {
+            label: 'support',
+            path: '/support',
+            isActive: false
+        },
+        {
             label: 'fun',
             path: '/fun',
             isActive: false
@@ -56,11 +67,6 @@ export const useBioTransition = defineStore('bio', () => {
         {
             label: 'balance',
             path: '/balance',
-            isActive: false
-        },
-        {
-            label: 'support',
-            path: '/support',
             isActive: false
         }
     ]);
@@ -88,11 +94,7 @@ export const useBioTransition = defineStore('bio', () => {
     // i did use throttle here to prevent triggering route change multiple times when scrolling fast or using  laptop touchPad(trigger multiple scroll event when scrolling)
 
     const next = useThrottleFn(() => {
-        enterTransition.value = mdAndSmaller ? 'right' : 'up';
-        leaveTransition.value = mdAndSmaller ? 'left' : 'down';
-
         uuid.value = randomUid();
-
         const index =
             (activeLinkIndex.value + 1 + bioLinks.length) % bioLinks.length;
         const link = bioLinks[index];
@@ -100,11 +102,7 @@ export const useBioTransition = defineStore('bio', () => {
     }, 500);
 
     const prev = useThrottleFn(() => {
-        enterTransition.value = mdAndSmaller ? 'left' : 'down';
-        leaveTransition.value = mdAndSmaller ? 'right' : 'up';
-
         uuid.value = randomUid();
-
         const index =
             (activeLinkIndex.value - 1 + bioLinks.length) % bioLinks.length;
         const link = bioLinks[index];
@@ -146,6 +144,8 @@ export const useBioTransition = defineStore('bio', () => {
         setNavigationElement,
         setAnimaLeaveOnRouteChange,
         setAnimateEnterOnRouteChange,
+        setEnterTransition,
+        setLeaveTransition,
         animateEnterOnRouteChange: readonly(animateEnterOnRouteChange),
         animateLeaveOnRouteChange: readonly(animateLeaveOnRouteChange),
         mdAndSmaller: readonly(mdAndSmaller)
@@ -177,8 +177,6 @@ function disableNavigation(el: Element) {
             ' '
         ];
 
-        console.log('e');
-
         if (keys.includes((e as KeyboardEvent).key)) {
             e.preventDefault();
             return false;
@@ -209,7 +207,7 @@ export const pageTransition: TransitionProps = {
     css: false,
     duration: {
         enter: 1.4,
-        leave: 0.9
+        leave: 0.7
     },
     onLeave(el: Element, done: () => void) {
         const resetNavigation = disableNavigation(el);
@@ -221,22 +219,28 @@ export const pageTransition: TransitionProps = {
         // to change animation direction depending on screen size
         const transitionAxis = mdAndSmaller ? 'xPercent' : 'yPercent';
 
-        const percent =
-            leaveTransition === 'down' || leaveTransition === 'left' ? 80 : -80;
+        let transitionPercent;
+
+        if (mdAndSmaller) {
+            transitionPercent = leaveTransition === 'left' ? 80 : -80;
+        } else {
+            transitionPercent = leaveTransition === 'up' ? 80 : -80;
+        }
 
         const animation = animateLeaveOnRouteChange
             ? {
                   duration: 0.6,
-                  [transitionAxis]: percent,
+                  [transitionAxis]: transitionPercent,
                   opacity: 0,
                   ease: Power2.easeInOut,
                   onComplete: () => {
                       resetNavigation();
                       done();
-                  }
+                  },
+                  delay: 0.1
               }
             : {
-                  duration: 0.7,
+                  duration: 0.3,
                   opacity: 0,
                   ease: Power2.easeOut,
                   onComplete: () => {
@@ -246,8 +250,7 @@ export const pageTransition: TransitionProps = {
               };
 
         gsap.to(mainElement, {
-            ...animation,
-            delay: 0.1
+            ...animation
         });
     },
     onEnter(el: Element, done: () => void) {
@@ -258,11 +261,16 @@ export const pageTransition: TransitionProps = {
 
         const transitionAxis = mdAndSmaller ? 'xPercent' : 'yPercent';
 
-        const percent =
-            enterTransition === 'up' || enterTransition === 'left' ? 100 : -100;
+        let transitionPercent;
+
+        if (mdAndSmaller) {
+            transitionPercent = enterTransition === 'left' ? -100 : 100;
+        } else {
+            transitionPercent = enterTransition === 'up' ? -100 : 100;
+        }
 
         const translation = {
-            [transitionAxis]: percent
+            [transitionAxis]: transitionPercent
         };
 
         const animation = animateEnterOnRouteChange

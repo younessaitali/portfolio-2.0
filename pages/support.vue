@@ -8,7 +8,7 @@
 
 <template>
     <nuxt-layout>
-        <div class="h-full flex flex-col items-center justify-center">
+        <div class="flex min-h-full flex-col items-center justify-center">
             <head-line title="Like to have fun" />
             <SupportAnimation md="h-80" class="h-48 w-full" :key="uuid" />
             <p

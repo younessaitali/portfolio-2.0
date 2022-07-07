@@ -6,16 +6,22 @@
     onMounted(() => {
         tl.restart();
 
-        gsap.set('#support-rectangle', {
-            transformOrigin: 'bottom center'
+        tl.set('#support-rectangle', {
+            clearProps: 'all'
         });
-
-        gsap.set('#support-square', {
-            transformOrigin: 'bottom center',
-            xPercent: 160
+        tl.set('#support-square', {
+            clearProps: 'all'
         });
 
         setTimeout(() => {
+            tl.set('#support-rectangle', {
+                transformOrigin: 'bottom center'
+            });
+
+            tl.set('#support-square', {
+                transformOrigin: 'bottom center',
+                xPercent: 160
+            });
             tl.to(
                 '#support-square',
                 {
