@@ -17,10 +17,10 @@
                     font="medium"
                     class="mx-a px-2 xl:max-w-3xl lg:max-w-2xl"
                     text="champagne center lg:xl  ">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Donec euismod, nisi eu consectetur consectetur,Lorem ipsum
-                    dolor sit amet, consectetur adipiscing elit. Donec euismod,
-                    nisi eu consectetur consectetur,
+                    Youness is always curious about how things work and loves
+                    learning new things. The best way for him to learn something
+                    is to build it, That way he will gain a deep understanding
+                    of it.
                 </p>
             </div>
         </div>

@@ -9,14 +9,16 @@
 <template>
     <nuxt-layout>
         <div class="flex min-h-full flex-col items-center justify-center">
-            <head-line title="Like to have fun" />
+            <head-line title="Supportive" />
             <SupportAnimation md="h-80" class="h-48 w-full" :key="uuid" />
             <p
                 font="medium"
                 class="mx-a px-2 lg:mt-16 mt-8 xl:max-w-3xl lg:max-w-2xl"
                 text="champagne center lg:xl md">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                euismod, nisi eu consectetur consectetur,
+                In Youness' view, helping and supporting others is one of the
+                key pillars to living a happy life, which contributes to a
+                strong relationship, And he's trying his very best to follow his
+                view.
             </p>
         </div>
     </nuxt-layout>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    const wheel = ref<HTMLElement | null>(null);
+    const wheel = ref<HTMLDivElement | null>(null);
 
     const projects = $ref([
         {

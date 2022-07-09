@@ -96,15 +96,12 @@
                     class="md:flex-1 text-left mx-a isolate relative text-base px-2">
                     <span
                         lg="inline text-9rem"
-                        class="hidden absolute -top-16 z left-12 -z-10 leading-46 outline-champagne-1 opacity-50 dark:opacity-30 text-13rem"
+                        class="hidden absolute -top-28 z left-12 -z-10 leading-46 outline-champagne-1 opacity-50 dark:opacity-30 text-13rem"
                         >Get In Touch</span
                     >
                     <h1 class="font-medium text-6xl">Get In Touch</h1>
                     <p class="text-canvas mt-5 text-lg max-w-sm font-normal">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Sed ut quam morbi etiam justo. Consequat, suspendisse
-                        tellus et at blandit. Mi malesuada elementum sagittis,
-                        posuere nam.
+                        & Let's build something beautiful together.
                     </p>
                 </div>
             </div>
