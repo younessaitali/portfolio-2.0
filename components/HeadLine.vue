@@ -8,7 +8,7 @@
 <template>
     <div class="relative text-center isolate">
         <h4
-            class="xl:text-38 md:text-34 2xl:text-42 md:leading-40 text-8xl text-transparent text-stroke-champagne/50 dark:text-stroke-champagne/10 text-stroke-2">
+            class="xl:text-38 md:text-34 2xl:text-42 md:leading-40 text-8xl outline-champagne-1 opacity-50 dark:opacity-20">
             Youness
         </h4>
         <h1

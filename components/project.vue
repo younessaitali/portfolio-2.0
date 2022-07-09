@@ -23,8 +23,8 @@
         lg="max-w-[75%]   mb-0"
         class="flex-1 flex mb-24 relative flex-col items-center justify-center gap-y-8 mx-auto">
         <span
-            class="absolute w-full h-full -top-16 uppercase break-words -left-4 leading-46 max-w-5xl hidden lg:block opacity-20"
-            text="10rem stroke-champagne stroke-1 left  transparent">
+            class="absolute w-full h-full -top-16 uppercase break-words -left-4 leading-46 max-w-5xl outline-champagne-1 hidden lg:block opacity-20"
+            text="10rem  left">
             {{ name }}
         </span>
 

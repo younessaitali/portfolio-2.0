@@ -92,10 +92,11 @@
                         :is-dirty="meta.touched"
                         :is-textarea="true" />
                 </form>
-                <div class="md:flex-1 text-left mx-a relative text-base px-2">
+                <div
+                    class="md:flex-1 text-left mx-a isolate relative text-base px-2">
                     <span
                         lg="inline text-9rem"
-                        class="text-transparent hidden absolute -top-16 left-12 leading-46 text-stroke-2 text-stroke-champagne/20 text-13rem"
+                        class="hidden absolute -top-16 z left-12 -z-10 leading-46 outline-champagne-1 opacity-50 dark:opacity-30 text-13rem"
                         >Get In Touch</span
                     >
                     <h1 class="font-medium text-6xl">Get In Touch</h1>

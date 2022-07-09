@@ -231,12 +231,12 @@
                         v-underline-animation="{ isActive: project.isActive }"
                         @click="projectSelected(project.name)"
                         font="bold"
-                        text="4xl center stroke-sm stroke-champagne"
+                        text="4xl center "
                         :class="[
-                            'py-5 px-9 z-20 inline-block relative capitalize after:-ml-16 cursor-pointer overflow-hidden group opacity-85',
+                            'py-5 px-9 z-20 inline-block  relative capitalize after:-ml-16 cursor-pointer overflow-hidden group opacity-85',
                             {
-                                'text-transparent': !project.isActive,
-                                'text-champagne': project.isActive
+                                'outline-champagne-0.8': !project.isActive,
+                                '!text-champagne': project.isActive
                             }
                         ]">
                         <span

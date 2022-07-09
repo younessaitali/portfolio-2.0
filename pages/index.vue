@@ -12,12 +12,13 @@
             <h1
                 class="dark:text-white lg:text-8xl text-7xl capitalize font-light">
                 hi I'm
-                <outline-text class="text-9xl"> Youness </outline-text>
+                <span class="font-semibold outline-champagne-1">Youness</span>
             </h1>
             <h2
                 class="md:text-4xl text-3xl text-canvas md:mt-4 mt-2 font-semibold">
                 Full-Stack Developer
             </h2>
+
             <p
                 font="medium"
                 class="mx-a px-2 lg:mt-16 mt-8 xl:max-w-3xl lg:max-w-2xl dark:text-champagne text-darkChampagne lg:text-xl">

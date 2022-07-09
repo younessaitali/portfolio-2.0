@@ -6,7 +6,8 @@ import {
     presetUno,
     transformerDirectives,
     transformerVariantGroup,
-    presetWebFonts
+    presetWebFonts,
+    toEscapedSelector as e
 } from 'unocss';
 
 export default defineConfig({
@@ -33,13 +34,42 @@ export default defineConfig({
             darkChampagne: '#87805E'
         }
     },
+    rules: [
+        [
+            /^outline-(.*)-(.*)$/,
+            ([, color, size], { rawSelector, theme }) => {
+                const selector = e(rawSelector);
+
+                if (theme.colors[color])
+                    return `
+${selector} {
+  text-shadow: ${size}px ${size}px 0 ${theme.colors[color]},
+     	-${size}px -${size}px 0 ${theme.colors[color]},
+      ${size}px -${size}px 0 ${theme.colors[color]},
+      -${size}px ${size}px 0 ${theme.colors[color]},
+       ${size}px ${size}px 0 ${theme.colors[color]};
+}
+
+
+.dark ${selector} {
+  color: ${theme.colors['darkBlue']};
+}
+
+${selector} {
+  color: ${theme.colors['white']};
+}
+`;
+            }
+        ]
+    ],
+
     presets: [
         presetUno(),
         presetWebFonts({
             fonts: {
                 sans: {
                     name: 'Poppins',
-                    weights: [300, 400, 500, 600, 700, 800, 900]
+                    weights: [300, 400, 500, 600, 700]
                 }
             }
         }),
