@@ -8,9 +8,10 @@
                 <slot />
             </div>
         </main>
+
         <p
             role="note"
-            class="text-lg md:block hidden text-base fixed -left-17 bottom-1/2 rotate-270">
+            class="text-lg md:block hidden text-base fixed -left-19 bottom-1/2 rotate-270">
             Want to Work 🤝
             <nuxt-link :to="{ path: '/contact' }" class="underline"
                 >Together?</nuxt-link

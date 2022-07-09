@@ -200,17 +200,17 @@
     <nuxt-layout>
         <template #root>
             <div
-                lg="-right-(9.25rem)  inset-y-0 my-auto w-84 h-10 rotate-270"
+                lg="-right-(8rem)  inset-y-0 my-auto w-72 h-8 rotate-270"
                 md="bottom-20 ml-28 w-[calc(100%-7rem)] "
-                class="fixed bottom-0 w-screen rotate-0 px-0.5 py-1.5 dark:bg-champagne/50 bg-darkBlue/50 z-36 flex items-center justify-between">
-                <button type="button" @click="nextProject" text="white 2xl">
+                class="fixed bottom-0 w-screen text-white text-2xl rotate-0 px-0.5 py-1.5 dark:bg-champagne/50 bg-darkBlue/50 z-36 flex items-center justify-between">
+                <button type="button" @click="nextProject">
                     <span class="inline-block i-carbon:chevron-down"></span>
                     <span class="sr-only">next project</span>
                 </button>
-                <span text="xl md:2xl white">
+                <span text="lg md:xl ">
                     {{ activeProject.project.name }}
                 </span>
-                <button type="button" @click="prevProject" text="white 2xl">
+                <button type="button" @click="prevProject">
                     <span class="inline-block i-carbon:chevron-up"></span>
                     <span class="sr-only">previous project</span>
                 </button>
