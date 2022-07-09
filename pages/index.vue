@@ -12,10 +12,7 @@
             <h1
                 class="dark:text-white lg:text-8xl text-7xl capitalize font-light">
                 hi I'm
-                <span
-                    class="text-transparent font-semibold text-stroke-champagne text-stroke-2"
-                    >Youness</span
-                >
+                <outline-text class="text-9xl"> Youness </outline-text>
             </h1>
             <h2
                 class="md:text-4xl text-3xl text-canvas md:mt-4 mt-2 font-semibold">

@@ -17,6 +17,7 @@ declare module 'vue' {
     'SocialMediaBar': typeof import("../components/SocialMediaBar.vue")['default'],
     'SupportAnimation': typeof import("../components/SupportAnimation.vue")['default'],
     'VSvg': typeof import("../components/VSvg.vue")['default'],
+    'OutlineText': typeof import("../components/outline-text.vue")['default'],
     'Project': typeof import("../components/project.vue")['default'],
     'FormsTextInput': typeof import("../components/forms/TextInput.vue")['default'],
     'IconsMenuIcon': typeof import("../components/icons/MenuIcon.vue")['default'],
@@ -76,6 +77,7 @@ declare module 'vue' {
     'LazySocialMediaBar': typeof import("../components/SocialMediaBar.vue")['default'],
     'LazySupportAnimation': typeof import("../components/SupportAnimation.vue")['default'],
     'LazyVSvg': typeof import("../components/VSvg.vue")['default'],
+    'LazyOutlineText': typeof import("../components/outline-text.vue")['default'],
     'LazyProject': typeof import("../components/project.vue")['default'],
     'LazyFormsTextInput': typeof import("../components/forms/TextInput.vue")['default'],
     'LazyIconsMenuIcon': typeof import("../components/icons/MenuIcon.vue")['default'],
@@ -137,6 +139,7 @@ export const SocialCard: typeof import("../components/SocialCard.vue")['default'
 export const SocialMediaBar: typeof import("../components/SocialMediaBar.vue")['default']
 export const SupportAnimation: typeof import("../components/SupportAnimation.vue")['default']
 export const VSvg: typeof import("../components/VSvg.vue")['default']
+export const OutlineText: typeof import("../components/outline-text.vue")['default']
 export const Project: typeof import("../components/project.vue")['default']
 export const FormsTextInput: typeof import("../components/forms/TextInput.vue")['default']
 export const IconsMenuIcon: typeof import("../components/icons/MenuIcon.vue")['default']
@@ -196,6 +199,7 @@ export const LazySocialCard: typeof import("../components/SocialCard.vue")['defa
 export const LazySocialMediaBar: typeof import("../components/SocialMediaBar.vue")['default']
 export const LazySupportAnimation: typeof import("../components/SupportAnimation.vue")['default']
 export const LazyVSvg: typeof import("../components/VSvg.vue")['default']
+export const LazyOutlineText: typeof import("../components/outline-text.vue")['default']
 export const LazyProject: typeof import("../components/project.vue")['default']
 export const LazyFormsTextInput: typeof import("../components/forms/TextInput.vue")['default']
 export const LazyIconsMenuIcon: typeof import("../components/icons/MenuIcon.vue")['default']
