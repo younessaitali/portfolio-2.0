@@ -2,6 +2,7 @@
     const { uuid } = useBioTransition();
     definePageMeta({
         layout: 'home',
+
         pageTransition
     });
 </script>
