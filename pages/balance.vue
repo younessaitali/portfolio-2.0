@@ -13,7 +13,7 @@
             class="w-full min-h-full flex flex-col items-center justify-center">
             <div
                 class="flex flex-col items-center my-auto xl:max-h-2xl lg:max-h-2xl md:max-h-xl gap-y-3">
-                <head-line title="Trying his very best to be balanced" />
+                <head-line title="Tries his very best to be balanced" />
                 <BalanceAnimation class="2xl:max-h-sm max-h-xs" :key="uuid" />
 
                 <figure

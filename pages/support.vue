@@ -9,7 +9,7 @@
 <template>
     <nuxt-layout>
         <div class="flex min-h-full flex-col items-center justify-center">
-            <head-line title="Enjoy supporting others" />
+            <head-line title="Enjoys supporting others" />
             <SupportAnimation md="h-80" class="h-48 w-full" :key="uuid" />
             <p
                 font="medium"
