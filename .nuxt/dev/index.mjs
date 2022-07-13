@@ -34,10 +34,10 @@ import { snakeCase, kebabCase, pascalCase } from 'file:///home/youness/dev/portf
 import { visit } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/unist-util-visit@4.1.0/node_modules/unist-util-visit/index.js';
 import { stringifyEntitiesLight } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/stringify-entities@4.0.3/node_modules/stringify-entities/index.js';
 import { parseEntities } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/parse-entities@4.0.0/node_modules/parse-entities/index.js';
-import { markdownLineEnding, markdownSpace, asciiAlpha, markdownLineEndingOrSpace, asciiAlphanumeric } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/micromark-util-character@1.1.0/node_modules/micromark-util-character/index.js';
-import { factorySpace } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/micromark-factory-space@1.0.0/node_modules/micromark-factory-space/index.js';
-import { factoryWhitespace } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/micromark-factory-whitespace@1.0.0/node_modules/micromark-factory-whitespace/index.js';
-import { codeFenced } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/micromark-core-commonmark@1.0.6/node_modules/micromark-core-commonmark/index.js';
+import { markdownLineEnding, markdownSpace, asciiAlpha, markdownLineEndingOrSpace, asciiAlphanumeric } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/micromark-util-character@1.1.0/node_modules/micromark-util-character/dev/index.js';
+import { factorySpace } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/micromark-factory-space@1.0.0/node_modules/micromark-factory-space/dev/index.js';
+import { factoryWhitespace } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/micromark-factory-whitespace@1.0.0/node_modules/micromark-factory-whitespace/dev/index.js';
+import { codeFenced } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/micromark-core-commonmark@1.0.6/node_modules/micromark-core-commonmark/dev/index.js';
 import { all } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/mdast-util-to-hast@12.1.1/node_modules/mdast-util-to-hast/index.js';
 import { detab } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/detab@3.0.1/node_modules/detab/index.js';
 import { u } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/unist-builder@3.0.0/node_modules/unist-builder/index.js';
@@ -3577,18 +3577,18 @@ const _356242 = defineLazyEventHandler(async () => {
 });
 
 const _lazy_377271 = () => Promise.resolve().then(function () { return contact_post$1; });
-const _lazy_350823 = () => Promise.resolve().then(function () { return renderer$1; });
+const _lazy_272091 = () => Promise.resolve().then(function () { return renderer$1; });
 
 const handlers = [
   { route: '/api/contact', handler: _lazy_377271, lazy: true, middleware: false, method: "post" },
-  { route: '/__nuxt_error', handler: _lazy_350823, lazy: true, middleware: false, method: undefined },
+  { route: '/__nuxt_error', handler: _lazy_272091, lazy: true, middleware: false, method: undefined },
   { route: '/api/_content/query/:qid', handler: _332874, lazy: false, middleware: false, method: "get" },
   { route: '/api/_content/query', handler: _332874, lazy: false, middleware: false, method: "get" },
   { route: '/api/_content/cache', handler: _278401, lazy: false, middleware: false, method: "get" },
   { route: '/api/_content/navigation/:qid', handler: _363179, lazy: false, middleware: false, method: "get" },
   { route: '/api/_content/navigation', handler: _363179, lazy: false, middleware: false, method: "get" },
   { route: '/api/_content/highlight', handler: _356242, lazy: false, middleware: false, method: "post" },
-  { route: '/**', handler: _lazy_350823, lazy: true, middleware: false, method: undefined }
+  { route: '/**', handler: _lazy_272091, lazy: true, middleware: false, method: undefined }
 ];
 
 function createNitroApp() {
@@ -3625,6 +3625,7 @@ function createNitroApp() {
   const app = {
     hooks,
     h3App,
+    router,
     localCall,
     localFetch
   };
@@ -3722,7 +3723,7 @@ function publicAssetsURL(...path) {
   return path.length ? joinURL(publicBase, ...path) : publicBase;
 }
 
-const getClientManifest = () => import('/home/youness/dev/portfolio-2.0/.nuxt/dist/server/client.manifest.mjs').then((r) => r.default || r);
+const getClientManifest = () => import('/home/youness/dev/portfolio-2.0/.nuxt/dist/server/client.manifest.mjs').then((r) => r.default || r).then((r) => typeof r === "function" ? r() : r);
 const getServerEntry = () => import('/home/youness/dev/portfolio-2.0/.nuxt/dist/server/server.mjs').then((r) => r.default || r);
 const getSSRRenderer = lazyCachedFunction(async () => {
   const clientManifest = await getClientManifest();
@@ -3733,15 +3734,19 @@ const getSSRRenderer = lazyCachedFunction(async () => {
   if (!createSSRApp) {
     throw new Error("Server bundle is not available");
   }
-  const renderToString$1 = async (input, context) => {
-    const html = await renderToString(input, context);
-    return `<div id="__nuxt">${html}</div>`;
-  };
-  return createRenderer(createSSRApp, {
+  const renderer = createRenderer(createSSRApp, {
     clientManifest,
     renderToString: renderToString$1,
     publicPath: buildAssetsURL()
   });
+  async function renderToString$1(input, context) {
+    const html = await renderToString(input, context);
+    if (process.env.NUXT_VITE_NODE_OPTIONS) {
+      renderer.rendererContext.updateManifest(await getClientManifest());
+    }
+    return `<div id="__nuxt">${html}</div>`;
+  }
+  return renderer;
 });
 const getSPARenderer = lazyCachedFunction(async () => {
   const clientManifest = await getClientManifest();
