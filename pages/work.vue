@@ -29,7 +29,7 @@
         {
             name: 'Auto Filler',
             description: `desktop application that assists users with repetitive tasks and auto-fills forms from a
-  spreadsheet. As a result, my client spent less time doing the repetitive tasks.`,
+  spreadsheet. As a result, my client spent less time doing  repetitive tasks.`,
             isActive: false,
             image: {
                 src: '/projects/auto-k.svg',
