@@ -2,7 +2,7 @@
     "private": true,
     "packageManager": "pnpm@7.0.1",
     "scripts": {
-        "postinstall": "husky install && chmod ug+x .husky/*",
+        "postinstall": "husky install && chmod ug+x .husky/* && nuxi prepare",
         "preinstall": "npx only-allow pnpm",
         "audit": "run-s audit:*",
         "audit:dev": "pnpm audit --json --dev",
@@ -28,7 +28,7 @@
         "@nuxtjs/color-mode": "^3.1.4",
         "@pinia/nuxt": "^0.3.1",
         "@types/nprogress": "^0.2.0",
-        "@typescript-eslint/eslint-plugin": "^5.30.6",
+        "@typescript-eslint/eslint-plugin": "^5.31.0",
         "@typescript-eslint/parser": "^5.31.0",
         "@unocss/nuxt": "^0.44.7",
         "@vee-validate/zod": "^4.6.2",
@@ -49,7 +49,8 @@
         "vee-validate": "^4.6.2",
         "vitest": "^0.19.1",
         "vue-tsc": "^0.39.0",
-        "zod": "^3.17.10"
+        "zod": "^3.17.10",
+        "vite": "2.9.14"
     },
     "dependencies": {
         "gsap": "^3.10.4"

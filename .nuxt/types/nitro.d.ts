@@ -3,13 +3,13 @@ declare module 'nitropack' {
   type Awaited<T> = T extends PromiseLike<infer U> ? Awaited<U> : T
   interface InternalApi {
     '/api/contact': Awaited<ReturnType<typeof import('../../server/api/contact.post').default>>
-    '/__nuxt_error': Awaited<ReturnType<typeof import('../../node_modules/.pnpm/nuxt@3.0.0-rc.6/node_modules/nuxt/dist/core/runtime/nitro/renderer').default>>
-    '/api/_content/query/:qid': Awaited<ReturnType<typeof import('../../node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/server/api/query').default>>
-    '/api/_content/query': Awaited<ReturnType<typeof import('../../node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/server/api/query').default>>
-    '/api/_content/cache': Awaited<ReturnType<typeof import('../../node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/server/api/cache').default>>
-    '/api/_content/navigation/:qid': Awaited<ReturnType<typeof import('../../node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/server/api/navigation').default>>
-    '/api/_content/navigation': Awaited<ReturnType<typeof import('../../node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/server/api/navigation').default>>
-    '/api/_content/highlight': Awaited<ReturnType<typeof import('../../node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/server/api/highlight').default>>
+    '/__nuxt_error': Awaited<ReturnType<typeof import('../../node_modules/.pnpm/nuxt@3.0.0-rc.6_vite@2.9.14/node_modules/nuxt/dist/core/runtime/nitro/renderer').default>>
+    '/api/_content/query/:qid': Awaited<ReturnType<typeof import('../../node_modules/.pnpm/@nuxt+content@2.0.1_vite@2.9.14/node_modules/@nuxt/content/dist/runtime/server/api/query').default>>
+    '/api/_content/query': Awaited<ReturnType<typeof import('../../node_modules/.pnpm/@nuxt+content@2.0.1_vite@2.9.14/node_modules/@nuxt/content/dist/runtime/server/api/query').default>>
+    '/api/_content/cache': Awaited<ReturnType<typeof import('../../node_modules/.pnpm/@nuxt+content@2.0.1_vite@2.9.14/node_modules/@nuxt/content/dist/runtime/server/api/cache').default>>
+    '/api/_content/navigation/:qid': Awaited<ReturnType<typeof import('../../node_modules/.pnpm/@nuxt+content@2.0.1_vite@2.9.14/node_modules/@nuxt/content/dist/runtime/server/api/navigation').default>>
+    '/api/_content/navigation': Awaited<ReturnType<typeof import('../../node_modules/.pnpm/@nuxt+content@2.0.1_vite@2.9.14/node_modules/@nuxt/content/dist/runtime/server/api/navigation').default>>
+    '/api/_content/highlight': Awaited<ReturnType<typeof import('../../node_modules/.pnpm/@nuxt+content@2.0.1_vite@2.9.14/node_modules/@nuxt/content/dist/runtime/server/api/highlight').default>>
   }
 }
 declare global {

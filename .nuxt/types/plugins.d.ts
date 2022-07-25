@@ -7,13 +7,13 @@ type InjectionType<A extends Plugin> = A extends Plugin<infer T> ? Decorate<T> :
 
 type NuxtAppInjections = 
   InjectionType<typeof import("../components.plugin").default> &
-  InjectionType<typeof import("../../node_modules/.pnpm/nuxt@3.0.0-rc.6/node_modules/nuxt/dist/head/runtime/lib/vueuse-head.plugin").default> &
-  InjectionType<typeof import("../../node_modules/.pnpm/nuxt@3.0.0-rc.6/node_modules/nuxt/dist/head/runtime/plugin").default> &
-  InjectionType<typeof import("../../node_modules/.pnpm/nuxt@3.0.0-rc.6/node_modules/nuxt/dist/pages/runtime/router").default> &
-  InjectionType<typeof import("../../node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/plugin").default> &
-  InjectionType<typeof import("../../node_modules/.pnpm/@nuxtjs+color-mode@3.1.4/node_modules/@nuxtjs/color-mode/dist/runtime/plugin.server").default> &
-  InjectionType<typeof import("../../node_modules/.pnpm/@nuxtjs+color-mode@3.1.4/node_modules/@nuxtjs/color-mode/dist/runtime/plugin.client").default> &
-  InjectionType<typeof import("../../node_modules/.pnpm/@pinia+nuxt@0.3.1_typescript@4.7.4/node_modules/@pinia/nuxt/dist/runtime/plugin.vue3").default> &
+  InjectionType<typeof import("../../node_modules/.pnpm/nuxt@3.0.0-rc.6_vite@2.9.14/node_modules/nuxt/dist/head/runtime/lib/vueuse-head.plugin").default> &
+  InjectionType<typeof import("../../node_modules/.pnpm/nuxt@3.0.0-rc.6_vite@2.9.14/node_modules/nuxt/dist/head/runtime/plugin").default> &
+  InjectionType<typeof import("../../node_modules/.pnpm/nuxt@3.0.0-rc.6_vite@2.9.14/node_modules/nuxt/dist/pages/runtime/router").default> &
+  InjectionType<typeof import("../../node_modules/.pnpm/@nuxt+content@2.0.1_vite@2.9.14/node_modules/@nuxt/content/dist/runtime/plugin").default> &
+  InjectionType<typeof import("../../node_modules/.pnpm/@nuxtjs+color-mode@3.1.4_vite@2.9.14/node_modules/@nuxtjs/color-mode/dist/runtime/plugin.server").default> &
+  InjectionType<typeof import("../../node_modules/.pnpm/@nuxtjs+color-mode@3.1.4_vite@2.9.14/node_modules/@nuxtjs/color-mode/dist/runtime/plugin.client").default> &
+  InjectionType<typeof import("../../node_modules/.pnpm/@pinia+nuxt@0.3.1_lahzunkvacnqvhsxgkxtoghzza/node_modules/@pinia/nuxt/dist/runtime/plugin.vue3").default> &
   InjectionType<typeof import("../unocss").default> &
   InjectionType<typeof import("../../plugins/__typed-router").default> &
   InjectionType<typeof import("../../plugins/underLineDirective").default>

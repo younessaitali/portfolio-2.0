@@ -51,4 +51,5 @@ dist-ssr
 
 
 # nuxt files
-/.output
+.output
+.nuxt
