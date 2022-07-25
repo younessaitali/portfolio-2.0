@@ -7,7 +7,7 @@
         "audit": "run-s audit:*",
         "audit:dev": "pnpm audit --json --dev",
         "audit:prod": "pnpm audit --json --prod",
-        "build": "NITRO_PRESET=vercel-edge nuxt build",
+        "build": "nuxi build",
         "dev": "nuxi dev",
         "start": "node .output/server/index.mjs",
         "lint": "run-s lint:*",
