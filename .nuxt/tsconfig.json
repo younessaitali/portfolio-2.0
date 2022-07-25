@@ -50,13 +50,13 @@
         "public/*"
       ],
       "#app": [
-        "node_modules/.pnpm/nuxt@3.0.0-rc.5/node_modules/nuxt/dist/app"
+        "node_modules/.pnpm/nuxt@3.0.0-rc.6/node_modules/nuxt/dist/app"
       ],
       "#app/*": [
-        "node_modules/.pnpm/nuxt@3.0.0-rc.5/node_modules/nuxt/dist/app/*"
+        "node_modules/.pnpm/nuxt@3.0.0-rc.6/node_modules/nuxt/dist/app/*"
       ],
       "vue-demi": [
-        "node_modules/.pnpm/nuxt@3.0.0-rc.5/node_modules/nuxt/dist/app/compat/vue-demi"
+        "node_modules/.pnpm/nuxt@3.0.0-rc.6/node_modules/nuxt/dist/app/compat/vue-demi"
       ],
       "pinia": [
         "pinia/dist/pinia"
@@ -65,10 +65,10 @@
         ".nuxt/color-mode-options"
       ],
       "#head": [
-        "node_modules/.pnpm/nuxt@3.0.0-rc.5/node_modules/nuxt/dist/head/runtime"
+        "node_modules/.pnpm/nuxt@3.0.0-rc.6/node_modules/nuxt/dist/head/runtime"
       ],
       "#head/*": [
-        "node_modules/.pnpm/nuxt@3.0.0-rc.5/node_modules/nuxt/dist/head/runtime/*"
+        "node_modules/.pnpm/nuxt@3.0.0-rc.6/node_modules/nuxt/dist/head/runtime/*"
       ],
       "#components": [
         ".nuxt/components"
@@ -78,9 +78,6 @@
       ],
       "#build": [
         ".nuxt"
-      ],
-      "#build/*": [
-        ".nuxt/*"
       ]
     }
   },

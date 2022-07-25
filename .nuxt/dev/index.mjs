@@ -5,17 +5,17 @@ import { join } from 'path';
 import { mkdirSync } from 'fs';
 import { parentPort, threadId } from 'worker_threads';
 import { provider, isWindows } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/std-env@3.1.1/node_modules/std-env/dist/index.mjs';
-import { defineEventHandler, handleCacheHeaders, createEvent, useQuery, useCookie, createError, defineLazyEventHandler, useBody, createApp, createRouter, lazyEventHandler, eventHandler } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/h3@0.7.10/node_modules/h3/dist/index.mjs';
+import { defineEventHandler, handleCacheHeaders, createEvent, useQuery, useCookie, createError, defineLazyEventHandler, useBody, createApp, createRouter, lazyEventHandler, eventHandler } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/h3@0.7.12/node_modules/h3/dist/index.mjs';
 import { createFetch as createFetch$1, Headers } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/ohmyfetch@0.4.18/node_modules/ohmyfetch/dist/node.mjs';
 import destr from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/destr@1.1.1/node_modules/destr/dist/index.mjs';
 import { createRouter as createRouter$1 } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/radix3@0.1.2/node_modules/radix3/dist/index.mjs';
 import { createCall, createFetch } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/unenv@0.5.2/node_modules/unenv/runtime/fetch/index.mjs';
 import { createHooks } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/hookable@5.1.1/node_modules/hookable/dist/index.mjs';
-import { hash } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/ohash@0.1.0/node_modules/ohash/dist/index.mjs';
-import { parseURL, withQuery, withLeadingSlash, withoutTrailingSlash, withBase, joinURL } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/ufo@0.8.4/node_modules/ufo/dist/index.mjs';
+import { hash } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/ohash@0.1.4/node_modules/ohash/dist/index.mjs';
+import { parseURL, withQuery, withLeadingSlash, withoutTrailingSlash, withBase, joinURL } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/ufo@0.8.5/node_modules/ufo/dist/index.mjs';
 import { createStorage, prefixStorage } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/unstorage@0.4.1/node_modules/unstorage/dist/index.mjs';
 import _unstorage_drivers_fs from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/unstorage@0.4.1/node_modules/unstorage/dist/drivers/fs.mjs';
-import { extname } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/pathe@0.3.0/node_modules/pathe/dist/index.mjs';
+import { extname } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/pathe@0.3.2/node_modules/pathe/dist/index.mjs';
 import defu from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/defu@6.0.0/node_modules/defu/dist/defu.mjs';
 import remarkEmoji from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/remark-emoji@3.0.2/node_modules/remark-emoji/index.js';
 import rehypeSlug from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/rehype-slug@5.0.1/node_modules/rehype-slug/index.js';
@@ -38,7 +38,7 @@ import { markdownLineEnding, markdownSpace, asciiAlpha, markdownLineEndingOrSpac
 import { factorySpace } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/micromark-factory-space@1.0.0/node_modules/micromark-factory-space/dev/index.js';
 import { factoryWhitespace } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/micromark-factory-whitespace@1.0.0/node_modules/micromark-factory-whitespace/dev/index.js';
 import { codeFenced } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/micromark-core-commonmark@1.0.6/node_modules/micromark-core-commonmark/dev/index.js';
-import { all } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/mdast-util-to-hast@12.1.1/node_modules/mdast-util-to-hast/index.js';
+import { all } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/mdast-util-to-hast@12.1.2/node_modules/mdast-util-to-hast/index.js';
 import { detab } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/detab@3.0.1/node_modules/detab/index.js';
 import { u } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/unist-builder@3.0.0/node_modules/unist-builder/index.js';
 import { encode } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/mdurl@1.0.1/node_modules/mdurl/index.js';
@@ -46,13 +46,13 @@ import { position } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.p
 import htmlTags from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/html-tags@3.2.0/node_modules/html-tags/index.js';
 import slugify from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/slugify@1.6.5/node_modules/slugify/slugify.js';
 import { getHighlighter, BUNDLED_LANGUAGES, BUNDLED_THEMES } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/shiki-es@0.1.2/node_modules/shiki-es/dist/shiki.node.mjs';
-import { z } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/zod@3.17.3/node_modules/zod/lib/index.mjs';
+import { z } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/zod@3.17.10/node_modules/zod/lib/index.mjs';
 import { createRenderer } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/vue-bundle-renderer@0.3.9/node_modules/vue-bundle-renderer/dist/index.mjs';
 import devalue from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/@nuxt+devalue@2.0.0/node_modules/@nuxt/devalue/dist/devalue.mjs';
 import { renderToString } from 'file:///home/youness/dev/portfolio-2.0/node_modules/.pnpm/vue@3.2.37/node_modules/vue/server-renderer/index.mjs';
 import htmlTemplate from '/home/youness/dev/portfolio-2.0/.nuxt/views/document.template.mjs';
 
-const _runtimeConfig = {"app":{"baseURL":"/","buildAssetsDir":"/_nuxt/","cdnURL":""},"nitro":{"routes":{},"envPrefix":"NUXT_"},"public":{"content":{"base":"_content","tags":{"p":"prose-p","a":"prose-a","blockquote":"prose-blockquote","code-inline":"prose-code-inline","code":"prose-code","em":"prose-em","h1":"prose-h1","h2":"prose-h2","h3":"prose-h3","h4":"prose-h4","h5":"prose-h5","h6":"prose-h6","hr":"prose-hr","img":"prose-img","ul":"prose-ul","ol":"prose-ol","li":"prose-li","strong":"prose-strong","table":"prose-table","thead":"prose-thead","tbody":"prose-tbody","td":"prose-td","th":"prose-th","tr":"prose-tr"},"highlight":{"theme":"one-dark-pro"},"wsUrl":"ws://localhost:4000/"}},"sendinblueAPi":"","content":{"cacheVersion":2,"cacheIntegerity":"2895586844","transformers":["/home/youness/dev/portfolio-2.0/node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/server/transformers/markdown.mjs","/home/youness/dev/portfolio-2.0/node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/server/transformers/yaml.mjs","/home/youness/dev/portfolio-2.0/node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/server/transformers/json.mjs","/home/youness/dev/portfolio-2.0/node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/server/transformers/csv.mjs","/home/youness/dev/portfolio-2.0/node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/server/transformers/path-meta.mjs","/home/youness/dev/portfolio-2.0/node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/server/transformers/shiki.mjs"],"base":"_content","watch":true,"sources":["content"],"ignores":["\\.","-"],"locales":[],"highlight":{"theme":"one-dark-pro"},"markdown":{"tags":{"p":"prose-p","a":"prose-a","blockquote":"prose-blockquote","code-inline":"prose-code-inline","code":"prose-code","em":"prose-em","h1":"prose-h1","h2":"prose-h2","h3":"prose-h3","h4":"prose-h4","h5":"prose-h5","h6":"prose-h6","hr":"prose-hr","img":"prose-img","ul":"prose-ul","ol":"prose-ol","li":"prose-li","strong":"prose-strong","table":"prose-table","thead":"prose-thead","tbody":"prose-tbody","td":"prose-td","th":"prose-th","tr":"prose-tr"},"rehypePlugins":[],"remarkPlugins":[]},"yaml":{},"csv":{},"navigation":{"fields":[]}}};
+const _runtimeConfig = {"app":{"baseURL":"/","buildAssetsDir":"/_nuxt/","cdnURL":""},"nitro":{"routes":{},"envPrefix":"NUXT_"},"public":{"content":{"base":"_content","tags":{"p":"prose-p","a":"prose-a","blockquote":"prose-blockquote","code-inline":"prose-code-inline","code":"prose-code","em":"prose-em","h1":"prose-h1","h2":"prose-h2","h3":"prose-h3","h4":"prose-h4","h5":"prose-h5","h6":"prose-h6","hr":"prose-hr","img":"prose-img","ul":"prose-ul","ol":"prose-ol","li":"prose-li","strong":"prose-strong","table":"prose-table","thead":"prose-thead","tbody":"prose-tbody","td":"prose-td","th":"prose-th","tr":"prose-tr"},"highlight":{"theme":"one-dark-pro"},"wsUrl":"ws://localhost:4000/"}},"sendinblueAPi":"","content":{"cacheVersion":2,"cacheIntegerity":"LD57n8H6UT","transformers":["/home/youness/dev/portfolio-2.0/node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/server/transformers/markdown.mjs","/home/youness/dev/portfolio-2.0/node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/server/transformers/yaml.mjs","/home/youness/dev/portfolio-2.0/node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/server/transformers/json.mjs","/home/youness/dev/portfolio-2.0/node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/server/transformers/csv.mjs","/home/youness/dev/portfolio-2.0/node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/server/transformers/path-meta.mjs","/home/youness/dev/portfolio-2.0/node_modules/.pnpm/@nuxt+content@2.0.1/node_modules/@nuxt/content/dist/runtime/server/transformers/shiki.mjs"],"base":"_content","watch":true,"sources":["content"],"ignores":["\\.","-"],"locales":[],"highlight":{"theme":"one-dark-pro"},"markdown":{"tags":{"p":"prose-p","a":"prose-a","blockquote":"prose-blockquote","code-inline":"prose-code-inline","code":"prose-code","em":"prose-em","h1":"prose-h1","h2":"prose-h2","h3":"prose-h3","h4":"prose-h4","h5":"prose-h5","h6":"prose-h6","hr":"prose-hr","img":"prose-img","ul":"prose-ul","ol":"prose-ol","li":"prose-li","strong":"prose-strong","table":"prose-table","thead":"prose-thead","tbody":"prose-tbody","td":"prose-td","th":"prose-th","tr":"prose-tr"},"rehypePlugins":[],"remarkPlugins":[]},"yaml":{},"csv":{},"navigation":{"fields":[]}}};
 const ENV_PREFIX = "NITRO_";
 const ENV_PREFIX_ALT = _runtimeConfig.nitro.envPrefix ?? process.env.NITRO_ENV_PREFIX ?? "_";
 const getEnv = (key) => {
@@ -2823,7 +2823,7 @@ const getContentQuery = (event) => {
   return query;
 };
 
-const _332874 = defineEventHandler(async (event) => {
+const _DU4JTe = defineEventHandler(async (event) => {
   const query = getContentQuery(event);
   const contents = await serverQueryContent(event, query).find();
   if (query.first && Array.isArray(contents) && contents.length === 0) {
@@ -2839,7 +2839,7 @@ const _332874 = defineEventHandler(async (event) => {
   return contents;
 });
 
-const _278401 = defineEventHandler(async (event) => {
+const _jGlc28 = defineEventHandler(async (event) => {
   const now = Date.now();
   await serverQueryContent(event).find();
   return {
@@ -2921,7 +2921,7 @@ function pick(keys) {
   };
 }
 
-const _363179 = defineEventHandler(async (event) => {
+const _Yhjigv = defineEventHandler(async (event) => {
   const query = getContentQuery(event);
   const contents = await serverQueryContent(event, query).where({
     _partial: false
@@ -3534,7 +3534,7 @@ const resolveBody = (body) => {
     theme: resolveTheme(body.theme)
   };
 };
-const _356242 = defineLazyEventHandler(async () => {
+const _Oyxwli = defineLazyEventHandler(async () => {
   const { theme, preload } = useRuntimeConfig().content.highlight;
   const highlighter = await getHighlighter({
     theme: theme || "dark-plus",
@@ -3576,19 +3576,19 @@ const _356242 = defineLazyEventHandler(async () => {
   };
 });
 
-const _lazy_377271 = () => Promise.resolve().then(function () { return contact_post$1; });
-const _lazy_272091 = () => Promise.resolve().then(function () { return renderer$1; });
+const _lazy_z3Epl9 = () => Promise.resolve().then(function () { return contact_post$1; });
+const _lazy_640e5c = () => Promise.resolve().then(function () { return renderer$1; });
 
 const handlers = [
-  { route: '/api/contact', handler: _lazy_377271, lazy: true, middleware: false, method: "post" },
-  { route: '/__nuxt_error', handler: _lazy_272091, lazy: true, middleware: false, method: undefined },
-  { route: '/api/_content/query/:qid', handler: _332874, lazy: false, middleware: false, method: "get" },
-  { route: '/api/_content/query', handler: _332874, lazy: false, middleware: false, method: "get" },
-  { route: '/api/_content/cache', handler: _278401, lazy: false, middleware: false, method: "get" },
-  { route: '/api/_content/navigation/:qid', handler: _363179, lazy: false, middleware: false, method: "get" },
-  { route: '/api/_content/navigation', handler: _363179, lazy: false, middleware: false, method: "get" },
-  { route: '/api/_content/highlight', handler: _356242, lazy: false, middleware: false, method: "post" },
-  { route: '/**', handler: _lazy_272091, lazy: true, middleware: false, method: undefined }
+  { route: '/api/contact', handler: _lazy_z3Epl9, lazy: true, middleware: false, method: "post" },
+  { route: '/__nuxt_error', handler: _lazy_640e5c, lazy: true, middleware: false, method: undefined },
+  { route: '/api/_content/query/:qid', handler: _DU4JTe, lazy: false, middleware: false, method: "get" },
+  { route: '/api/_content/query', handler: _DU4JTe, lazy: false, middleware: false, method: "get" },
+  { route: '/api/_content/cache', handler: _jGlc28, lazy: false, middleware: false, method: "get" },
+  { route: '/api/_content/navigation/:qid', handler: _Yhjigv, lazy: false, middleware: false, method: "get" },
+  { route: '/api/_content/navigation', handler: _Yhjigv, lazy: false, middleware: false, method: "get" },
+  { route: '/api/_content/highlight', handler: _Oyxwli, lazy: false, middleware: false, method: "post" },
+  { route: '/**', handler: _lazy_640e5c, lazy: true, middleware: false, method: undefined }
 ];
 
 function createNitroApp() {
