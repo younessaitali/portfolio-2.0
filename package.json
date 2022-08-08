@@ -30,7 +30,7 @@
         "@types/nprogress": "^0.2.0",
         "@typescript-eslint/eslint-plugin": "^5.31.0",
         "@typescript-eslint/parser": "^5.31.0",
-        "@unocss/nuxt": "^0.44.7",
+        "@unocss/nuxt": "^0.45.5",
         "@vee-validate/zod": "^4.6.2",
         "@vueuse/nuxt": "^8.9.4",
         "eslint": "^8.20.0",
