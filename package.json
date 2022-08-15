@@ -24,7 +24,7 @@
         "@iconify-json/carbon": "^1.1.7",
         "@iconify-json/icon-park-outline": "^1.1.5",
         "@nuxt/content": "^2.0.1",
-        "@nuxt/test-utils-edge": "3.0.0-rc.6-27646047.133723f",
+        "@nuxt/test-utils-edge": "3.0.0-rc.8-27676327.dae836a",
         "@nuxtjs/color-mode": "^3.1.4",
         "@pinia/nuxt": "^0.3.1",
         "@types/nprogress": "^0.2.0",
