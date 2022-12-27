@@ -27,7 +27,7 @@
                 appropriate technology.
             </p>
             <a
-                href="https://drive.google.com/file/d/1CLLjqPX1QJIQvaI1tosUTpjy8w1m9nHN/view?usp=sharing"
+                href="https://drive.google.com/file/d/1npTa9p_yxlmdF2EQVigIvmT5FKUZCs1e/view?usp=share_link"
                 target="_blank"
                 md="py-3 px-10 text-lg"
                 rel="noopener"
