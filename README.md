@@ -1,3 +1,5 @@
+
+
 <h1 align="center">
   younessaitali.com - v3
 </h1>
@@ -16,3 +18,10 @@ and hosted with <a href="https://vercel.com/" target="_blank">Vercel</a>
 
 Inspiration for the animations came from  Zendesk [Video](https://vimeo.com/189252888?embedded=true&source=video_title&owner=3763101),
 and I would like to thank my friend [MED](https://www.behance.net/mohamedlatrach) for polishing the design.
+
+## Development
+
+```bash
+pnpm install
+pnpm dev
+```
